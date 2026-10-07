@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gesture Recognition CNN | Nagaraju Dharavath</title>
+<title><span data-i18n="grTitle">Gesture Recognition CNN</span> | Nagaraju Dharavath</title>
 <link rel="stylesheet" href="../../css/style.css"><style>.projectGallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}.projectGallery figure{margin:0;background:#071019;border:1px solid #203746;border-radius:14px;overflow:hidden}.projectGallery img{display:block;width:100%;height:230px;object-fit:cover}.projectGallery figcaption{padding:11px 13px;color:#91a7b2;font-size:12px}.hint{color:#758892;font-size:12px;line-height:1.6;margin-top:14px}@media(max-width:700px){.projectGallery{grid-template-columns:1fr}.projectGallery img{height:200px}}</style>
 </head>
 <body>
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
-<header class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../index.html#home">Home</a><a href="../../index.html#about">About</a><a href="../../index.html#skills">Skills</a><a href="../../index.html#projects">Projects</a><a href="../../index.html#contact">Contact</a></nav></div></header>
+<header class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../index.html#home" data-i18n="home">Home</a><a href="../../index.html#about" data-i18n="about">About</a><a href="../../index.html#skills" data-i18n="skills">Skills</a><a href="../../index.html#projects" data-i18n="projects">Projects</a><a href="../../index.html#contact" data-i18n="contact">Contact</a></nav><label class="language-select"><span>🌐</span><select id="languageSelect"><option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="ja">日本語</option><option value="zh">中文</option></select></label></div></header>
 <main class="wrap detailPage">
 <a href="../../index.html#projects" class="back">← Back to Projects</a>
-<section class="detailHero"><div class="eyebrow">Computer Vision • Deep Learning • Raspberry Pi</div><h1>Gesture Recognition CNN</h1><p class="sub">Real-time hand gesture recognition using camera input, computer vision and a CNN model.</p><div class="actions"><a class="btn primary" href="live/">Live Dashboard</a><a class="btn" href="https://github.com/nagaraju072001-design/Gesture-Recognition-CNN" target="_blank" rel="noopener">GitHub</a></div></section>
+<section class="detailHero"><div class="eyebrow"><span data-i18n="grEy">Computer Vision • Deep Learning • Raspberry Pi</span></div><h1><span data-i18n="grTitle">Gesture Recognition CNN</span></h1><p class="sub"><span data-i18n="grSub">Real-time hand gesture recognition using camera input, computer vision and a CNN model.</span></p><div class="actions"><a class="btn primary" href="live/">Live Dashboard</a><a class="btn" href="https://github.com/nagaraju072001-design/Gesture-Recognition-CNN" target="_blank" rel="noopener">GitHub</a></div></section>
 <div class="detailGrid">
-<div class="box"><h3>Project Snapshot</h3><div class="snapshot"><div><span class="miniLabel">STATUS</span><strong>Prototype / deployment development</strong></div><div><span class="miniLabel">FOCUS</span><strong>Real-time gesture recognition</strong></div><div><span class="miniLabel">PLATFORM</span><strong>Raspberry Pi + camera</strong></div></div></div>
-<div class="box"><h3>Live Project</h3><div class="live" id="live"><div><div style="font-size:44px">◉</div><strong>Gesture device connection</strong><br><span class="status">● Dashboard ready</span><p class="sub">The live Raspberry Pi connection will be integrated here when the device backend is available.</p></div></div></div>
-<div class="box"><h3>Architecture</h3><div class="code">Camera
+<div class="box"><h3><span data-i18n="snap">Project Snapshot</span></h3><div class="snapshot"><div><span class="miniLabel"><span data-i18n="status">STATUS</span></span><strong><span data-i18n="prototype">Prototype / deployment development</span></strong></div><div><span class="miniLabel"><span data-i18n="focus">FOCUS</span></span><strong><span data-i18n="gestureFocus">Real-time gesture recognition</span></strong></div><div><span class="miniLabel"><span data-i18n="platform">PLATFORM</span></span><strong><span data-i18n="rpiCamera">Raspberry Pi + camera</span></strong></div></div></div>
+<div class="box"><h3><span data-i18n="liveProject">Live Project</span></h3><div class="live" id="live"><div><div style="font-size:44px">◉</div><strong><span data-i18n="gestureConn">Gesture device connection</span></strong><br><span class="status"><span data-i18n="dashReady">● Dashboard ready</span></span><p class="sub"><span data-i18n="gestureLive">The live Raspberry Pi connection will be integrated here when the device backend is available.</span></p></div></div></div>
+<div class="box"><h3><span data-i18n="architecture">Architecture</span></h3><div class="code">Camera
   ↓
 OpenCV / MediaPipe
   ↓
@@ -26,9 +26,9 @@ CNN Model
 Gesture prediction
   ↓
 Live Dashboard</div></div>
-<div class="box"><h3>Overview</h3><p>A complete gesture-recognition pipeline covering dataset collection, model training, camera inference and Raspberry Pi deployment.</p><h3>Objective</h3><p>Recognize a defined set of hand gestures from live camera input using a lightweight computer-vision and CNN pipeline suitable for edge deployment.</p><h3>Technologies</h3><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">CNN</span><span class="tag">TensorFlow / TFLite</span><span class="tag">MediaPipe</span><span class="tag">Raspberry Pi</span></div>
+<div class="box"><h3><span data-i18n="overview">Overview</span></h3><p><span data-i18n="gestureOverview">A complete gesture-recognition pipeline covering dataset collection, model training, camera inference and Raspberry Pi deployment.</span></p><h3><span data-i18n="objective">Objective</span></h3><p><span data-i18n="gestureObjective">Recognize a defined set of hand gestures from live camera input using a lightweight computer-vision and CNN pipeline suitable for edge deployment.</span></p><h3><span data-i18n="technologies">Technologies</span></h3><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">CNN</span><span class="tag">TensorFlow / TFLite</span><span class="tag">MediaPipe</span><span class="tag">Raspberry Pi</span></div>
 <div class="box"><h3>Gesture Classes</h3><div class="cards" style="margin-top:0"><div class="card"><h3>Fist</h3></div><div class="card"><h3>OK</h3></div><div class="card"><h3>Palm</h3></div><div class="card"><h3>Peace</h3></div><div class="card"><h3>Thumb Up</h3></div></div></div>
-<div class="box"><h3>Engineering Pipeline</h3><div class="code">Camera
+<div class="box"><h3><span data-i18n="pipeline">Engineering Pipeline</span></h3><div class="code">Camera
   ↓
 OpenCV / MediaPipe
   ↓
@@ -39,17 +39,17 @@ CNN / TensorFlow Lite
 Gesture prediction
   ↓
 Live interface</div></div>
-<div class="box"><h3>Current Implementation</h3><p>The project covers dataset collection, image preprocessing, CNN-based recognition and camera inference. The current gesture set includes Fist, OK, Palm, Peace and Thumb Up.</p><h3>Challenges & Solutions</h3><p>Camera selection, real-time inference and reliable gesture classification were handled while keeping the system suitable for edge hardware.</p></div>
-<div class="box"><h3>System Gallery</h3><p>Real project captures from the Raspberry Pi 5 gesture-recognition system.</p><div class="projectGallery">
+<div class="box"><h3><span data-i18n="current">Current Implementation</span></h3><p><span data-i18n="gestureCurrent">The project covers dataset collection, image preprocessing, CNN-based recognition and camera inference. The current gesture set includes Fist, OK, Palm, Peace and Thumb Up.</span></p><h3><span data-i18n="challenges">Challenges & Solutions</span></h3><p><span data-i18n="gestureChallenges">Camera selection, real-time inference and reliable gesture classification were handled while keeping the system suitable for edge hardware.</span></p></div>
+<div class="box"><h3><span data-i18n="gallery">System Gallery</span></h3><p>Real project captures from the Raspberry Pi 5 gesture-recognition system.</p><div class="projectGallery">
 <figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/dashboard_aidge.png" alt="Gesture Recognition Aidge dashboard"><figcaption>Live Aidge monitoring dashboard</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/palm_right.png" alt="Palm gesture recognition"><figcaption>Palm gesture</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/fist_left.png" alt="Fist gesture recognition"><figcaption>Fist gesture</figcaption></figure>
 <figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/peace_right.png" alt="Peace gesture recognition"><figcaption>Peace gesture</figcaption></figure>
 </div></div>
-<div class="box"><h3>Measured Model Performance</h3><div class="snapshot"><div><span class="miniLabel">TENSORFLOW</span><strong>6.14 ms<br>162.84 FPS</strong></div><div><span class="miniLabel">AIDGE CPU</span><strong>0.26 ms<br>3850.48 FPS</strong></div><div><span class="miniLabel">MODEL INPUT</span><strong>63 float32 features</strong></div></div><p class="hint">These are model-only Raspberry Pi 5 measurements; camera capture, MediaPipe, UART and dashboard processing are not included.</p></div>
-<div class="box"><h3>Future Work</h3><p>More gestures, improved model accuracy, latency/FPS monitoring and tighter Raspberry Pi dashboard integration.</p></div>
+<div class="box"><h3><span data-i18n="performance">Measured Model Performance</span></h3><div class="snapshot"><div><span class="miniLabel">TENSORFLOW</span><strong>6.14 ms<br>162.84 FPS</strong></div><div><span class="miniLabel">AIDGE CPU</span><strong>0.26 ms<br>3850.48 FPS</strong></div><div><span class="miniLabel">MODEL INPUT</span><strong>63 float32 features</strong></div></div><p class="hint">These are model-only Raspberry Pi 5 measurements; camera capture, MediaPipe, UART and dashboard processing are not included.</p></div>
+<div class="box"><h3><span data-i18n="future">Future Work</span></h3><p><span data-i18n="gestureFuture">More gestures, improved model accuracy, latency/FPS monitoring and tighter Raspberry Pi dashboard integration.</span></p></div>
 </div>
 </main>
 <footer class="footer">Nagaraju • Embedded Software & Embedded AI Engineering</footer>
-</body>
+<script src="../../js/app.js"></script></body>
 </html>
