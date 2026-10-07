@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EdgeGuard Dashboard | Nagaraju Dharavath</title><link rel="stylesheet" href="../../../css/style.css"></head>
+<body>
+<div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div></div>
+<header class="nav"><div class="wrap navin"><a class="brand" href="../../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../../index.html#home">Home</a><a href="../">Project</a><a href="../../../index.html#projects">Projects</a></nav></div></header>
+<main class="wrap dashboard">
+<a class="back" href="../">← Back to EdgeGuard</a>
+<div class="eyebrow">LIVE PROJECT • EDGE AI • COLIBRY</div><h1>EdgeGuard Monitoring Dashboard</h1><p class="sub">A dedicated interface for human and animal detection on the edge device.</p>
+<div class="connectionBar"><span id="dot" class="dot offline"></span><strong id="connection">DEVICE OFFLINE</strong><span id="lastCheck">Not connected</span><button id="check" class="btn">Check Device</button></div>
+<div class="dashboardGrid">
+<section class="box camera"><h2>Live Detection</h2><div class="cameraBox"><div class="cameraIcon">◉</div><strong id="cameraTitle">No device connected</strong><p id="cameraText">When the Raspberry Pi / Colibry backend is online, the live detection stream will appear here.</p></div></section>
+<section class="box"><h2>Detection Status</h2><div class="metric"><span>Detected Objects</span><strong id="objects">—</strong></div><div class="metric"><span>Inference FPS</span><strong id="fps">—</strong></div><div class="metric"><span>Inference Runtime</span><strong id="runtime">—</strong></div></section>
+<section class="box"><h2>Target Classes</h2><div class="tagList"><span class="tag">Person</span><span class="tag">Animal</span><span class="tag">Other COCO classes</span></div><p class="hint">The final dashboard will show bounding boxes, labels, confidence and tracking information from the edge inference pipeline.</p></section>
+<section class="box"><h2>Device Configuration</h2><p class="sub">Backend URL</p><input id="api" class="apiInput" placeholder="http://edge-device:8000" value="">
+<p class="hint">The URL can later point to the Raspberry Pi / Colibry backend or a secure tunnel. The dashboard reports offline until the health check succeeds.</p><button id="save" class="btn primary">Save Backend URL</button></section>
+</div>
+</main><footer class="footer">EdgeGuard • Embedded AI Monitoring Dashboard</footer>
+<script>
+const api=document.getElementById('api'), saved=localStorage.getItem('edgeguardApi')||''; api.value=saved;
+const els={dot:document.getElementById('dot'),connection:document.getElementById('connection'),last:document.getElementById('lastCheck'),cameraTitle:document.getElementById('cameraTitle'),cameraText:document.getElementById('cameraText'),objects:document.getElementById('objects'),fps:document.getElementById('fps'),runtime:document.getElementById('runtime')};
+function offline(msg='Device is not connected'){els.dot.className='dot offline';els.connection.textContent='DEVICE OFFLINE';els.last.textContent=msg;els.cameraTitle.textContent='No device connected';els.cameraText.textContent='The dashboard cannot receive detection data until the device backend is reachable.';els.objects.textContent='—';els.fps.textContent='—';els.runtime.textContent='—'}
+async function check(){const base=api.value.trim().replace(/\/$/,'');if(!base){offline('Backend URL not configured');return}els.connection.textContent='CHECKING…';try{const r=await fetch(base+'/health',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json().catch(()=>({}));els.dot.className='dot online';els.connection.textContent='DEVICE ONLINE';els.last.textContent='Health check successful';els.cameraTitle.textContent='Edge device connected';els.cameraText.textContent='Live detection data can be connected here.';if(d.objects!=null)els.objects.textContent=d.objects;if(d.fps!=null)els.fps.textContent=d.fps;if(d.runtime)els.runtime.textContent=d.runtime}catch(e){offline('Connection failed — '+e.message)}}
+document.getElementById('check').onclick=check;document.getElementById('save').onclick=()=>{localStorage.setItem('edgeguardApi',api.value.trim());check()};offline();
+</script></body></html>
