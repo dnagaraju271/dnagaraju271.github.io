@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gesture Recognition CNN | Nagaraju Dharavath</title>
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/style.css"><style>.projectGallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}.projectGallery figure{margin:0;background:#071019;border:1px solid #203746;border-radius:14px;overflow:hidden}.projectGallery img{display:block;width:100%;height:230px;object-fit:cover}.projectGallery figcaption{padding:11px 13px;color:#91a7b2;font-size:12px}.hint{color:#758892;font-size:12px;line-height:1.6;margin-top:14px}@media(max-width:700px){.projectGallery{grid-template-columns:1fr}.projectGallery img{height:200px}}</style>
 </head>
 <body>
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
@@ -40,7 +40,13 @@ Gesture prediction
   ↓
 Live interface</div></div>
 <div class="box"><h3>Current Implementation</h3><p>The project covers dataset collection, image preprocessing, CNN-based recognition and camera inference. The current gesture set includes Fist, OK, Palm, Peace and Thumb Up.</p><h3>Challenges & Solutions</h3><p>Camera selection, real-time inference and reliable gesture classification were handled while keeping the system suitable for edge hardware.</p></div>
-<div class="box"><h3>Results & Media</h3><div class="live">Project images, camera screenshots, model results and benchmark information will be added here.</div></div>
+<div class="box"><h3>System Gallery</h3><p>Real project captures from the Raspberry Pi 5 gesture-recognition system.</p><div class="projectGallery">
+<figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/dashboard_aidge.png" alt="Gesture Recognition Aidge dashboard"><figcaption>Live Aidge monitoring dashboard</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/palm_right.png" alt="Palm gesture recognition"><figcaption>Palm gesture</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/fist_left.png" alt="Fist gesture recognition"><figcaption>Fist gesture</figcaption></figure>
+<figure><img src="https://raw.githubusercontent.com/nagaraju072001-design/Gesture-Recognition-CNN/main/docs/images/peace_right.png" alt="Peace gesture recognition"><figcaption>Peace gesture</figcaption></figure>
+</div></div>
+<div class="box"><h3>Measured Model Performance</h3><div class="snapshot"><div><span class="miniLabel">TENSORFLOW</span><strong>6.14 ms<br>162.84 FPS</strong></div><div><span class="miniLabel">AIDGE CPU</span><strong>0.26 ms<br>3850.48 FPS</strong></div><div><span class="miniLabel">MODEL INPUT</span><strong>63 float32 features</strong></div></div><p class="hint">These are model-only Raspberry Pi 5 measurements; camera capture, MediaPipe, UART and dashboard processing are not included.</p></div>
 <div class="box"><h3>Future Work</h3><p>More gestures, improved model accuracy, latency/FPS monitoring and tighter Raspberry Pi dashboard integration.</p></div>
 </div>
 </main>
