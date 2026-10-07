@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="../css/style.css?v=20261007-3">
 <style>
 .resume-page .detailPage{max-width:980px}.resume-page .box{padding:18px}.resume-page .detailGrid{gap:14px}.resume-page .detailPage>h1{margin-bottom:4px}.resume-page .detailPage>.sub{margin-bottom:12px}@media(max-width:800px){.resume-page .detailGrid{grid-template-columns:1fr}}
-@media print{@page{size:A4 portrait;margin:7mm}.resume-page{background:#fff!important;color:#111!important;font-size:8.7pt;line-height:1.22}.resume-page .detailPage{max-width:none!important}.resume-page .detailPage>h1{font-size:22pt!important;margin:0 0 2px!important}.resume-page .detailPage>.sub{font-size:10pt!important;margin:0 0 6px!important}.resume-page .box{padding:8px!important;margin-top:6px!important;border:1px solid #aaa!important;border-radius:5px!important;background:#fff!important;box-shadow:none!important}.resume-page .box h2{font-size:12pt!important;margin:0 0 4px!important}.resume-page .box h3{font-size:10pt!important;margin:0 0 3px!important}.resume-page .box p{margin:2px 0!important}.resume-page .detailGrid{gap:6px!important}.resume-page .eyebrow{font-size:8pt!important}.resume-page .actions,.resume-page .nav,.resume-page #space,.resume-page .footer{display:none!important}}
 </style></head>
 <body class="resume-page">
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
@@ -49,28 +48,23 @@
 
   <div class="actions">
     <a class="btn primary" href="Dharavath_Nagaraju_Resume.pdf" download data-i18n="resume.download">Download Resume</a>
-    <button class="btn" type="button" onclick="printOriginalResume()" data-i18n="resume.print">Print Resume</button>
     <a class="btn" href="../index.html" data-i18n="resume.back">Back to Portfolio</a>
   </div>
-
-  <section class="resume-viewer">
-    <iframe id="resumePdf" title="Nagaraju Dharavath Resume" src="Dharavath_Nagaraju_Resume.pdf"></iframe>
-  </section>
 </main>
 
 <footer class="footer" data-i18n="resume.footer">Nagaraju Dharavath • Embedded Software & Embedded AI Engineering</footer>
 
 <script>
 const R={
-en:{"nav.home":"Home","nav.about":"About","nav.skills":"Skills","nav.projects":"Projects","nav.education":"Education","nav.experience":"Experience","nav.contact":"Contact","resume.label":"RESUME","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.print":"Print Resume","resume.back":"Back to Portfolio"},
-fr:{"nav.home":"Accueil","nav.about":"À propos","nav.skills":"Compétences","nav.projects":"Projets","nav.education":"Formation","nav.experience":"Expérience","nav.contact":"Contact","resume.label":"CV","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingénieur systèmes embarqués | Embedded AI & IoT Developer","resume.download":"Télécharger le CV en PDF","resume.print":"Imprimer le CV","resume.back":"Retour au portfolio"},
-de:{"nav.home":"Startseite","nav.about":"Über mich","nav.skills":"Fähigkeiten","nav.projects":"Projekte","nav.education":"Ausbildung","nav.experience":"Erfahrung","nav.contact":"Kontakt","resume.label":"LEBENSLAUF","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded-Systems-Ingenieur | Embedded AI & IoT Developer","resume.download":"Lebenslauf als PDF herunterladen","resume.print":"Lebenslauf drucken","resume.back":"Zurück zum Portfolio"},
-es:{"nav.home":"Inicio","nav.about":"Sobre mí","nav.skills":"Habilidades","nav.projects":"Proyectos","nav.education":"Educación","nav.experience":"Experiencia","nav.contact":"Contacto","resume.label":"CURRÍCULUM","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingeniero de Sistemas Embebidos | Embedded AI & IoT Developer","resume.download":"Descargar el CV en PDF","resume.print":"Imprimir el CV","resume.back":"Volver al portfolio"},
-hi:{"nav.home":"होम","nav.about":"मेरे बारे में","nav.skills":"कौशल","nav.projects":"प्रोजेक्ट्स","nav.education":"शिक्षा","nav.experience":"अनुभव","nav.contact":"संपर्क","resume.label":"रिज़्यूमे","resume.name":"DHARAVATH NAGARAJU","resume.role":"एम्बेडेड सिस्टम्स इंजीनियर | Embedded AI & IoT Developer","resume.download":"रिज़्यूमे PDF डाउनलोड करें","resume.print":"रिज़्यूमे प्रिंट करें","resume.back":"पोर्टफोलियो पर वापस जाएँ"},
-te:{"nav.home":"హోమ్","nav.about":"నా గురించి","nav.skills":"నైపుణ్యాలు","nav.projects":"ప్రాజెక్టులు","nav.education":"విద్య","nav.experience":"అనుభవం","nav.contact":"సంప్రదించండి","resume.label":"రెజ్యూమ్","resume.name":"DHARAVATH NAGARAJU","resume.role":"ఎంబెడెడ్ సిస్టమ్స్ ఇంజనీర్ | Embedded AI & IoT Developer","resume.download":"రెజ్యూమ్ PDF డౌన్‌లోడ్ చేయండి","resume.print":"రెజ్యూమ్ ప్రింట్ చేయండి","resume.back":"పోర్ట్‌ఫోలియోకు తిరిగి వెళ్లండి"},
-ta:{"nav.home":"முகப்பு","nav.about":"என்னைப் பற்றி","nav.skills":"திறன்கள்","nav.projects":"திட்டங்கள்","nav.education":"கல்வி","nav.experience":"அனுபவம்","nav.contact":"தொடர்பு","resume.label":"விண்ணப்பச் சுயவிவரம்","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Resume PDF பதிவிறக்கவும்","resume.print":"Resume-ஐ அச்சிடவும்","resume.back":"Portfolio-க்கு திரும்பு"},
-ja:{"nav.home":"ホーム","nav.about":"概要","nav.skills":"スキル","nav.projects":"プロジェクト","nav.education":"学歴","nav.experience":"経験","nav.contact":"連絡先","resume.label":"履歴書","resume.name":"DHARAVATH NAGARAJU","resume.role":"組み込みシステムエンジニア | Embedded AI & IoT Developer","resume.download":"履歴書PDFをダウンロード","resume.print":"履歴書を印刷","resume.back":"ポートフォリオに戻る"},
-zh:{"nav.home":"首页","nav.about":"关于我","nav.skills":"技能","nav.projects":"项目","nav.education":"教育","nav.experience":"经历","nav.contact":"联系","resume.label":"简历","resume.name":"DHARAVATH NAGARAJU","resume.role":"嵌入式系统工程师 | Embedded AI & IoT Developer","resume.download":"下载简历 PDF","resume.print":"打印简历","resume.back":"返回作品集"}
+en:{"nav.home":"Home","nav.about":"About","nav.skills":"Skills","nav.projects":"Projects","nav.education":"Education","nav.experience":"Experience","nav.contact":"Contact","resume.label":"RESUME","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+fr:{"nav.home":"Accueil","nav.about":"À propos","nav.skills":"Compétences","nav.projects":"Projets","nav.education":"Formation","nav.experience":"Expérience","nav.contact":"Contact","resume.label":"CV","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingénieur systèmes embarqués | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+de:{"nav.home":"Startseite","nav.about":"Über mich","nav.skills":"Fähigkeiten","nav.projects":"Projekte","nav.education":"Ausbildung","nav.experience":"Erfahrung","nav.contact":"Kontakt","resume.label":"LEBENSLAUF","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded-Systems-Ingenieur | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+es:{"nav.home":"Inicio","nav.about":"Sobre mí","nav.skills":"Habilidades","nav.projects":"Proyectos","nav.education":"Educación","nav.experience":"Experiencia","nav.contact":"Contacto","resume.label":"CURRÍCULUM","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingeniero de Sistemas Embebidos | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+hi:{"nav.home":"होम","nav.about":"मेरे बारे में","nav.skills":"कौशल","nav.projects":"प्रोजेक्ट्स","nav.education":"शिक्षा","nav.experience":"अनुभव","nav.contact":"संपर्क","resume.label":"रिज़्यूमे","resume.name":"DHARAVATH NAGARAJU","resume.role":"एम्बेडेड सिस्टम्स इंजीनियर | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+te:{"nav.home":"హోమ్","nav.about":"నా గురించి","nav.skills":"నైపుణ్యాలు","nav.projects":"ప్రాజెక్టులు","nav.education":"విద్య","nav.experience":"అనుభవం","nav.contact":"సంప్రదించండి","resume.label":"రెజ్యూమ్","resume.name":"DHARAVATH NAGARAJU","resume.role":"ఎంబెడెడ్ సిస్టమ్స్ ఇంజనీర్ | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+ta:{"nav.home":"முகப்பு","nav.about":"என்னைப் பற்றி","nav.skills":"திறன்கள்","nav.projects":"திட்டங்கள்","nav.education":"கல்வி","nav.experience":"அனுபவம்","nav.contact":"தொடர்பு","resume.label":"விண்ணப்பச் சுயவிவரம்","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+ja:{"nav.home":"ホーム","nav.about":"概要","nav.skills":"スキル","nav.projects":"プロジェクト","nav.education":"学歴","nav.experience":"経験","nav.contact":"連絡先","resume.label":"履歴書","resume.name":"DHARAVATH NAGARAJU","resume.role":"組み込みシステムエンジニア | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
+zh:{"nav.home":"首页","nav.about":"关于我","nav.skills":"技能","nav.projects":"项目","nav.education":"教育","nav.experience":"经历","nav.contact":"联系","resume.label":"简历","resume.name":"DHARAVATH NAGARAJU","resume.role":"嵌入式系统工程师 | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"}
 };
 function applyLanguage(lang){
  const t=R[lang]||R.en;
@@ -84,11 +78,7 @@ function detectLanguage(){
  if(saved&&R[saved])return saved;
  const browser=(navigator.language||"en").toLowerCase().split("-")[0];
  return R[browser]?browser:"en";
-}
-function printOriginalResume(){
- window.open("Dharavath_Nagaraju_Resume.pdf","_blank");
-}
-document.addEventListener("DOMContentLoaded",()=>{
+}document.addEventListener("DOMContentLoaded",()=>{
  applyLanguage(detectLanguage());
  const select=document.getElementById("languageSelect");
  if(select)select.addEventListener("change",e=>applyLanguage(e.target.value));
