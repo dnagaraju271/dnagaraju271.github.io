@@ -41,6 +41,23 @@ class DeviceTelemetry(BaseModel):
     accelerator: str | None = None
     extra: dict[str, Any] = {}
 
+
+MESSAGES = {
+    "en": "Device offline or no telemetry received yet.",
+    "fr": "Appareil hors ligne ou aucune télémétrie reçue pour le moment.",
+    "de": "Gerät offline oder noch keine Telemetriedaten empfangen.",
+    "es": "Dispositivo sin conexión o aún no se han recibido datos de telemetría.",
+    "hi": "डिवाइस ऑफलाइन है या अभी तक कोई telemetry प्राप्त नहीं हुई है।",
+    "te": "డివైస్ ఆఫ్‌లైన్‌లో ఉంది లేదా ఇంకా telemetry అందలేదు.",
+    "ta": "சாதனம் ஆஃப்லைனில் உள்ளது அல்லது இதுவரை telemetry பெறப்படவில்லை.",
+    "ja": "デバイスがオフライン、またはまだテレメトリを受信していません。",
+    "zh": "设备离线或尚未收到遥测数据。"
+}
+
+def request_language(accept_language: str | None) -> str:
+    code = (accept_language or "en").lower().split(",")[0].split("-")[0]
+    return code if code in MESSAGES else "en"
+
 latest: dict[str, DeviceTelemetry] = {}
 
 def require_device_token(x_device_token: str | None = Header(default=None)) -> None:
@@ -56,10 +73,10 @@ def health() -> dict[str, Any]:
     return {"status": "ok", "service": "portfolio-api", "environment": APP_ENV, "time": datetime.now(timezone.utc).isoformat()}
 
 @app.get("/api/projects/{project}/status")
-def project_status(project: str) -> dict[str, Any]:
+def project_status(project: str, accept_language: str | None = Header(default=None)) -> dict[str, Any]:
     item = latest.get(project)
     if item is None:
-        return {"project": project, "online": False, "message": "Device offline or no telemetry received yet."}
+        return {"project": project, "online": False, "message": MESSAGES[request_language(accept_language)]}
     return item.model_dump(mode="json")
 
 @app.get("/api/projects")
