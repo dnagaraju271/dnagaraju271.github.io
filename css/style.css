@@ -146,3 +146,11 @@ box-shadow:0 0 0 1px rgba(70,220,255,.08),0 0 75px rgba(38,190,255,.18),inset 0 
 .card p{max-width:68ch}
 @media(max-width:600px){#scrollProgress{height:2px}.eyebrow:before{width:5px;height:5px}.project-hit:after{display:none}}
 @media(prefers-reduced-motion:reduce){#scrollProgress{transition:none!important}.project-hit:after{transition:none!important}}
+
+
+/* Balanced information grids v20261007-6 */
+.section[id="about"] .cards,.section[id="experience"] .cards,.section[id="education"] .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.section[id="about"] .card,.section[id="experience"] .card,.section[id="education"] .card{height:100%}
+.section[id="about"] .card p,.section[id="experience"] .card p,.section[id="education"] .card p{margin-bottom:0}
+@media(max-width:900px){.section[id="about"] .cards,.section[id="experience"] .cards,.section[id="education"] .cards{grid-template-columns:1fr}}
+@media(min-width:901px){.section[id="about"] .cards,.section[id="experience"] .cards,.section[id="education"] .cards{align-items:stretch}}
