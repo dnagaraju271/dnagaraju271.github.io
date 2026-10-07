@@ -131,3 +131,18 @@ box-shadow:0 0 0 1px rgba(70,220,255,.08),0 0 75px rgba(38,190,255,.18),inset 0 
 @media(min-width:1100px){.hero>div:first-child{padding-right:10px}.visual{margin-right:2px}}
 @media(max-width:850px){.hero{gap:28px;min-height:auto}.hero h1{font-size:clamp(44px,10vw,68px)}.visual{min-height:400px}.section{padding:82px 0}.section h2{font-size:35px}}
 @media(max-width:600px){.brand:after{display:none}.hero h1{letter-spacing:-.035em}.hero p{line-height:1.65}.visual{min-height:320px}.section{padding:72px 0}.section h2{font-size:31px}.card{padding:21px}}
+
+
+/* Micro-interactions + navigation polish v20261007-5 */
+#scrollProgress{position:fixed;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));box-shadow:0 0 16px rgba(57,216,255,.45);z-index:100;transform-origin:left center;pointer-events:none}
+.eyebrow{position:relative;display:inline-flex;align-items:center;gap:9px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px rgba(57,216,255,.75);flex:none}
+.nav nav a[aria-current="true"]{color:#fff}
+.nav nav a[aria-current="true"]:after{transform:scaleX(1);opacity:.9}
+.nav nav a:focus-visible,.brand:focus-visible,.btn:focus-visible,.language-select select:focus-visible{outline:2px solid rgba(57,216,255,.75);outline-offset:4px;border-radius:8px}
+.project-hit{position:relative}
+.project-hit:after{content:"";position:absolute;right:22px;bottom:22px;width:36px;height:36px;border:1px solid rgba(57,216,255,.14);border-radius:50%;opacity:0;transform:scale(.8);transition:.3s ease;pointer-events:none}
+.project-card:hover .project-hit:after{opacity:1;transform:scale(1)}
+.card p{max-width:68ch}
+@media(max-width:600px){#scrollProgress{height:2px}.eyebrow:before{width:5px;height:5px}.project-hit:after{display:none}}
+@media(prefers-reduced-motion:reduce){#scrollProgress{transition:none!important}.project-hit:after{transition:none!important}}
