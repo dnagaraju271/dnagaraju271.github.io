@@ -64,3 +64,7 @@
  .detailPage h1,.detailPage h2,.detailPage h3,.detailPage p,.detailPage strong{color:#111!important}
  .detailPage .box{background:#fff!important;border:1px solid #bbb!important;box-shadow:none!important;break-inside:avoid}
 }
+
+/* Stable project-card layout: the link fills the card without nested flex/height conflicts. */
+.project-card{min-height:0!important;display:block!important;overflow:hidden}.project-hit{height:auto!important;min-height:255px;box-sizing:border-box}
+@media(max-width:900px){.cards{grid-template-columns:1fr}.project-hit{min-height:0}}
