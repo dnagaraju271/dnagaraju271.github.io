@@ -8,14 +8,14 @@
 </head>
 <body>
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
-<header class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../index.html#home">Home</a><a href="../../index.html#about">About</a><a href="../../index.html#skills">Skills</a><a href="../../index.html#projects">Projects</a><a href="../../index.html#contact">Contact</a></nav></div></header>
+<header class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../index.html#home" data-i18n="home">Home</a><a href="../../index.html#about" data-i18n="about">About</a><a href="../../index.html#skills" data-i18n="skills">Skills</a><a href="../../index.html#projects" data-i18n="projects">Projects</a><a href="../../index.html#contact" data-i18n="contact">Contact</a></nav><label class="language-select"><span>🌐</span><select id="languageSelect"><option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="ja">日本語</option><option value="zh">中文</option></select></label></div></header>
 <main class="wrap detailPage">
 <a href="../../index.html#projects" class="back">← Back to Projects</a>
-<section class="detailHero"><div class="eyebrow">Embedded AI • Colibry NPU • Computer Vision</div><h1>EdgeGuard — Embedded AI on Colibry</h1><p class="sub">Real-time human and animal detection using edge AI, computer vision and the Colibry hardware platform.</p><div class="actions"><a class="btn primary" href="live/">Live Dashboard</a><a class="btn" href="#details">Project Details</a></div></section>
+<section class="detailHero"><div class="eyebrow">Embedded AI • Colibry NPU • Computer Vision</div><h1><span data-i18n="egTitle">EdgeGuard — Embedded AI on Colibry</span></h1><p class="sub"><span data-i18n="egSub">Real-time human and animal detection using edge AI, computer vision and the Colibry hardware platform.</span></p><div class="actions"><a class="btn primary" href="live/">Live Dashboard</a><a class="btn" href="#details">Project Details</a></div></section>
 <div class="detailGrid">
-<div class="box"><h3>Project Snapshot</h3><div class="snapshot"><div><span class="miniLabel">STATUS</span><strong>In active development</strong></div><div><span class="miniLabel">FOCUS</span><strong>Human + animal detection</strong></div><div><span class="miniLabel">PLATFORM</span><strong>Colibry + edge hardware</strong></div></div></div>
-<div class="box"><h3>Live Project</h3><div class="live" id="live"><div><div style="font-size:44px">◉</div><strong>EdgeGuard device connection</strong><br><span class="status">● Dashboard ready</span><p class="sub">The live Raspberry Pi / Colibry connection will be integrated here. When the device backend is online, this section will become the monitoring interface.</p></div></div></div>
-<div class="box"><h3>Architecture</h3><div class="code">Camera
+<div class="box"><h3><span data-i18n="snap">Project Snapshot</span></h3><div class="snapshot"><div><span class="miniLabel"><span data-i18n="status">STATUS</span></span><strong><span data-i18n="active">In active development</span></strong></div><div><span class="miniLabel"><span data-i18n="focus">FOCUS</span></span><strong><span data-i18n="humanAnimal">Human + animal detection</span></strong></div><div><span class="miniLabel"><span data-i18n="platform">PLATFORM</span></span><strong><span data-i18n="colibry">Colibry + edge hardware</span></strong></div></div></div>
+<div class="box"><h3><span data-i18n="liveProject">Live Project</span></h3><div class="live" id="live"><div><div style="font-size:44px">◉</div><strong><span data-i18n="edgeConn">EdgeGuard device connection</span></strong><br><span class="status"><span data-i18n="dashReady">● Dashboard ready</span></span><p class="sub"><span data-i18n="edgeLive">The live Raspberry Pi / Colibry connection will be integrated here. When the device backend is online, this section will become the monitoring interface.</span></p></div></div></div>
+<div class="box"><h3><span data-i18n="architecture">Architecture</span></h3><div class="code">Camera
   ↓
 Colibry Hardware
   ↓
@@ -28,8 +28,8 @@ AIDGE / NPU acceleration
 Human + Animal Detection
   ↓
 Live Dashboard</div></div>
-<div class="box" id="details"><h3>Overview</h3><p>EdgeGuard is the main embedded AI project. The Colibry board and its NPU/SDK work are part of the same project, providing the hardware acceleration and embedded deployment platform.</p><h3>Objective</h3><p>Build a practical edge-AI vision pipeline that can perform object detection close to the camera instead of depending on a cloud inference service.</p><h3>Technologies</h3><span class="tag">Colibry Board</span><span class="tag">NPU</span><span class="tag">RISC-V</span><span class="tag">Python</span><span class="tag">Linux</span><span class="tag">OpenCV</span><span class="tag">YOLOv8</span><span class="tag">ONNX</span><span class="tag">AIDGE</span></div>
-<div class="box"><h3>Engineering Pipeline</h3><div class="code">Camera
+<div class="box" id="details"><h3><span data-i18n="overview">Overview</span></h3><p><span data-i18n="edgeOverview">EdgeGuard is the main embedded AI project. The Colibry board and its NPU/SDK work are part of the same project, providing the hardware acceleration and embedded deployment platform.</span></p><h3><span data-i18n="objective">Objective</span></h3><p><span data-i18n="edgeObjective">Build a practical edge-AI vision pipeline that can perform object detection close to the camera instead of depending on a cloud inference service.</span></p><h3><span data-i18n="technologies">Technologies</span></h3><span class="tag">Colibry Board</span><span class="tag">NPU</span><span class="tag">RISC-V</span><span class="tag">Python</span><span class="tag">Linux</span><span class="tag">OpenCV</span><span class="tag">YOLOv8</span><span class="tag">ONNX</span><span class="tag">AIDGE</span></div>
+<div class="box"><h3><span data-i18n="pipeline">Engineering Pipeline</span></h3><div class="code">Camera
   ↓
 Preprocessing
   ↓
@@ -40,11 +40,11 @@ AIDGE runtime
 NPU / hardware acceleration
   ↓
 Detection + monitoring</div></div>
-<div class="box"><h3>Current Implementation</h3><p>The project currently includes the Colibry/NPU environment work, AIDGE setup, ONNX model loading and inference validation. Performance benchmarking and the complete real-time detection pipeline are still being developed.</p><h3>Challenges & Solutions</h3><p>The work includes embedded SDK setup, model import, inference validation, preprocessing/postprocessing and hardware-specific optimization.</p></div>
-<div class="box"><h3>Results & Media</h3><div class="live">Project images, detection screenshots, architecture diagrams and benchmark results will be added here.</div></div>
-<div class="box"><h3>Future Work</h3><p>Real-time tracking, additional animal classes, NPU performance benchmarking, lower latency and a fully integrated live monitoring dashboard.</p></div>
+<div class="box"><h3><span data-i18n="current">Current Implementation</span></h3><p><span data-i18n="edgeCurrent">The project currently includes the Colibry/NPU environment work, AIDGE setup, ONNX model loading and inference validation. Performance benchmarking and the complete real-time detection pipeline are still being developed.</span></p><h3><span data-i18n="challenges">Challenges & Solutions</span></h3><p><span data-i18n="edgeChallenges">The work includes embedded SDK setup, model import, inference validation, preprocessing/postprocessing and hardware-specific optimization.</span></p></div>
+<div class="box"><h3><span data-i18n="results">Results & Media</span></h3><div class="live">Project images, detection screenshots, architecture diagrams and benchmark results will be added here.</div></div>
+<div class="box"><h3><span data-i18n="future">Future Work</span></h3><p><span data-i18n="edgeFuture">Real-time tracking, additional animal classes, NPU performance benchmarking, lower latency and a fully integrated live monitoring dashboard.</span></p></div>
 </div>
 </main>
 <footer class="footer">Nagaraju • Embedded Software & Embedded AI Engineering</footer>
-</body>
+<script src="../../js/app.js"></script></body>
 </html>
