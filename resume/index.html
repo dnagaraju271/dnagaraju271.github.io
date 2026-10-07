@@ -1,15 +1,221 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resume | Nagaraju Dharavath</title><link rel="stylesheet" href="../css/style.css"></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Multilingual resume of Nagaraju Dharavath — Embedded Systems Engineer | Embedded AI & IoT Developer">
+<title>Resume | Nagaraju Dharavath</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
 <body>
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
-<header class="nav"><div class="wrap navin"><a class="brand" href="../index.html">NAGA<span>RAJU</span></a><nav><a href="../index.html#home">Home</a><a href="../index.html#about">About</a><a href="../index.html#skills">Skills</a><a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a href="../index.html#education">Education</a><a href="../index.html#contact">Contact</a></nav></div></header>
+
+<header class="nav">
+  <div class="wrap navin">
+    <a class="brand" href="../index.html">NAGA<span>RAJU</span></a>
+    <nav>
+      <a href="../index.html#home" data-i18n="nav.home">Home</a>
+      <a href="../index.html#about" data-i18n="nav.about">About</a>
+      <a href="../index.html#skills" data-i18n="nav.skills">Skills</a>
+      <a href="../index.html#projects" data-i18n="nav.projects">Projects</a>
+      <a href="../index.html#experience" data-i18n="nav.experience">Experience</a>
+      <a href="../index.html#education" data-i18n="nav.education">Education</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <label class="language-select" aria-label="Language">
+      <span>🌐</span>
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="hi">हिन्दी</option>
+        <option value="te">తెలుగు</option>
+        <option value="ta">தமிழ்</option>
+        <option value="ja">日本語</option>
+        <option value="zh">中文</option>
+      </select>
+    </label>
+  </div>
+</header>
+
 <main class="wrap detailPage">
-<div class="eyebrow">RESUME</div><h1>DHARAVATH NAGARAJU</h1><p class="sub">Embedded Systems Engineer | Embedded AI & IoT Developer</p>
-<div class="actions"><a class="btn primary" href="Dharavath_Nagaraju_Resume.pdf" download>Download Resume</a><a class="btn" href="../index.html">Back to Portfolio</a></div>
-<div class="box" style="margin-top:28px"><h2>Professional Profile</h2><p>Embedded Systems Engineer with hands-on experience building hardware-software systems, CNN inference, Raspberry Pi and Arduino deployment, UART communication and sensor integration. Background in electrical distribution systems with current focus on embedded AI, computer vision and edge computing.</p></div>
-<div class="detailGrid">
-<div class="box"><h3>Core Skills</h3><p>Arduino • Raspberry Pi • C/C++ • Python • Linux • TensorFlow Lite • CNN • MediaPipe • OpenCV • I2C • SPI • UART • BLE • PWM • Git • Flask • PlatformIO</p></div>
-<div class="box"><h3>Education</h3><p><strong>M.S. Embedded Systems</strong><br>Paris Institute of Digital Technology, France • 2025–2027</p><p><strong>B.Tech Electrical & Electronics Engineering</strong><br>JNTUH • 2021–2024 • CGPA 7.8</p><p><strong>Diploma Electrical & Electronics Engineering</strong><br>SBTET • 2018–2021 • CGPA 8.45</p></div>
-</div>
-</main><footer class="footer">Nagaraju Dharavath • Embedded Software & Embedded AI Engineering</footer></body></html>
+  <div class="eyebrow" data-i18n="resume.label">RESUME</div>
+  <h1 data-i18n="resume.name">DHARAVATH NAGARAJU</h1>
+  <p class="sub" data-i18n="resume.role">Embedded Systems Engineer | Embedded AI & IoT Developer</p>
+
+  <div class="actions">
+    <button class="btn primary" type="button" onclick="window.print()" data-i18n="resume.print">Print / Save as PDF</button>
+    <a class="btn" href="../index.html" data-i18n="resume.back">Back to Portfolio</a>
+  </div>
+
+  <section class="box" style="margin-top:28px">
+    <h2 data-i18n="resume.profileTitle">Professional Profile</h2>
+    <p data-i18n="resume.profile">Embedded Systems Engineer with hands-on experience building hardware-software systems, CNN inference, Raspberry Pi and Arduino deployment, UART communication and sensor integration. Background in electrical distribution systems with current focus on embedded AI, computer vision and edge computing.</p>
+  </section>
+
+  <div class="detailGrid">
+    <section class="box">
+      <h3 data-i18n="resume.skillsTitle">Core Skills</h3>
+      <p data-i18n="resume.skills">Embedded Systems: Arduino, Raspberry Pi, C/C++, firmware, microcontroller programming, real-time systems, IoT, sensor integration.</p>
+      <p data-i18n="resume.ai">Embedded AI / Computer Vision: TensorFlow Lite, CNN inference, MediaPipe, OpenCV, edge AI deployment, gesture recognition.</p>
+      <p data-i18n="resume.protocols">Communication Protocols: I2C, SPI, UART custom hex packet protocols, BLE, PWM.</p>
+      <p data-i18n="resume.electrical">Electrical Engineering: 33/11 kV distribution, transformers, relay protection, substation maintenance.</p>
+      <p data-i18n="resume.tools">Programming & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.</p>
+      <p data-i18n="resume.web">Web & Dashboards: HTML, CSS, JavaScript, real-time data visualization.</p>
+    </section>
+
+    <section class="box">
+      <h3 data-i18n="resume.educationTitle">Education</h3>
+      <p><strong data-i18n="resume.ms">M.S. Embedded Systems</strong><br><span data-i18n="resume.msSchool">Paris Institute of Digital Technology, France • 2025–2027</span></p>
+      <p><strong data-i18n="resume.btech">B.Tech Electrical & Electronics Engineering</strong><br><span data-i18n="resume.btechSchool">JNTUH • 2021–2024 • CGPA 7.8</span></p>
+      <p><strong data-i18n="resume.diploma">Diploma Electrical & Electronics Engineering</strong><br><span data-i18n="resume.diplomaSchool">SBTET • 2018–2021 • CGPA 8.45</span></p>
+    </section>
+  </div>
+
+  <section class="box" style="margin-top:20px">
+    <h3 data-i18n="resume.projectsTitle">Projects</h3>
+    <p><strong data-i18n="resume.p1">AI-Based Hand Gesture Recognition</strong> — <span data-i18n="resume.p1d">CNN, MediaPipe, Raspberry Pi 5, UART.</span></p>
+    <p><strong data-i18n="resume.p2">Magic Wand</strong> — <span data-i18n="resume.p2d">Edge AI Gesture Recognition Device.</span></p>
+    <p><strong data-i18n="resume.p3">Smart Home Monitoring System + Sensor Dashboard</strong> — <span data-i18n="resume.p3d">IoT monitoring and real-time sensor dashboard.</span></p>
+    <p><strong data-i18n="resume.p4">Arduino RADAR & Stepper Motor Control</strong></p>
+    <p><strong data-i18n="resume.p5">UPS Battery Monitoring with Automatic Changeover</strong></p>
+  </section>
+
+  <section class="box" style="margin-top:20px">
+    <h3 data-i18n="resume.experienceTitle">Experience</h3>
+    <p><strong data-i18n="resume.e1">Process Associate | Genpact</strong><br><span data-i18n="resume.e1d">Jul 2024 – Aug 2025</span></p>
+    <p><strong data-i18n="resume.e2">Intern – Electrical Field Engineer | SPDCL</strong><br><span data-i18n="resume.e2d">Jun 2023 – Aug 2023</span></p>
+    <p><strong data-i18n="resume.e3">Intern – Electrical Systems | AVR Power Suppliers, Hyderabad</strong><br><span data-i18n="resume.e3d">Jun 2020 – Dec 2020</span></p>
+  </section>
+
+  <section class="box" style="margin-top:20px">
+    <h3 data-i18n="resume.languagesTitle">Languages</h3>
+    <p data-i18n="resume.languages">English C2 • French A2</p>
+  </section>
+</main>
+
+<footer class="footer" data-i18n="resume.footer">Nagaraju Dharavath • Embedded Software & Embedded AI Engineering</footer>
+
+<script>
+const R = {
+en:{
+"nav.home":"Home","nav.about":"About","nav.skills":"Skills","nav.projects":"Projects","nav.education":"Education","nav.experience":"Experience","nav.contact":"Contact",
+"resume.label":"RESUME","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.print":"Print / Save as PDF","resume.back":"Back to Portfolio",
+"resume.profileTitle":"Professional Profile","resume.profile":"Embedded Systems Engineer with hands-on experience building hardware-software systems, CNN inference, Raspberry Pi and Arduino deployment, UART communication and sensor integration. Background in electrical distribution systems with current focus on embedded AI, computer vision and edge computing.",
+"resume.skillsTitle":"Core Skills","resume.skills":"Embedded Systems: Arduino, Raspberry Pi, C/C++, firmware, microcontroller programming, real-time systems, IoT, sensor integration.","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite, CNN inference, MediaPipe, OpenCV, edge AI deployment, gesture recognition.","resume.protocols":"Communication Protocols: I2C, SPI, UART custom hex packet protocols, BLE, PWM.","resume.electrical":"Electrical Engineering: 33/11 kV distribution, transformers, relay protection, substation maintenance.","resume.tools":"Programming & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web & Dashboards: HTML, CSS, JavaScript, real-time data visualization.",
+"resume.educationTitle":"Education","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"Projects","resume.p1":"AI-Based Hand Gesture Recognition","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Edge AI Gesture Recognition Device.","resume.p3":"Smart Home Monitoring System + Sensor Dashboard","resume.p3d":"IoT monitoring and real-time sensor dashboard.","resume.p4":"Arduino RADAR & Stepper Motor Control","resume.p5":"UPS Battery Monitoring with Automatic Changeover",
+"resume.experienceTitle":"Experience","resume.e1":"Process Associate | Genpact","resume.e1d":"Jul 2024 – Aug 2025","resume.e2":"Intern – Electrical Field Engineer | SPDCL","resume.e2d":"Jun 2023 – Aug 2023","resume.e3":"Intern – Electrical Systems | AVR Power Suppliers, Hyderabad","resume.e3d":"Jun 2020 – Dec 2020",
+"resume.languagesTitle":"Languages","resume.languages":"English C2 • French A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+fr:{
+"nav.home":"Accueil","nav.about":"À propos","nav.skills":"Compétences","nav.projects":"Projets","nav.education":"Formation","nav.experience":"Expérience","nav.contact":"Contact",
+"resume.label":"CV","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingénieur systèmes embarqués | Embedded AI & IoT Developer","resume.print":"Imprimer / Enregistrer en PDF","resume.back":"Retour au portfolio",
+"resume.profileTitle":"Profil professionnel","resume.profile":"Ingénieur systèmes embarqués avec une expérience pratique dans la création de systèmes matériels-logiciels, l’inférence CNN, le déploiement sur Raspberry Pi et Arduino, la communication UART et l’intégration de capteurs. Formation en systèmes de distribution électrique, avec un intérêt actuel pour l’IA embarquée, la vision par ordinateur et l’Edge Computing.",
+"resume.skillsTitle":"Compétences principales","resume.skills":"Systèmes embarqués : Arduino, Raspberry Pi, C/C++, firmware, programmation de microcontrôleurs, systèmes temps réel, IoT, intégration de capteurs.","resume.ai":"IA embarquée / Vision : TensorFlow Lite, inférence CNN, MediaPipe, OpenCV, déploiement Edge AI, reconnaissance de gestes.","resume.protocols":"Protocoles de communication : I2C, SPI, protocoles UART personnalisés à paquets hexadécimaux, BLE, PWM.","resume.electrical":"Génie électrique : distribution 33/11 kV, transformateurs, protection par relais, maintenance de postes électriques.","resume.tools":"Programmation & outils : Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web & dashboards : HTML, CSS, JavaScript, visualisation de données en temps réel.",
+"resume.educationTitle":"Formation","resume.ms":"M.S. Systèmes embarqués","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Génie électrique et électronique","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diplôme Génie électrique et électronique","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"Projets","resume.p1":"Reconnaissance de gestes de la main par IA","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Dispositif de reconnaissance de gestes par Edge AI.","resume.p3":"Système de surveillance domotique + dashboard capteurs","resume.p3d":"Surveillance IoT et tableau de bord des capteurs en temps réel.","resume.p4":"RADAR Arduino & commande de moteur pas à pas","resume.p5":"Surveillance de batterie UPS avec basculement automatique",
+"resume.experienceTitle":"Expérience","resume.e1":"Process Associate | Genpact","resume.e1d":"Juil. 2024 – Août 2025","resume.e2":"Stagiaire – Ingénieur électricien terrain | SPDCL","resume.e2d":"Juin 2023 – Août 2023","resume.e3":"Stagiaire – Systèmes électriques | AVR Power Suppliers, Hyderabad","resume.e3d":"Juin 2020 – Déc. 2020",
+"resume.languagesTitle":"Langues","resume.languages":"Anglais C2 • Français A2","resume.footer":"Nagaraju Dharavath • Ingénierie des logiciels embarqués & Embedded AI"
+},
+de:{
+"nav.home":"Startseite","nav.about":"Über mich","nav.skills":"Fähigkeiten","nav.projects":"Projekte","nav.education":"Ausbildung","nav.experience":"Erfahrung","nav.contact":"Kontakt",
+"resume.label":"LEBENSLAUF","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded-Systems-Ingenieur | Embedded AI & IoT Developer","resume.print":"Drucken / als PDF speichern","resume.back":"Zurück zum Portfolio",
+"resume.profileTitle":"Berufsprofil","resume.profile":"Embedded-Systems-Ingenieur mit praktischer Erfahrung in Hardware-Software-Systemen, CNN-Inferenz, Bereitstellung auf Raspberry Pi und Arduino, UART-Kommunikation und Sensorintegration. Hintergrund in elektrischen Verteilungssystemen mit aktuellem Fokus auf Embedded AI, Computer Vision und Edge Computing.",
+"resume.skillsTitle":"Kernkompetenzen","resume.skills":"Embedded Systems: Arduino, Raspberry Pi, C/C++, Firmware, Mikrocontrollerprogrammierung, Echtzeitsysteme, IoT, Sensorintegration.","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite, CNN-Inferenz, MediaPipe, OpenCV, Edge-AI-Deployment, Gestenerkennung.","resume.protocols":"Kommunikationsprotokolle: I2C, SPI, benutzerdefinierte UART-Hex-Paketprotokolle, BLE, PWM.","resume.electrical":"Elektrotechnik: 33/11-kV-Verteilung, Transformatoren, Relaisschutz, Wartung von Umspannwerken.","resume.tools":"Programmierung & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web & Dashboards: HTML, CSS, JavaScript, Echtzeit-Datenvisualisierung.",
+"resume.educationTitle":"Ausbildung","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, Frankreich • 2025–2027","resume.btech":"B.Tech Elektrotechnik & Elektronik","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diplom Elektrotechnik & Elektronik","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"Projekte","resume.p1":"KI-basierte Handgestenerkennung","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Edge-AI-Gerät zur Gestenerkennung.","resume.p3":"Smart-Home-Monitoring + Sensor-Dashboard","resume.p3d":"IoT-Monitoring und Echtzeit-Sensor-Dashboard.","resume.p4":"Arduino RADAR & Schrittmotorsteuerung","resume.p5":"USV-Batterieüberwachung mit automatischer Umschaltung",
+"resume.experienceTitle":"Berufserfahrung","resume.e1":"Process Associate | Genpact","resume.e1d":"Juli 2024 – Aug. 2025","resume.e2":"Praktikant – Elektroingenieur im Außendienst | SPDCL","resume.e2d":"Juni 2023 – Aug. 2023","resume.e3":"Praktikant – Elektrische Systeme | AVR Power Suppliers, Hyderabad","resume.e3d":"Juni 2020 – Dez. 2020",
+"resume.languagesTitle":"Sprachen","resume.languages":"Englisch C2 • Französisch A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+es:{
+"nav.home":"Inicio","nav.about":"Sobre mí","nav.skills":"Habilidades","nav.projects":"Proyectos","nav.education":"Educación","nav.experience":"Experiencia","nav.contact":"Contacto",
+"resume.label":"CURRÍCULUM","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingeniero de Sistemas Embebidos | Embedded AI & IoT Developer","resume.print":"Imprimir / Guardar como PDF","resume.back":"Volver al portfolio",
+"resume.profileTitle":"Perfil profesional","resume.profile":"Ingeniero de sistemas embebidos con experiencia práctica en sistemas hardware-software, inferencia CNN, despliegue en Raspberry Pi y Arduino, comunicación UART e integración de sensores. Formación en sistemas de distribución eléctrica y enfoque actual en IA embebida, visión por computadora y edge computing.",
+"resume.skillsTitle":"Competencias principales","resume.skills":"Sistemas embebidos: Arduino, Raspberry Pi, C/C++, firmware, programación de microcontroladores, sistemas en tiempo real, IoT e integración de sensores.","resume.ai":"IA embebida / Visión por computadora: TensorFlow Lite, inferencia CNN, MediaPipe, OpenCV, despliegue Edge AI y reconocimiento de gestos.","resume.protocols":"Protocolos de comunicación: I2C, SPI, protocolos UART personalizados de paquetes hexadecimales, BLE, PWM.","resume.electrical":"Ingeniería eléctrica: distribución 33/11 kV, transformadores, protección por relés y mantenimiento de subestaciones.","resume.tools":"Programación y herramientas: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web y dashboards: HTML, CSS, JavaScript y visualización de datos en tiempo real.",
+"resume.educationTitle":"Educación","resume.ms":"M.S. Sistemas Embebidos","resume.msSchool":"Paris Institute of Digital Technology, Francia • 2025–2027","resume.btech":"B.Tech Ingeniería Eléctrica y Electrónica","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Ingeniería Eléctrica y Electrónica","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"Proyectos","resume.p1":"Reconocimiento de gestos de mano basado en IA","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Dispositivo de reconocimiento de gestos mediante Edge AI.","resume.p3":"Sistema de monitorización de hogar inteligente + dashboard de sensores","resume.p3d":"Monitorización IoT y dashboard de sensores en tiempo real.","resume.p4":"RADAR Arduino y control de motor paso a paso","resume.p5":"Monitorización de batería UPS con cambio automático",
+"resume.experienceTitle":"Experiencia","resume.e1":"Process Associate | Genpact","resume.e1d":"Jul. 2024 – Ago. 2025","resume.e2":"Prácticas – Ingeniero eléctrico de campo | SPDCL","resume.e2d":"Jun. 2023 – Ago. 2023","resume.e3":"Prácticas – Sistemas eléctricos | AVR Power Suppliers, Hyderabad","resume.e3d":"Jun. 2020 – Dic. 2020",
+"resume.languagesTitle":"Idiomas","resume.languages":"Inglés C2 • Francés A2","resume.footer":"Nagaraju Dharavath • Ingeniería de Software Embebido & Embedded AI"
+},
+hi:{
+"nav.home":"होम","nav.about":"मेरे बारे में","nav.skills":"कौशल","nav.projects":"प्रोजेक्ट्स","nav.education":"शिक्षा","nav.experience":"अनुभव","nav.contact":"संपर्क",
+"resume.label":"रिज़्यूमे","resume.name":"DHARAVATH NAGARAJU","resume.role":"एम्बेडेड सिस्टम्स इंजीनियर | Embedded AI & IoT Developer","resume.print":"प्रिंट / PDF के रूप में सेव करें","resume.back":"पोर्टफोलियो पर वापस जाएँ",
+"resume.profileTitle":"प्रोफेशनल प्रोफ़ाइल","resume.profile":"हार्डवेयर-सॉफ्टवेयर सिस्टम, CNN inference, Raspberry Pi और Arduino deployment, UART communication तथा sensor integration बनाने का व्यावहारिक अनुभव रखने वाले Embedded Systems Engineer। Electrical distribution systems की पृष्ठभूमि के साथ वर्तमान फोकस Embedded AI, computer vision और edge computing पर है।",
+"resume.skillsTitle":"मुख्य कौशल","resume.skills":"Embedded Systems: Arduino, Raspberry Pi, C/C++, firmware, microcontroller programming, real-time systems, IoT और sensor integration।","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite, CNN inference, MediaPipe, OpenCV, edge AI deployment और gesture recognition।","resume.protocols":"Communication Protocols: I2C, SPI, custom UART hex packet protocols, BLE, PWM।","resume.electrical":"Electrical Engineering: 33/11 kV distribution, transformers, relay protection और substation maintenance।","resume.tools":"Programming & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office।","resume.web":"Web & Dashboards: HTML, CSS, JavaScript और real-time data visualization।",
+"resume.educationTitle":"शिक्षा","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"प्रोजेक्ट्स","resume.p1":"AI-Based Hand Gesture Recognition","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART।","resume.p2":"Magic Wand","resume.p2d":"Edge AI Gesture Recognition Device।","resume.p3":"Smart Home Monitoring System + Sensor Dashboard","resume.p3d":"IoT monitoring और real-time sensor dashboard।","resume.p4":"Arduino RADAR & Stepper Motor Control","resume.p5":"UPS Battery Monitoring with Automatic Changeover",
+"resume.experienceTitle":"अनुभव","resume.e1":"Process Associate | Genpact","resume.e1d":"जुलाई 2024 – अगस्त 2025","resume.e2":"Intern – Electrical Field Engineer | SPDCL","resume.e2d":"जून 2023 – अगस्त 2023","resume.e3":"Intern – Electrical Systems | AVR Power Suppliers, Hyderabad","resume.e3d":"जून 2020 – दिसंबर 2020",
+"resume.languagesTitle":"भाषाएँ","resume.languages":"English C2 • French A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+te:{
+"nav.home":"హోమ్","nav.about":"నా గురించి","nav.skills":"నైపుణ్యాలు","nav.projects":"ప్రాజెక్టులు","nav.education":"విద్య","nav.experience":"అనుభవం","nav.contact":"సంప్రదించండి",
+"resume.label":"రెజ్యూమ్","resume.name":"DHARAVATH NAGARAJU","resume.role":"ఎంబెడెడ్ సిస్టమ్స్ ఇంజనీర్ | Embedded AI & IoT Developer","resume.print":"ప్రింట్ / PDFగా సేవ్ చేయండి","resume.back":"పోర్ట్‌ఫోలియోకు తిరిగి వెళ్లండి",
+"resume.profileTitle":"ప్రొఫెషనల్ ప్రొఫైల్","resume.profile":"హార్డ్‌వేర్-సాఫ్ట్‌వేర్ సిస్టమ్స్, CNN inference, Raspberry Pi మరియు Arduino deployment, UART communication మరియు sensor integrationలో ప్రాక్టికల్ అనుభవం ఉన్న Embedded Systems Engineer. Electrical distribution systems నేపథ్యంతో ప్రస్తుతం Embedded AI, computer vision మరియు edge computingపై దృష్టి ఉంది.",
+"resume.skillsTitle":"ప్రధాన నైపుణ్యాలు","resume.skills":"Embedded Systems: Arduino, Raspberry Pi, C/C++, firmware, microcontroller programming, real-time systems, IoT, sensor integration.","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite, CNN inference, MediaPipe, OpenCV, edge AI deployment, gesture recognition.","resume.protocols":"Communication Protocols: I2C, SPI, custom UART hex packet protocols, BLE, PWM.","resume.electrical":"Electrical Engineering: 33/11 kV distribution, transformers, relay protection, substation maintenance.","resume.tools":"Programming & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web & Dashboards: HTML, CSS, JavaScript, real-time data visualization.",
+"resume.educationTitle":"విద్య","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"ప్రాజెక్టులు","resume.p1":"AI-Based Hand Gesture Recognition","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Edge AI Gesture Recognition Device.","resume.p3":"Smart Home Monitoring System + Sensor Dashboard","resume.p3d":"IoT monitoring మరియు real-time sensor dashboard.","resume.p4":"Arduino RADAR & Stepper Motor Control","resume.p5":"UPS Battery Monitoring with Automatic Changeover",
+"resume.experienceTitle":"అనుభవం","resume.e1":"Process Associate | Genpact","resume.e1d":"జూలై 2024 – ఆగస్టు 2025","resume.e2":"Intern – Electrical Field Engineer | SPDCL","resume.e2d":"జూన్ 2023 – ఆగస్టు 2023","resume.e3":"Intern – Electrical Systems | AVR Power Suppliers, Hyderabad","resume.e3d":"జూన్ 2020 – డిసెంబర్ 2020",
+"resume.languagesTitle":"భాషలు","resume.languages":"English C2 • French A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+ta:{
+"nav.home":"முகப்பு","nav.about":"என்னைப் பற்றி","nav.skills":"திறன்கள்","nav.projects":"திட்டங்கள்","nav.education":"கல்வி","nav.experience":"அனுபவம்","nav.contact":"தொடர்பு",
+"resume.label":"விண்ணப்பச் சுயவிவரம்","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.print":"அச்சிடு / PDF ஆக சேமி","resume.back":"Portfolio-க்கு திரும்பு",
+"resume.profileTitle":"தொழில்முறை சுயவிவரம்","resume.profile":"Hardware-software systems, CNN inference, Raspberry Pi மற்றும் Arduino deployment, UART communication மற்றும் sensor integration ஆகியவற்றில் நடைமுறை அனுபவம் கொண்ட Embedded Systems Engineer. Electrical distribution systems பின்னணியுடன் தற்போது Embedded AI, computer vision மற்றும் edge computing மீது கவனம் செலுத்துகிறேன்.",
+"resume.skillsTitle":"முக்கிய திறன்கள்","resume.skills":"Embedded Systems: Arduino, Raspberry Pi, C/C++, firmware, microcontroller programming, real-time systems, IoT, sensor integration.","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite, CNN inference, MediaPipe, OpenCV, edge AI deployment, gesture recognition.","resume.protocols":"Communication Protocols: I2C, SPI, custom UART hex packet protocols, BLE, PWM.","resume.electrical":"Electrical Engineering: 33/11 kV distribution, transformers, relay protection, substation maintenance.","resume.tools":"Programming & Tools: Python, PySerial, Flask, Linux, Arduino IDE, PlatformIO, VS Code, MATLAB, Git, MS Office.","resume.web":"Web & Dashboards: HTML, CSS, JavaScript, real-time data visualization.",
+"resume.educationTitle":"கல்வி","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"திட்டங்கள்","resume.p1":"AI-Based Hand Gesture Recognition","resume.p1d":"CNN, MediaPipe, Raspberry Pi 5, UART.","resume.p2":"Magic Wand","resume.p2d":"Edge AI Gesture Recognition Device.","resume.p3":"Smart Home Monitoring System + Sensor Dashboard","resume.p3d":"IoT monitoring மற்றும் real-time sensor dashboard.","resume.p4":"Arduino RADAR & Stepper Motor Control","resume.p5":"UPS Battery Monitoring with Automatic Changeover",
+"resume.experienceTitle":"அனுபவம்","resume.e1":"Process Associate | Genpact","resume.e1d":"ஜூலை 2024 – ஆகஸ்ட் 2025","resume.e2":"Intern – Electrical Field Engineer | SPDCL","resume.e2d":"ஜூன் 2023 – ஆகஸ்ட் 2023","resume.e3":"Intern – Electrical Systems | AVR Power Suppliers, Hyderabad","resume.e3d":"ஜூன் 2020 – டிசம்பர் 2020",
+"resume.languagesTitle":"மொழிகள்","resume.languages":"English C2 • French A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+ja:{
+"nav.home":"ホーム","nav.about":"概要","nav.skills":"スキル","nav.projects":"プロジェクト","nav.education":"学歴","nav.experience":"経験","nav.contact":"連絡先",
+"resume.label":"履歴書","resume.name":"DHARAVATH NAGARAJU","resume.role":"組み込みシステムエンジニア | Embedded AI & IoT Developer","resume.print":"印刷 / PDFとして保存","resume.back":"ポートフォリオに戻る",
+"resume.profileTitle":"プロフィール","resume.profile":"ハードウェア・ソフトウェアシステム、CNN推論、Raspberry Pi・Arduinoへの展開、UART通信、センサー統合を実践している組み込みシステムエンジニアです。電力配電システムの経験を背景に、現在はEmbedded AI、コンピュータビジョン、エッジコンピューティングに注力しています。",
+"resume.skillsTitle":"主なスキル","resume.skills":"Embedded Systems: Arduino、Raspberry Pi、C/C++、ファームウェア、マイコンプログラミング、リアルタイムシステム、IoT、センサー統合。","resume.ai":"Embedded AI / Computer Vision: TensorFlow Lite、CNN推論、MediaPipe、OpenCV、Edge AI展開、ジェスチャー認識。","resume.protocols":"通信プロトコル: I2C、SPI、カスタムUART Hexパケットプロトコル、BLE、PWM。","resume.electrical":"電気工学: 33/11 kV配電、変圧器、リレー保護、変電所保守。","resume.tools":"プログラミング & ツール: Python、PySerial、Flask、Linux、Arduino IDE、PlatformIO、VS Code、MATLAB、Git、MS Office。","resume.web":"Web & ダッシュボード: HTML、CSS、JavaScript、リアルタイムデータ可視化。",
+"resume.educationTitle":"学歴","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"プロジェクト","resume.p1":"AIベースの手ジェスチャー認識","resume.p1d":"CNN、MediaPipe、Raspberry Pi 5、UART。","resume.p2":"Magic Wand","resume.p2d":"Edge AIジェスチャー認識デバイス。","resume.p3":"スマートホーム監視システム + センサーダッシュボード","resume.p3d":"IoT監視とリアルタイムセンサーダッシュボード。","resume.p4":"Arduino RADAR & ステッピングモーター制御","resume.p5":"UPSバッテリー監視と自動切替",
+"resume.experienceTitle":"経験","resume.e1":"Process Associate | Genpact","resume.e1d":"2024年7月 – 2025年8月","resume.e2":"インターン – Electrical Field Engineer | SPDCL","resume.e2d":"2023年6月 – 2023年8月","resume.e3":"インターン – Electrical Systems | AVR Power Suppliers, Hyderabad","resume.e3d":"2020年6月 – 2020年12月",
+"resume.languagesTitle":"言語","resume.languages":"英語 C2 • フランス語 A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+},
+zh:{
+"nav.home":"首页","nav.about":"关于我","nav.skills":"技能","nav.projects":"项目","nav.education":"教育","nav.experience":"经历","nav.contact":"联系",
+"resume.label":"简历","resume.name":"DHARAVATH NAGARAJU","resume.role":"嵌入式系统工程师 | Embedded AI & IoT Developer","resume.print":"打印 / 保存为 PDF","resume.back":"返回作品集",
+"resume.profileTitle":"个人简介","resume.profile":"嵌入式系统工程师，具有硬件软件系统、CNN 推理、Raspberry Pi 和 Arduino 部署、UART 通信及传感器集成的实践经验。拥有电力配电系统背景，目前专注于嵌入式 AI、计算机视觉和边缘计算。",
+"resume.skillsTitle":"核心技能","resume.skills":"嵌入式系统：Arduino、Raspberry Pi、C/C++、固件、微控制器编程、实时系统、IoT、传感器集成。","resume.ai":"嵌入式 AI / 计算机视觉：TensorFlow Lite、CNN 推理、MediaPipe、OpenCV、边缘 AI 部署、手势识别。","resume.protocols":"通信协议：I2C、SPI、自定义 UART 十六进制数据包协议、BLE、PWM。","resume.electrical":"电气工程：33/11 kV 配电、变压器、继电保护、变电站维护。","resume.tools":"编程与工具：Python、PySerial、Flask、Linux、Arduino IDE、PlatformIO、VS Code、MATLAB、Git、MS Office。","resume.web":"Web 与仪表板：HTML、CSS、JavaScript、实时数据可视化。",
+"resume.educationTitle":"教育","resume.ms":"M.S. Embedded Systems","resume.msSchool":"Paris Institute of Digital Technology, France • 2025–2027","resume.btech":"B.Tech Electrical & Electronics Engineering","resume.btechSchool":"JNTUH • 2021–2024 • CGPA 7.8","resume.diploma":"Diploma Electrical & Electronics Engineering","resume.diplomaSchool":"SBTET • 2018–2021 • CGPA 8.45",
+"resume.projectsTitle":"项目","resume.p1":"基于 AI 的手势识别","resume.p1d":"CNN、MediaPipe、Raspberry Pi 5、UART。","resume.p2":"Magic Wand","resume.p2d":"Edge AI 手势识别设备。","resume.p3":"智能家居监控系统 + 传感器仪表板","resume.p3d":"IoT 监控和实时传感器仪表板。","resume.p4":"Arduino RADAR 与步进电机控制","resume.p5":"UPS 电池监控与自动切换",
+"resume.experienceTitle":"工作经历","resume.e1":"Process Associate | Genpact","resume.e1d":"2024年7月 – 2025年8月","resume.e2":"实习生 – 电气现场工程师 | SPDCL","resume.e2d":"2023年6月 – 2023年8月","resume.e3":"实习生 – 电气系统 | AVR Power Suppliers, Hyderabad","resume.e3d":"2020年6月 – 2020年12月",
+"resume.languagesTitle":"语言","resume.languages":"英语 C2 • 法语 A2","resume.footer":"Nagaraju Dharavath • Embedded Software & Embedded AI Engineering"
+}
+};
+
+function applyLanguage(lang){
+  const t=R[lang]||R.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const value=t[el.dataset.i18n];
+    if(value!==undefined) el.innerHTML=value;
+  });
+  const select=document.getElementById("languageSelect");
+  if(select) select.value=lang;
+  localStorage.setItem("portfolio-language",lang);
+  document.title=(lang==="en"?"Resume":lang==="fr"?"CV":lang==="de"?"Lebenslauf":lang==="es"?"Currículum":lang==="hi"?"रिज़्यूमे":lang==="te"?"రెజ్యూమ్":lang==="ta"?"விண்ணப்பச் சுயவிவரம்":lang==="ja"?"履歴書":"简历")+" | Nagaraju Dharavath";
+}
+
+function detectLanguage(){
+  const saved=localStorage.getItem("portfolio-language");
+  if(saved && R[saved]) return saved;
+  const browser=(navigator.language||"en").toLowerCase().split("-")[0];
+  return R[browser]?browser:"en";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  applyLanguage(detectLanguage());
+  const select=document.getElementById("languageSelect");
+  if(select) select.addEventListener("change",e=>applyLanguage(e.target.value));
+});
+</script>
+</body>
+</html>
