@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Multilingual resume of Nagaraju Dharavath — Embedded Systems Engineer | Embedded AI & IoT Developer">
+<meta name="description" content="Multilingual resume of Nagaraju Dharavath - Embedded Systems Engineer | Embedded AI & IoT Developer">
 <title>Resume | Nagaraju Dharavath</title>
 <link rel="stylesheet" href="../css/style.css?v=20261007-3">
 <style>
-.resume-page .detailPage{max-width:980px}.resume-page .box{padding:18px}.resume-page .detailGrid{gap:14px}.resume-page .detailPage>h1{margin-bottom:4px}.resume-page .detailPage>.sub{margin-bottom:12px}@media(max-width:800px){.resume-page .detailGrid{grid-template-columns:1fr}}
+.resume-page .detailPage{max-width:980px}.resume-page .box{padding:18px}.resume-page .detailGrid{gap:14px}.resume-page .detailPage>h1{margin-bottom:4px}.resume-page .detailPage>.sub{margin-bottom:12px}
+.resume-download-card{margin-top:18px}.resume-download-card h2{margin:0 0 7px;font-size:1rem}.resume-download-card p{margin:0 0 14px;opacity:.78}.resume-download-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.resume-download-row select{min-width:190px;background:rgba(10,18,34,.75);color:inherit;border:1px solid rgba(130,190,255,.22);border-radius:10px;padding:11px 12px;font:inherit}.resume-download-row .btn{cursor:pointer}.resume-note{font-size:.84rem;margin-top:11px!important}
+@media(max-width:800px){.resume-page .detailGrid{grid-template-columns:1fr}.resume-download-row{align-items:stretch}.resume-download-row select,.resume-download-row .btn{width:100%}}
 </style></head>
 <body class="resume-page">
 <div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
@@ -46,8 +48,21 @@
   <h1 data-i18n="resume.name">DHARAVATH NAGARAJU</h1>
   <p class="sub" data-i18n="resume.role">Embedded Systems Engineer | Embedded AI & IoT Developer</p>
 
+  <section class="box resume-download-card">
+    <h2 data-i18n="resume.choose">Choose Resume Language</h2>
+    <p data-i18n="resume.chooseText">Download the finalized resume in the language you prefer.</p>
+    <div class="resume-download-row">
+      <label class="sr-only" for="resumeLanguage">Resume language</label>
+      <select id="resumeLanguage" aria-label="Resume language">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+      <a id="resumeDownload" class="btn primary" href="#" download data-i18n="resume.download">Download Resume</a>
+    </div>
+    <p class="resume-note" data-i18n="resume.availableNote">Finalized PDF versions currently available: English and French.</p>
+  </section>
+
   <div class="actions">
-    <a class="btn primary" href="Dharavath_Nagaraju_Resume.pdf" download data-i18n="resume.download">Download Resume</a>
     <a class="btn" href="../index.html" data-i18n="resume.back">Back to Portfolio</a>
   </div>
 </main>
@@ -56,33 +71,66 @@
 
 <script>
 const R={
-en:{"nav.home":"Home","nav.about":"About","nav.skills":"Skills","nav.projects":"Projects","nav.education":"Education","nav.experience":"Experience","nav.contact":"Contact","resume.label":"RESUME","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-fr:{"nav.home":"Accueil","nav.about":"À propos","nav.skills":"Compétences","nav.projects":"Projets","nav.education":"Formation","nav.experience":"Expérience","nav.contact":"Contact","resume.label":"CV","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingénieur systèmes embarqués | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-de:{"nav.home":"Startseite","nav.about":"Über mich","nav.skills":"Fähigkeiten","nav.projects":"Projekte","nav.education":"Ausbildung","nav.experience":"Erfahrung","nav.contact":"Kontakt","resume.label":"LEBENSLAUF","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded-Systems-Ingenieur | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-es:{"nav.home":"Inicio","nav.about":"Sobre mí","nav.skills":"Habilidades","nav.projects":"Proyectos","nav.education":"Educación","nav.experience":"Experiencia","nav.contact":"Contacto","resume.label":"CURRÍCULUM","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingeniero de Sistemas Embebidos | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-hi:{"nav.home":"होम","nav.about":"मेरे बारे में","nav.skills":"कौशल","nav.projects":"प्रोजेक्ट्स","nav.education":"शिक्षा","nav.experience":"अनुभव","nav.contact":"संपर्क","resume.label":"रिज़्यूमे","resume.name":"DHARAVATH NAGARAJU","resume.role":"एम्बेडेड सिस्टम्स इंजीनियर | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-te:{"nav.home":"హోమ్","nav.about":"నా గురించి","nav.skills":"నైపుణ్యాలు","nav.projects":"ప్రాజెక్టులు","nav.education":"విద్య","nav.experience":"అనుభవం","nav.contact":"సంప్రదించండి","resume.label":"రెజ్యూమ్","resume.name":"DHARAVATH NAGARAJU","resume.role":"ఎంబెడెడ్ సిస్టమ్స్ ఇంజనీర్ | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-ta:{"nav.home":"முகப்பு","nav.about":"என்னைப் பற்றி","nav.skills":"திறன்கள்","nav.projects":"திட்டங்கள்","nav.education":"கல்வி","nav.experience":"அனுபவம்","nav.contact":"தொடர்பு","resume.label":"விண்ணப்பச் சுயவிவரம்","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-ja:{"nav.home":"ホーム","nav.about":"概要","nav.skills":"スキル","nav.projects":"プロジェクト","nav.education":"学歴","nav.experience":"経験","nav.contact":"連絡先","resume.label":"履歴書","resume.name":"DHARAVATH NAGARAJU","resume.role":"組み込みシステムエンジニア | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"},
-zh:{"nav.home":"首页","nav.about":"关于我","nav.skills":"技能","nav.projects":"项目","nav.education":"教育","nav.experience":"经历","nav.contact":"联系","resume.label":"简历","resume.name":"DHARAVATH NAGARAJU","resume.role":"嵌入式系统工程师 | Embedded AI & IoT Developer","resume.download":"Download Resume","resume.back":"Back to Portfolio"}
+en:{"nav.home":"Home","nav.about":"About","nav.skills":"Skills","nav.projects":"Projects","nav.education":"Education","nav.experience":"Experience","nav.contact":"Contact","resume.label":"RESUME","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.choose":"Choose Resume Language","resume.chooseText":"Download the finalized resume in the language you prefer.","resume.download":"Download Resume","resume.back":"Back to Portfolio","resume.availableNote":"Finalized PDF versions currently available: English and French."},
+fr:{"nav.home":"Accueil","nav.about":"À propos","nav.skills":"Compétences","nav.projects":"Projets","nav.education":"Formation","nav.experience":"Expérience","nav.contact":"Contact","resume.label":"CV","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingénieur systèmes embarqués | Embedded AI & IoT Developer","resume.choose":"Choisir la langue du CV","resume.chooseText":"Téléchargez la version finale du CV dans la langue de votre choix.","resume.download":"Télécharger le CV","resume.back":"Retour au portfolio","resume.availableNote":"Versions PDF finalisées actuellement disponibles : anglais et français."},
+de:{"nav.home":"Startseite","nav.about":"Über mich","nav.skills":"Fähigkeiten","nav.projects":"Projekte","nav.education":"Ausbildung","nav.experience":"Erfahrung","nav.contact":"Kontakt","resume.label":"LEBENSLAUF","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded-Systems-Ingenieur | Embedded AI & IoT Developer","resume.choose":"Sprache des Lebenslaufs wählen","resume.chooseText":"Laden Sie den finalisierten Lebenslauf in Ihrer bevorzugten Sprache herunter.","resume.download":"Lebenslauf herunterladen","resume.back":"Zurück zum Portfolio","resume.availableNote":"Derzeit finalisierte PDF-Versionen verfügbar: Englisch und Französisch."},
+es:{"nav.home":"Inicio","nav.about":"Sobre mí","nav.skills":"Habilidades","nav.projects":"Proyectos","nav.education":"Educación","nav.experience":"Experiencia","nav.contact":"Contacto","resume.label":"CURRÍCULUM","resume.name":"DHARAVATH NAGARAJU","resume.role":"Ingeniero de Sistemas Embebidos | Embedded AI & IoT Developer","resume.choose":"Elegir idioma del CV","resume.chooseText":"Descarga el CV finalizado en el idioma que prefieras.","resume.download":"Descargar CV","resume.back":"Volver al portfolio","resume.availableNote":"Versiones PDF finalizadas disponibles actualmente: inglés y francés."},
+hi:{"nav.home":"होम","nav.about":"मेरे बारे में","nav.skills":"कौशल","nav.projects":"प्रोजेक्ट्स","nav.education":"शिक्षा","nav.experience":"अनुभव","nav.contact":"संपर्क","resume.label":"रिज़्यूमे","resume.name":"DHARAVATH NAGARAJU","resume.role":"एम्बेडेड सिस्टम्स इंजीनियर | Embedded AI & IoT Developer","resume.choose":"रिज़्यूमे की भाषा चुनें","resume.chooseText":"अपनी पसंद की भाषा में अंतिम रिज़्यूमे डाउनलोड करें।","resume.download":"रिज़्यूमे डाउनलोड करें","resume.back":"पोर्टफोलियो पर वापस जाएँ","resume.availableNote":"अभी अंतिम PDF संस्करण उपलब्ध हैं: अंग्रेज़ी और फ़्रेंच।"},
+te:{"nav.home":"హోమ్","nav.about":"నా గురించి","nav.skills":"నైపుణ్యాలు","nav.projects":"ప్రాజెక్టులు","nav.education":"విద్య","nav.experience":"అనుభవం","nav.contact":"సంప్రదించండి","resume.label":"రెజ్యూమ్","resume.name":"DHARAVATH NAGARAJU","resume.role":"ఎంబెడెడ్ సిస్టమ్స్ ఇంజనీర్ | Embedded AI & IoT Developer","resume.choose":"రెజ్యూమ్ భాషను ఎంచుకోండి","resume.chooseText":"మీకు నచ్చిన భాషలో తుది రెజ్యూమ్‌ను డౌన్‌లోడ్ చేసుకోండి.","resume.download":"రెజ్యూమ్ డౌన్‌లోడ్","resume.back":"పోర్ట్‌ఫోలియోకు తిరిగి వెళ్ళండి","resume.availableNote":"ప్రస్తుతం తుది PDF వెర్షన్లు అందుబాటులో ఉన్నాయి: ఇంగ్లీష్ మరియు ఫ్రెంచ్."},
+ta:{"nav.home":"முகப்பு","nav.about":"என்னைப் பற்றி","nav.skills":"திறன்கள்","nav.projects":"திட்டங்கள்","nav.education":"கல்வி","nav.experience":"அனுபவம்","nav.contact":"தொடர்பு","resume.label":"விண்ணப்பச் சுயவிவரம்","resume.name":"DHARAVATH NAGARAJU","resume.role":"Embedded Systems Engineer | Embedded AI & IoT Developer","resume.choose":"Resume மொழியைத் தேர்ந்தெடுக்கவும்","resume.chooseText":"உங்களுக்கு விருப்பமான மொழியில் இறுதி Resume-ஐ பதிவிறக்கவும்.","resume.download":"Resume-ஐ பதிவிறக்கவும்","resume.back":"Portfolio-க்கு திரும்பவும்","resume.availableNote":"தற்போது இறுதி PDF பதிப்புகள் கிடைக்கின்றன: ஆங்கிலம் மற்றும் பிரெஞ்சு."},
+ja:{"nav.home":"ホーム","nav.about":"概要","nav.skills":"スキル","nav.projects":"プロジェクト","nav.education":"学歴","nav.experience":"経験","nav.contact":"連絡先","resume.label":"履歴書","resume.name":"DHARAVATH NAGARAJU","resume.role":"組み込みシステムエンジニア | Embedded AI & IoT Developer","resume.choose":"履歴書の言語を選択","resume.chooseText":"希望する言語の完成版履歴書をダウンロードしてください。","resume.download":"履歴書をダウンロード","resume.back":"ポートフォリオに戻る","resume.availableNote":"現在利用できる完成版PDF：英語・フランス語。"},
+zh:{"nav.home":"首页","nav.about":"关于我","nav.skills":"技能","nav.projects":"项目","nav.education":"教育","nav.experience":"经历","nav.contact":"联系","resume.label":"简历","resume.name":"DHARAVATH NAGARAJU","resume.role":"嵌入式系统工程师 | Embedded AI & IoT Developer","resume.choose":"选择简历语言","resume.chooseText":"下载您偏好语言的最终简历。","resume.download":"下载简历","resume.back":"返回作品集","resume.availableNote":"目前提供的最终 PDF 版本：英文和法文。"}
 };
+
+const EN_PDF_BASE64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAobWFpbHRvOm5hZ2FyYWp1MDcyMDAxQGdtYWlsLmNvbSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyAzMDcuODE5NCA3NjAuMTQ4NyA0MjAuNDQxOCA3NzAuNzA4NyBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKNSAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2RuYWdhcmFqdS8pCj4+IC9Cb3JkZXIgWyAwIDAgMCBdIC9SZWN0IFsgMTQ2LjE1OSA3NDguNjQ4NyAyNDUuOTMzNCA3NTkuMjA4NyBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKNiAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly9naXRodWIuY29tL2RuYWdhcmFqdTI3MSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyAyNTMuMTE0MiA3NDguNjQ4NyAzNTIuNDEzNCA3NTkuMjA4NyBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKNyAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly9kbmFnYXJhanUyNzEuZ2l0aHViLmlvLykKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyAzNTkuNTk0MiA3NDguNjQ4NyA0NDkuMTE2NiA3NTkuMjA4NyBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKOCAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly9naXRodWIuY29tL2RuYWdhcmFqdTI3MSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyA3NS4wMzM2OSA0OTguMTA4NyAxNzYuNTg5NyA1MDguOTA4NyBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKOSAwIG9iago8PAovQW5ub3RzIFsgNCAwIFIgNSAwIFIgNiAwIFIgNyAwIFIgOCAwIFIgXSAvQ29udGVudHMgMTMgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIAogIC9UcmFucyA8PAoKPj4gL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjEwIDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgMTIgMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iagoxMSAwIG9iago8PAovQXV0aG9yIChEaGFyYXZhdGggTmFnYXJhanUpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjEwMDgwNzQ2NDkrMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjEwMDgwNzQ2NDkrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKFJlc3VtZSAtIERoYXJhdmF0aCBOYWdhcmFqdSAtIEVtYmVkZGVkIFN5c3RlbXMgRW5naW5lZXIpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKMTIgMCBvYmoKPDwKL0NvdW50IDEgL0tpZHMgWyA5IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKMTMgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMzMyNwo+PgpzdHJlYW0KR2F1SE5nTikjaCg0Rk0xbSRGNV86MVJLRGAkSjFhQHErSzcyP1BvcCV0ODVnIydxaU1NQ3JuSWIvXi4pL0osYydScTFsTVgnQiYkbVg4NWJtQnAwLGFoaitASiw5Vkpka1JEQFtgTl0rND0uVU9lbkVqOm1lR1ZpR1A1Y19YX0UqKVg1OVI/ZGtyKEZaW3FUKEBuVjxBYmhjYjVdQTFvNG5IJ1hqQTJpJW5OaWZhcmg1ND4hQ1sxTTI1WSNIJ206I2xiSFtKLTJtO29xUV1fdCtVSXFcYWUzbzQwTDFdRz49L2xOWmhgS1s4OWZKVV5WPyRFXTttNCdXbjxMMHEqRClyXFsoREBobTRKOihXYzFpS1pERFciPWs2XypbREQ6LCNtYTZOXy1jWy82W3MhNT82RWFyXV0uSi1LTDo1TC9TJCdIdWVbQTJVWWdUREdnIlxLLF5fMmJKb0pwP0JjWEdOdGYwcVNLQzE7WXRPb0BaI144JE0vPU1rJ1pYYkw9Z3BBXF80LTo2MUpNaUlDNkIwS2dSWGcnT24vKmdDSyxjXXJJQFhUWiFIUUl1Nj1gUF5cUEAvNj5APD81XjlQIWFCVTAhVVFTOy11VTxWN1NYb2JBV0MmJUNxUGBeP1pzLCsrbzZiU2lDPjdmI1pxbkUrZXFoZClsTGdfITkwL3JxXlBvUkpmY1gwW1FEbWlxXj42KydiQkZQT0hbMl4rMVNtOGdEbEdNP3RSWF1cYkI7YkonRyhaaTtcSCtKU2Y/YzJnMGtmT201LFUvKlozRDRUKFF0YHFgSUBwZkpRZl1oK2dVTzBSNzFxX2VLSEkrNFJdLik7bjVSVVVpbm43OyNTKEJvVTxgRWhwNnRQP11qNC5sLixdKG5RVC0mQEExWC89JSxfIjFJJUs/cStcVWklOlFkIjUiRjEzWlA5OlsoVWhiXWxfImhdWjktWUxTcjlmMidJXCgubDYrPzc/PTtkVyM/XFlkJTJII0RpMTtXMm1ULVokJTErTFY6aHImNHBrbmw1cW9ebFUvQy9SUFNWRD85RyxpbG9BNyZEREVGJigxSCRuOUdnSWguJCgzWmdUNzwkVms1WXNITkAoMVFzZz5ialwsVTo5LzVXW0ppbW4wZyo5X24uKWRaVUZUYGcsZUxDUmFEOThjT3VaK2dOUS9qSFhiYE9zK09xWCEpaXVeaVoiKGRtPTRsSEtfdFtSST4/ZGczKEBePyd0XyM0I25BPHFqcyxCUjszJFhhSyFmYUQ7R2BlVzEzMl1Qb2NodDEoV1lhIz9HQV1jaHVyYDxva01CYXA8Zi9tUl5zb3VbQGYnZzRsNkIrQyVLTHQzXCFzNlBWPnFsamU3VzVTZGVqLzVmXTNnTC4kXGNTdXM8SD08TSN1UWpwJ2lnbjk+LG4yTSk+OW81czhWQG1FJUtCNl9pJDRrc0BQWy1ALSJHIlQjSTAkY2ZvSFhpVEQ6UmZHNSM+VHNXLnFFaDJxQUdlVElbNjApaSw+XF04OmdfcS1xXjBWY2YmLC0vPWluODAkY1RmNHBfVT9aZyhlVk0/T0pYSTZqUEdpXDorYEA+cy5TSFtkYiReQm9qLkhERyo7Ozs5ISEmc24iRmImOy03XHRLXSg2NCJWSj1vJ0ZFZ0kvZEFOI2tlYlpUcmstUzBwLyNbKUlsKz5IYW1oNFNmaUEuQ3FsSmAlPFdSZ2xGbGNKWlgtJlwnSlpHLTlRWklmIjYpJ0dvZjFyXmdgWjNrOGVZZlo2aVZTL3BPKWg6bytKPzNLLD4qUDM4NkksXSc5T0IkJFAuImBYN1EmQGFyPEU0YGhXSDNlV3AjZyRRIUtoL2RMKGxzMzdCRnEoU29KSTtycXJRT1xFbkNZIztEZlBYMXRBaW42Qz0kYEVNKSE5XGUoaWA+I1E2YSEtIkVoRl4nN1JeYzJdakVzdFlfYkY6X1NgQTM3Mi9NZnVqIkBNYkRmOlRpUUROQU8nWlIrSnJuUVtcJT02QFQiJFklUVthQV9QN2MvMTBfXi5QQy4mMGE4IUQpViQxXV02YCRINHJPIkBicCE5Zldea1RgYW9mWVpmU0FTbmJyLCthdSJGRVh1ITRyKCVQOzwjNDg0PUEvayomNlpBVC4uZzRmU0EwXUwxaipaQSdVVDtCOkdTQGknZyJjUTA0OVEkSik6W1ZUNigjcmJubEhUamwpKCE0cnA8MFQ3cTllamRGW0whUDkuKVNCO3VIPjAndD9rWWwvJFonaytHMDlsYSRgOlh0VihUTDliZygiOWlgXzdvMTxybTNAQV8oMVxSI1I7aiJvVy1hZTBUV2U+ajFBWWItWWk7aDBwZEQ1W2ZbQyFCc1Y3SEwuUGFuLVxTVmVTQko0W2hRJyohQ2w6N2QvT1pCOHVSaCQmPlJtZilARG1GRUxwbEUzQlRPJkllUU9mTChecCI4QmAiOVlPc0dhPmQlJllEcEUjNCZzW1BiIT1ZQTE+ISgpQCNAdUkpOUJRdEZhdDMlVidjSjk8O0cpYUhfMVYtZmZRLV1HVGM0MFVSNjlWY19QXDVFS1cscEAlOGh1SE4lKmcsMXNac14mRDlyQyhQI0ZiNjhMMmtYclBrVyg6WFQpNktXIXUxNmxSb2NyPjdbYHJISUA8KzVsXEBrPUJTZEd0RCUhKExQPC5bamdHK2VOQ3RAOVkkYmxzL0pDK1o9Z1tYJztqRk85STBhQCQwc3I1bTpHQidlJCY1V0FRUlYlZnFMdVNLUzAkSSNYZGtTR2lzX2dkXHQmZzdKVmtjL110Jiw0TkVAKVxxSlktN0U+PEgxLWwqNT5SWl03KUJyKk0vRE1DNjBQP2U9Mz0uNVFQN0E9MyxWWnBgbVEiQEVhSzlHMSE2KWJASUBkPURPVyg5JjM2JzFhNzgjUStBb0Q1by5WPEFDdS4wcCRVWmg1Ml5gNlpONU10XmFWXVtVO0pfMidRQW1TX1RfL0VGaiM1XFUyS2dhUDQqdFNvMmhCPEI/cHBuRGI7YWZxS2pKbHJnR3VpKytwT1JxXWcoLUMnSDBKLy9TLyMxSDU2J3NmI3Jxb21ERUgnRjklS2BBalU0cSxmc08qK1lCNEdrblQpV3BRVlNFM19RcGg3QG44V2UwZz1vJy5vV1pxckpNY2hkaSovWy06IXNUTDFMJV48RHVBRHQoPzU7PUVZWU5AYilta1JNc3FsY29NaUg3aTFqbFkxT29ZNV84QU5rKlUkQmhJYkxRK2dYJiEjZlY4NEdvUUFKJ1FkUWchPSs0LDJEbHE/QidpQ3MzIU0tMGZaVCNrXVQtZ24lQTVeRydlQEdiJEolLy9bb2Fkbj9cWHBqdEVccSxTNylca2BTQCxfXDFLWFw4YjU6YD5zcEJGcy1CSmFIJF4vWFRlZEdaVGIsTiQpZlZPViomJGouLCtJZmtbb29vPDsyWHI3I1NtVGVQb3NqW0dFRD9ZQiREPUI/YzNoL2pbREQ8Um8kXWNyXjcvQTcnQm5VNSxkQit0UXVDbzdZLj5hYm9ATk1iYWteKy9gXDokP1ojb1ZSPD5eXUVwY0tNSGNgLTRxI21jRyRHRmlUR1wzYTNkaCpGKC42WjM3MTw/Tl9YUjUhcGRNT1lnXjhLVEtpaU8sXls7PEA+SDg6TVlMaERfKV1hT2Y7JylkNlg1OW1FPG9SNCtFcCZcbzc2R3BZKGVlI3BxSDFFdFdTV2MhXltzbXJrPnRQZ0xOXz1jWWYqaUVFUEJPb2IsLjoqRFFfNG82KHFAMThUPUVVUlRtPlNyLCFqYGksQVIxWWZRWCwrVXJOSDw4ZUBBXjNSOmw2NUhnNCRmMnFgOmZOTGtCR0g4bUVGNks4IW9tbmMhRlUjTjRUajpaQC1ocyMtci1pJkMlWyFJPnRhWig2XEQnSWhmMGJcJjdDWENPOzFQTjxYY0ViSFdORDNdJG51RDZFLV07NlwpWnFiSlZPKFlidWc0YmxlRkM1Jj1jbGsjImtzPi1wanRQajIvOXImSSNrI1ZJXmxgRyJVPShZdUZQOjQhQ2hFUUI7KFYxOEdKNF5nOzheTjNsOCVoPjNvNVZMLCJvYFBsJ09DZl1bK1ovOEVjR1dDZS4mSmBua0UxRmQ9Ly82J2UvYktFWlpyX1E3VEJQTlhaLE5WZUw4NzI9R14rPVo8Rlw8XWoqLjRfdSQhN2AyVF47PShOW1gxVzxRVUJyOUdIbz44MmFsZ2FBXU1OQUQ4Y009LjNNJkwhdGAzcVNTbyZkM2NiPzNBRjRrQjpTcyo0KV1ZcyZoQExdS3VRXjdVOFZrXUdUIzVFOXM6WEVoUTxpLSlGOFxHYl5vWUJkbEI+NHBZJWtJOWpNbUshaGBscnJja0xGTiteczYmI25pJCtNXThFWlZEajNTPUAmV189UEJmaEJHVFFnREBhKmBGTH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAwMDA1MDQgMDAwMDAgbiAKMDAwMDAwMDY5MyAwMDAwMCBuIAowMDAwMDAwODc2IDAwMDAwIG4gCjAwMDAwMDEwNTkgMDAwMDAgbiAKMDAwMDAwMTI0MiAwMDAwMCBuIAowMDAwMDAxNDg5IDAwMDAwIG4gCjAwMDAwMDE1NTkgMDAwMDAgbiAKMDAwMDAwMTg4NyAwMDAwMCBuIAowMDAwMDAwMTk0NyAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCBbPGE4NGYwZWI2ZTBlMjVhZWU1Yjc4MDIzNDYzZjQ3YmEwPjxhODRmMGViNmUwZTI1YWVlNWI3ODAyMzQ2M2Y0N2JhMD5dCi9JbmZvIDExIDAgUgovUm9vdCAxMCAwIFIKL1NpemUgMTQKPj4Kc3RhcnR4cmVmCjUzNjYlJUVPRgo=";
+
+function decodePdf(base64){
+  const bin=atob(base64);
+  const bytes=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+  return new Blob([bytes],{type:"application/pdf"});
+}
+let enObjectUrl=null;
+
+function setResumeDownload(lang){
+  const select=document.getElementById("resumeLanguage");
+  const link=document.getElementById("resumeDownload");
+  if(!select||!link)return;
+  select.value=(lang==="fr"?"fr":"en");
+  if(lang==="fr"){
+    if(enObjectUrl){URL.revokeObjectURL(enObjectUrl);enObjectUrl=null}
+    link.href="Dharavath_Nagaraju_Resume.pdf";
+    link.download="Dharavath_Nagaraju_Resume_FR.pdf";
+  }else{
+    if(enObjectUrl)URL.revokeObjectURL(enObjectUrl);
+    enObjectUrl=URL.createObjectURL(decodePdf(EN_PDF_BASE64));
+    link.href=enObjectUrl;
+    link.download="Dharavath_Nagaraju_Resume_EN.pdf";
+  }
+}
+
 function applyLanguage(lang){
- const t=R[lang]||R.en;
- document.documentElement.lang=lang;
- document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t[el.dataset.i18n];if(v!==undefined)el.innerHTML=v});
- const select=document.getElementById("languageSelect");if(select)select.value=lang;
- localStorage.setItem("portfolio-language",lang);
+  const t=R[lang]||R.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t[el.dataset.i18n];if(v!==undefined)el.innerHTML=v});
+  const select=document.getElementById("languageSelect");if(select)select.value=lang;
+  setResumeDownload(lang);
+  localStorage.setItem("portfolio-language",lang);
 }
 function detectLanguage(){
- const saved=localStorage.getItem("portfolio-language");
- if(saved&&R[saved])return saved;
- const browser=(navigator.language||"en").toLowerCase().split("-")[0];
- return R[browser]?browser:"en";
-}document.addEventListener("DOMContentLoaded",()=>{
- applyLanguage(detectLanguage());
- const select=document.getElementById("languageSelect");
- if(select)select.addEventListener("change",e=>applyLanguage(e.target.value));
+  const saved=localStorage.getItem("portfolio-language");
+  if(saved&&R[saved])return saved;
+  const browser=(navigator.language||"en").toLowerCase().split("-")[0];
+  return R[browser]?browser:"en";
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  applyLanguage(detectLanguage());
+  const select=document.getElementById("languageSelect");
+  if(select)select.addEventListener("change",e=>applyLanguage(e.target.value));
+  const resumeSelect=document.getElementById("resumeLanguage");
+  if(resumeSelect)resumeSelect.addEventListener("change",e=>setResumeDownload(e.target.value));
 });
+window.addEventListener("beforeunload",()=>{if(enObjectUrl)URL.revokeObjectURL(enObjectUrl)});
 </script>
 </body>
 </html>
