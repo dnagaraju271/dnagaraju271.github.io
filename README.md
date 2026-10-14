@@ -27,10 +27,10 @@ Personal portfolio for **Embedded Software Engineering** and **Embedded AI**.
 
 ## Website
 
-The portfolio is designed as a single-tab experience with project detail views and future live dashboards embedded directly into project pages.
+The portfolio is designed as a single-tab experience with project detail views and live dashboard pages linked from project detail views.
 
 Built and maintained by **Nagaraju Dharavath**.
 
-- GitHub: https://github.com/nagaraju072001-design
-- LinkedIn: https://www.linkedin.com/in/dharavath-nagaraju/
+- GitHub: https://github.com/dnagaraju271
+- LinkedIn: https://www.linkedin.com/in/dnagaraju/
 - Email: nagaraju072001@gmail.com
