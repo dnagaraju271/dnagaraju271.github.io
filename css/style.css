@@ -513,3 +513,32 @@ body{background:#0B132B!important}
 #space .pcb-pulses path:nth-child(3n){filter:drop-shadow(0 0 2px rgba(154,104,255,.3))!important;animation-duration:11.5s!important}
 @media(max-width:850px){#space .pcb-boards{opacity:.36}#space .pcb-board-large{opacity:.38}#space .pcb-board-small{opacity:.48}#space .pcb-board-mini,#space .pcb-board-tiny{opacity:.34}}
 @media(prefers-reduced-motion:reduce){#space .pcb-pulses path{animation:none!important}}
+
+
+/* FINAL BACKGROUND OVERRIDE: use one coherent custom SVG scene; remove the previous generic grid/orbs/waves and legacy chip layer */
+#space{position:fixed!important;inset:0!important;overflow:hidden!important;isolation:isolate!important;background:#030914!important;opacity:1!important}
+#space>.grid,#space>.particles,#space>.orb,#space>.wave{display:none!important}
+#space>.pcb-circuit{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;z-index:0!important;opacity:1!important;pointer-events:none!important;overflow:hidden!important}
+#space .pcb-traces,#space .pcb-fine-traces,#space .pcb-connectors{opacity:.78!important}
+#space .pcb-base-traces path{stroke:#075083!important;stroke-width:1.35!important;filter:none!important}
+#space .pcb-fine-traces path{stroke:#07385d!important;stroke-width:1!important;filter:none!important}
+#space .pcb-board .board-base{fill:url(#boardSurface)!important;stroke:#087b86!important;stroke-width:1.5!important;filter:none!important}
+#space .pcb-board .board-edge{fill:#061421!important;stroke:#0876a5!important;stroke-width:1.2!important}
+#space .pcb-board .board-trace{fill:none!important;stroke:#0a779b!important;stroke-width:1.15!important;filter:none!important}
+#space .pcb-board .board-chip{fill:url(#chipSurface)!important;stroke:#0785c6!important;stroke-width:1.5!important}
+#space .pcb-board .chip-inner{fill:#0a1b2b!important;stroke:#0c5277!important;stroke-width:1!important}
+#space .pcb-board .board-pins{fill:none!important;stroke:#087fba!important;stroke-width:1.7!important;filter:none!important}
+#space .pcb-board .board-port{fill:#030a14!important;stroke:#0877a8!important;stroke-width:1.3!important}
+#space .pcb-board .board-led{fill:#41f9bd!important;filter:none!important}
+#space .pcb-chip-large .chip-body,#space .pcb-chip-small .chip-body{fill:#07101e!important;stroke:#087bbd!important;stroke-width:2!important;filter:none!important}
+#space .pcb-chip-large .chip-core,#space .pcb-chip-small .chip-core{fill:#0a1d32!important;stroke:#0a527d!important;stroke-width:1.2!important}
+#space .pcb-chip-large .chip-pins,#space .pcb-chip-small .chip-pins{fill:none!important;stroke:#087fc0!important;stroke-width:2!important;stroke-linecap:round!important}
+#space .pcb-passives rect{fill:#0a2035!important;stroke:#0876a6!important;stroke-width:1.2!important}
+#space .pcb-passives circle{fill:#061221!important;stroke:#087fa9!important;stroke-width:1.8!important}
+#space .pcb-pulses path{stroke:#24cfff!important;stroke-width:2!important;stroke-dasharray:18 310!important;filter:none!important;animation:pcbTravelSubtle 9s linear infinite!important}
+#space .pcb-pulses path:nth-child(2n){stroke:#36edb1!important;animation-duration:11s!important;animation-delay:-3s!important}
+#space .pcb-pulses path:nth-child(3n){stroke:#8e63f8!important;animation-duration:12s!important;animation-delay:-5s!important}
+#space .pcb-leds circle{fill:#43edbd!important;filter:none!important;animation:pcbLedSoft 5s ease-in-out infinite alternate}
+@keyframes pcbLedSoft{from{opacity:.35}to{opacity:.9}}
+@media(max-width:850px){#space .pcb-board-left,#space .pcb-board-right{opacity:.35!important}#space .pcb-chip-large{opacity:.38!important}#space .pcb-chip-small{opacity:.45!important}#space .pcb-base-traces{opacity:.5!important}}
+@media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-leds circle{animation:none!important}}
