@@ -27,7 +27,9 @@ body{position:relative;isolation:isolate;background:transparent!important}
 }
 #space:after{content:none!important;display:none!important}
 #scrollProgress,.nav,main,.footer{position:relative;z-index:5}
-.nav{z-index:30!important}
+.nav{display:block!important;z-index:30!important}
+.actions{display:flex!important;flex-wrap:wrap}
+.footer{display:block!important}
 main{background:transparent!important}
 #space .pcb-traces path,#space .pcb-detail-traces path{
  fill:none!important;stroke:#087fc4!important;stroke-width:1.45!important;
