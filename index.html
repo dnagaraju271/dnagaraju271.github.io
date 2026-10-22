@@ -4,139 +4,96 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nagaraju Dharavath | Embedded Systems Engineer | Embedded AI</title>
-<link rel="stylesheet" href="css/style.css?v=20261022-pcb7">
+<link rel="stylesheet" href="css/style.css?v=20261022-pcb8">
 </head>
 <body>
 <div id="scrollProgress" aria-hidden="true"></div>
 <div id="space">
 <svg class="pcb-circuit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
  <defs>
-  <linearGradient id="pcbBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0879ff"/><stop offset="1" stop-color="#00d9ff"/></linearGradient>
-  <linearGradient id="pcbNeon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#00eaff"/><stop offset=".5" stop-color="#72fff0"/><stop offset="1" stop-color="#36ff9a"/></linearGradient>
-  <radialGradient id="pcbBoardGlow"><stop stop-color="#07386b" stop-opacity=".42"/><stop offset="1" stop-color="#020817" stop-opacity="0"/></radialGradient>
-  <filter id="pcbGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="traceBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0878c8"/><stop offset="1" stop-color="#06406c"/></linearGradient>
+  <linearGradient id="boardSurface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b2634"/><stop offset=".55" stop-color="#071827"/><stop offset="1" stop-color="#04101d"/></linearGradient>
+  <linearGradient id="chipSurface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b40"/><stop offset="1" stop-color="#050d1a"/></linearGradient>
+  <filter id="tinyGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
  </defs>
- <rect width="1600" height="900" fill="url(#pcbBoardGlow)"/>
- <g class="pcb-traces">
-  <path d="M-30 70 H170 Q205 70 205 105 V175 H285 L325 215 H410 V275 H485"/>
-  <path d="M-30 105 H125 L165 145 V230 H245 L280 265 H360 V315 H430"/>
-  <path d="M-30 330 H95 V295 Q95 270 120 270 H205 V235 H260 V190 H330"/>
-  <path d="M-30 365 H115 L150 330 H230 V300 H315 L350 335 H430"/>
-  <path d="M-20 575 H125 V535 H190 L225 500 H310 V455 H390 L425 420 H520"/>
-  <path d="M-20 615 H80 V680 H165 V730 H245 L285 690 H365 V640 H455"/>
-  <path d="M45 920 V805 H120 V760 H205 V715 H275 V665 H345"/>
-  <path d="M105 920 V855 H205 V815 H285 V770 H355 L390 735 H475"/>
-  <path d="M260 -30 V75 H345 L385 115 V165 H455 V220 H515"/>
-  <path d="M305 -30 V45 H395 V80 H475 L515 120 V185 H575"/>
-  <path d="M485 -30 V60 H555 L590 95 V155 H665 V205 H720"/>
-  <path d="M545 920 V835 H625 V790 H690 V735 H765 V685 H820"/>
-  <path d="M610 920 V870 H705 V825 H770 L810 785 V730 H875"/>
-  <path d="M720 -30 V65 H785 V105 H850 L890 145 V200 H950"/>
-  <path d="M800 -30 V40 H870 V85 H940 V135 H1005 L1045 175 V220"/>
-  <path d="M910 920 V835 H980 V785 H1050 V735 H1115 L1150 700 H1220"/>
-  <path d="M1010 920 V855 H1080 V810 H1150 V760 H1230 V720 H1300"/>
-  <path d="M1090 -30 V65 H1160 L1200 105 V155 H1270 V205 H1340"/>
-  <path d="M1165 -30 V40 H1240 V80 H1315 L1355 120 V180 H1425"/>
-  <path d="M1630 70 H1495 V120 H1430 L1390 160 V225 H1310 V270 H1240"/>
-  <path d="M1630 115 H1540 V170 H1480 V220 H1410 L1370 260 V320 H1300"/>
-  <path d="M1630 310 H1515 V350 H1450 L1415 385 H1335 V435 H1270"/>
-  <path d="M1630 350 H1560 V405 H1480 V455 H1400 L1360 495 H1285"/>
-  <path d="M1630 560 H1510 V600 H1440 V650 H1360 L1320 690 H1245"/>
-  <path d="M1630 610 H1550 V665 H1470 L1430 705 V760 H1350 V810 H1280"/>
-  <path d="M1550 920 V855 H1470 V815 H1400 V770 H1330 L1290 730 H1210"/>
-  <path d="M1480 920 V875 H1395 V835 H1320 L1280 795 V750 H1200"/>
-  <path d="M420 370 H500 V335 H565 L600 300 H680 V260 H740"/>
-  <path d="M520 450 H590 V410 H650 V375 H725 L760 340 H820"/>
-  <path d="M790 470 H860 V430 H925 L965 390 H1045 V345 H1105"/>
-  <path d="M845 510 H920 V550 H995 L1030 515 H1100 V470 H1175"/>
-  <path d="M380 555 H465 V520 H535 L570 485 H640"/>
-  <path d="M1040 600 H1115 V565 H1185 L1220 530 H1280"/>
-  <path d="M690 610 V565 H750 V535 H805"/>
-  <path d="M930 285 H985 V315 H1035"/>
-  <path d="M640 225 V270 H615 V300"/>
-  <path d="M1140 390 H1190 V360 H1230"/>
-  <path d="M250 405 H300 V380 H345"/>
-  <path d="M1240 620 H1190 V650 H1150"/>
+ <rect width="1600" height="900" fill="#030914"/>
+ <g class="pcb-base-traces" fill="none" stroke="url(#traceBlue)" stroke-width="1.5" opacity=".85" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M-20 90 H130 Q165 90 165 125 V185 H250 L290 225 H365 V270 H425"/>
+  <path d="M-20 120 H105 L145 160 V235 H215 L250 270 H325"/>
+  <path d="M-20 330 H85 V290 Q85 260 115 260 H185 V220 H240 V180 H300"/>
+  <path d="M-20 590 H110 V550 H180 L220 510 H300 V465 H365"/>
+  <path d="M45 920 V815 H125 V770 H205 V720 H280 V665 H345"/>
+  <path d="M260 -25 V65 H340 L380 105 V155 H445 V215 H505"/>
+  <path d="M510 -25 V65 H565 L600 100 V155 H670 V205 H720"/>
+  <path d="M690 920 V845 H760 V805 H825 V750 H900"/>
+  <path d="M850 -25 V55 H925 V95 H985 L1025 135 V190 H1080"/>
+  <path d="M1030 920 V840 H1110 V790 H1180 V745 H1260"/>
+  <path d="M1165 -25 V55 H1235 L1275 95 V150 H1345 V205 H1410"/>
+  <path d="M1620 85 H1495 V130 H1430 L1390 170 V230 H1320 V275 H1255"/>
+  <path d="M1620 330 H1545 V385 H1470 V430 H1390 L1350 475 H1280"/>
+  <path d="M1620 590 H1515 V635 H1445 V680 H1370 L1330 720 H1250"/>
+  <path d="M1530 920 V855 H1455 V810 H1380 V765 H1310 L1270 725"/>
+  <path d="M380 390 H455 V355 H515 L550 320 H625 V280 H680"/>
+  <path d="M900 480 H970 V440 H1030 L1070 400 H1140 V355 H1195"/>
+  <path d="M440 625 H515 V590 H575 L610 555 H675"/>
+  <path d="M1050 610 H1120 V575 H1180 L1215 540 H1270"/>
  </g>
- <g class="pcb-fine-traces">
-  <path d="M-20 145 H80 L105 170 H155"/><path d="M-20 155 H65 L90 180 H145"/>
-  <path d="M-20 175 H50 L75 200 H130"/><path d="M-20 195 H35 L60 220 H115"/>
-  <path d="M35 440 H100 L125 415 H185 V390 H240"/><path d="M35 450 H90 L115 430 H175 V405 H230"/>
-  <path d="M1340 25 V80 H1390 L1420 110 H1500"/><path d="M1360 25 V70 H1400 L1435 100 H1515"/>
-  <path d="M1380 25 V60 H1415 L1450 90 H1530"/><path d="M1400 25 V50 H1430 L1465 80 H1550"/>
-  <path d="M1270 850 H1320 L1350 880 H1430"/><path d="M1250 865 H1305 L1335 895 H1410"/>
-  <path d="M460 850 H510 L540 820 H600"/><path d="M450 865 H500 L530 835 H590"/>
-  <path d="M470 880 H490 L520 850 H580"/>
+ <g class="pcb-fine-traces" fill="none" stroke="#075083" stroke-width="1" opacity=".7">
+  <path d="M-10 145 H75 L100 170 H150 M-10 160 H60 L85 185 H135 M-10 175 H45 L70 200 H120"/>
+  <path d="M20 430 H100 L125 405 H185 V380 H235 M20 445 H90 L115 420 H175 V395 H225"/>
+  <path d="M1330 25 V75 H1380 L1410 105 H1490 M1350 25 V65 H1395 L1425 95 H1510 M1370 25 V55 H1410 L1440 85 H1530"/>
+  <path d="M1260 850 H1310 L1340 880 H1420 M1240 865 H1295 L1325 895 H1400"/>
  </g>
- <g class="pcb-pads">
-  <circle cx="205" cy="105" r="7"/><circle cx="325" cy="215" r="5"/><circle cx="485" cy="275" r="6"/><circle cx="165" cy="145" r="5"/>
-  <circle cx="205" cy="235" r="6"/><circle cx="390" cy="735" r="6"/><circle cx="455" cy="420" r="6"/><circle cx="515" cy="120" r="5"/>
-  <circle cx="590" cy="95" r="5"/><circle cx="665" cy="205" r="6"/><circle cx="850" cy="145" r="6"/><circle cx="1005" cy="135" r="5"/>
-  <circle cx="1200" cy="105" r="7"/><circle cx="1355" cy="120" r="6"/><circle cx="1495" cy="120" r="6"/><circle cx="1390" cy="160" r="5"/>
-  <circle cx="1415" cy="385" r="6"/><circle cx="1360" cy="495" r="6"/><circle cx="1440" cy="650" r="6"/><circle cx="1320" cy="690" r="6"/>
-  <circle cx="1280" cy="795" r="5"/><circle cx="1150" cy="760" r="6"/><circle cx="980" cy="785" r="6"/><circle cx="810" cy="785" r="6"/>
-  <circle cx="690" cy="735" r="5"/><circle cx="570" cy="485" r="5"/><circle cx="760" cy="340" r="5"/><circle cx="965" cy="390" r="6"/>
-  <circle cx="1220" cy="530" r="5"/><circle cx="300" cy="380" r="5"/><circle cx="640" cy="270" r="5"/><circle cx="920" cy="550" r="5"/>
+ <g class="pcb-connectors" fill="none" stroke="#0a6798" stroke-width="1.6">
+  <circle cx="165" cy="125" r="7"/><circle cx="290" cy="225" r="5"/><circle cx="445" cy="215" r="6"/><circle cx="600" cy="100" r="5"/><circle cx="985" cy="135" r="6"/><circle cx="1275" cy="95" r="6"/><circle cx="1390" cy="170" r="5"/><circle cx="1350" cy="475" r="6"/><circle cx="1445" cy="680" r="6"/><circle cx="1180" cy="745" r="5"/><circle cx="825" cy="750" r="6"/><circle cx="610" cy="555" r="5"/><circle cx="515" cy="590" r="5"/>
  </g>
- <g class="pcb-chips">
-  <g class="chip-large"><rect x="1380" y="280" width="126" height="126" rx="5"/><rect x="1392" y="292" width="102" height="102" rx="2"/><path class="pins" d="M1390 260v20 M1410 260v20 M1430 260v20 M1450 260v20 M1470 260v20 M1490 260v20 M1390 406v20 M1410 406v20 M1430 406v20 M1450 406v20 M1470 406v20 M1490 406v20 M1360 300h20 M1360 320h20 M1360 340h20 M1360 360h20 M1360 380h20 M1506 300h20 M1506 320h20 M1506 340h20 M1506 360h20 M1506 380h20"/></g>
-  <g class="chip-mid"><rect x="90" y="680" width="86" height="86" rx="4"/><rect x="99" y="689" width="68" height="68" rx="2"/><path class="pins" d="M105 662v18 M122 662v18 M139 662v18 M156 662v18 M105 766v18 M122 766v18 M139 766v18 M156 766v18 M72 692h18 M72 712h18 M72 732h18 M176 692h18 M176 712h18 M176 732h18"/></g>
-  <g class="chip-small"><rect x="700" y="305" width="58" height="58" rx="3"/><rect x="708" y="313" width="42" height="42" rx="2"/><path class="pins" d="M708 290v15 M722 290v15 M736 290v15 M750 290v15 M708 363v15 M722 363v15 M736 363v15 M750 363v15 M682 315h18 M682 330h18 M682 345h18 M758 315h18 M758 330h18 M758 345h18"/></g>
-  <g class="chip-small"><rect x="1120" y="650" width="64" height="64" rx="3"/><rect x="1128" y="658" width="48" height="48" rx="2"/><path class="pins" d="M1130 635v15 M1145 635v15 M1160 635v15 M1175 635v15 M1130 714v15 M1145 714v15 M1160 714v15 M1175 714v15 M1100 660h20 M1100 680h20 M1100 700h20 M1184 660h20 M1184 680h20 M1184 700h20"/></g>
-  <g class="passives"><rect x="560" y="130" width="26" height="11" rx="2"/><rect x="595" y="130" width="26" height="11" rx="2"/><rect x="625" y="130" width="26" height="11" rx="2"/><rect x="250" y="515" width="11" height="27" rx="2"/><rect x="270" y="515" width="11" height="27" rx="2"/><rect x="290" y="515" width="11" height="27" rx="2"/><rect x="1020" y="255" width="28" height="11" rx="2"/><rect x="1055" y="255" width="28" height="11" rx="2"/><circle cx="850" cy="245" r="13"/><circle cx="850" cy="245" r="6"/><circle cx="500" cy="650" r="12"/><circle cx="500" cy="650" r="5"/><circle cx="1260" cy="450" r="11"/><circle cx="1260" cy="450" r="5"/></g>
+ <!-- Board fragments are deliberately anchored to the edges so the portfolio content stays readable. -->
+ <g class="pcb-board pcb-board-left" transform="translate(38 100) rotate(-13 120 75)">
+  <rect class="board-base" width="240" height="150" rx="12"/><rect class="board-edge" x="7" y="7" width="226" height="136" rx="8"/>
+  <path class="board-trace" d="M15 35 H58 V52 H85 M15 50 H38 V90 H82 M15 116 H65 V98 H95 M135 15 V40 H166 V61 H220 M145 132 V110 H195 V90 H220"/>
+  <rect class="board-chip" x="86" y="38" width="70" height="66" rx="5"/><rect class="chip-inner" x="94" y="46" width="54" height="50" rx="3"/>
+  <rect class="board-chip" x="171" y="22" width="38" height="28" rx="3"/><rect class="board-chip" x="25" y="69" width="34" height="25" rx="3"/>
+  <path class="board-pins" d="M91 31v-8 M102 31v-8 M113 31v-8 M124 31v-8 M135 31v-8 M146 31v-8 M91 111v8 M102 111v8 M113 111v8 M124 111v8 M135 111v8 M146 111v8 M78 45h-8 M78 56h-8 M78 67h-8 M78 78h-8 M164 45h8 M164 56h8 M164 67h8 M164 78h8"/>
+  <rect class="board-port" x="217" y="56" width="15" height="34" rx="2"/><circle class="board-led" cx="65" cy="20" r="3"/><circle class="board-led" cx="190" cy="120" r="3"/>
  </g>
- <g class="pcb-pulses">
-  <path d="M-30 70 H170 Q205 70 205 105 V175 H285 L325 215 H410 V275 H485"/>
-  <path d="M-30 330 H95 V295 Q95 270 120 270 H205 V235 H260 V190 H330"/>
-  <path d="M45 920 V805 H120 V760 H205 V715 H275 V665 H345"/>
-  <path d="M305 -30 V45 H395 V80 H475 L515 120 V185 H575"/>
-  <path d="M545 920 V835 H625 V790 H690 V735 H765 V685 H820"/>
-  <path d="M800 -30 V40 H870 V85 H940 V135 H1005 L1045 175 V220"/>
-  <path d="M1630 115 H1540 V170 H1480 V220 H1410 L1370 260 V320 H1300"/>
-  <path d="M1630 350 H1560 V405 H1480 V455 H1400 L1360 495 H1285"/>
-  <path d="M1550 920 V855 H1470 V815 H1400 V770 H1330 L1290 730 H1210"/>
-  <path d="M910 920 V835 H980 V785 H1050 V735 H1115 L1150 700 H1220"/>
-  <path d="M420 370 H500 V335 H565 L600 300 H680 V260 H740"/>
-  <path d="M790 470 H860 V430 H925 L965 390 H1045 V345 H1105"/>
+ <g class="pcb-board pcb-board-right" transform="translate(1320 135) rotate(12 100 65)">
+  <rect class="board-base" width="220" height="130" rx="12"/><rect class="board-edge" x="7" y="7" width="206" height="116" rx="8"/>
+  <path class="board-trace" d="M15 30 H55 V48 H78 M15 45 H35 V82 H78 M15 105 H60 V88 H85 M126 15 V35 H160 V52 H202 M135 113 V91 H180 V75 H202"/>
+  <rect class="board-chip" x="78" y="32" width="60" height="56" rx="5"/><rect class="chip-inner" x="86" y="40" width="44" height="40" rx="3"/>
+  <rect class="board-chip" x="151" y="22" width="35" height="25" rx="3"/><rect class="board-chip" x="25" y="61" width="30" height="22" rx="3"/>
+  <path class="board-pins" d="M84 25v-7 M95 25v-7 M106 25v-7 M117 25v-7 M128 25v-7 M84 95v7 M95 95v7 M106 95v7 M117 95v7 M128 95v7 M71 40h-8 M71 51h-8 M71 62h-8 M71 73h-8 M145 40h8 M145 51h8 M145 62h8 M145 73h8"/>
+  <rect class="board-port" x="194" y="51" width="13" height="28" rx="2"/><circle class="board-led" cx="62" cy="20" r="3"/>
  </g>
- <g class="pcb-leds">
-  <circle cx="205" cy="105" r="3"/><circle cx="325" cy="215" r="3"/><circle cx="515" cy="120" r="3"/><circle cx="665" cy="205" r="3"/><circle cx="850" cy="145" r="3"/><circle cx="1005" cy="135" r="3"/><circle cx="1200" cy="105" r="3"/><circle cx="1495" cy="120" r="3"/><circle cx="1415" cy="385" r="3"/><circle cx="1360" cy="495" r="3"/><circle cx="1440" cy="650" r="3"/><circle cx="1150" cy="760" r="3"/><circle cx="980" cy="785" r="3"/><circle cx="810" cy="785" r="3"/><circle cx="570" cy="485" r="3"/><circle cx="965" cy="390" r="3"/>
+ <g class="pcb-chip-large" transform="translate(1375 285)">
+  <rect class="chip-body" x="0" y="0" width="126" height="126" rx="5"/><rect class="chip-core" x="12" y="12" width="102" height="102" rx="2"/>
+  <path class="chip-pins" d="M10 -20v20 M30 -20v20 M50 -20v20 M70 -20v20 M90 -20v20 M110 -20v20 M10 126v20 M30 126v20 M50 126v20 M70 126v20 M90 126v20 M110 126v20 M-20 15h20 M-20 35h20 M-20 55h20 M-20 75h20 M-20 95h20 M126 15h20 M126 35h20 M126 55h20 M126 75h20 M126 95h20"/>
  </g>
-
- <g class="pcb-boards" aria-hidden="true">
-  <g class="pcb-board pcb-board-large" transform="translate(55 115) rotate(-12 115 75)">
-   <rect class="board-base" x="0" y="0" width="245" height="145" rx="13"/>
-   <rect class="board-edge" x="8" y="8" width="229" height="129" rx="8"/>
-   <g class="board-traces"><path d="M20 34 H64 V52 H94 M20 48 H48 V83 H90 M20 105 H72 V91 H110 M135 18 V42 H168 V65 H215 M145 125 V103 H192 V87 H222"/></g>
-   <rect class="board-chip" x="87" y="38" width="68" height="62" rx="5"/><rect class="chip-inner" x="96" y="47" width="50" height="44" rx="3"/>
-   <rect class="board-chip" x="174" y="22" width="37" height="29" rx="3"/><rect class="board-chip" x="25" y="72" width="36" height="24" rx="3"/>
-   <g class="board-pins"><path d="M92 31v-8 M102 31v-8 M112 31v-8 M122 31v-8 M132 31v-8 M142 31v-8 M92 107v8 M102 107v8 M112 107v8 M122 107v8 M132 107v8 M142 107v8 M79 44h-8 M79 54h-8 M79 64h-8 M79 74h-8 M79 84h-8 M163 44h8 M163 54h8 M163 64h8 M163 74h8 M163 84h8"/></g>
-   <g class="board-pads"><circle cx="20" cy="18" r="4"/><circle cx="225" cy="18" r="4"/><circle cx="20" cy="125" r="4"/><circle cx="225" cy="125" r="4"/><circle cx="184" cy="111" r="3"/><circle cx="67" cy="23" r="3"/></g>
-   <rect class="board-port" x="217" y="55" width="18" height="36" rx="3"/><rect class="board-port" x="8" y="112" width="24" height="17" rx="2"/>
-  </g>
-  <g class="pcb-board pcb-board-small" transform="translate(1280 125) rotate(11 100 60)">
-   <rect class="board-base" width="210" height="120" rx="11"/><rect class="board-edge" x="7" y="7" width="196" height="106" rx="7"/>
-   <g class="board-traces"><path d="M15 30 H52 V48 H80 M15 42 H37 V83 H78 M15 98 H60 V84 H85 M128 15 V34 H163 V50 H194 M135 105 V85 H180 V72 H194"/></g>
-   <rect class="board-chip" x="78" y="31" width="57" height="52" rx="5"/><rect class="chip-inner" x="86" y="39" width="41" height="36" rx="3"/>
-   <rect class="board-chip" x="151" y="23" width="31" height="23" rx="3"/><rect class="board-chip" x="28" y="59" width="28" height="20" rx="3"/>
-   <g class="board-pins"><path d="M84 25v-7 M94 25v-7 M104 25v-7 M114 25v-7 M124 25v-7 M84 89v7 M94 89v7 M104 89v7 M114 89v7 M124 89v7 M71 38h-7 M71 48h-7 M71 58h-7 M71 68h-7 M142 38h7 M142 48h7 M142 58h7 M142 68h7"/></g>
-   <rect class="board-port" x="188" y="49" width="15" height="30" rx="2"/><circle class="board-led" cx="61" cy="20" r="3"/><circle class="board-led" cx="171" cy="94" r="3"/>
-  </g>
-  <g class="pcb-board pcb-board-mini" transform="translate(78 660) rotate(8 75 45)">
-   <rect class="board-base" width="155" height="92" rx="9"/><rect class="board-edge" x="6" y="6" width="143" height="80" rx="6"/>
-   <path class="board-trace" d="M13 23 H44 V37 H65 M13 67 H47 V55 H65 M95 12 V26 H127 V42 H142 M101 80 V65 H132"/>
-   <rect class="board-chip" x="62" y="28" width="40" height="37" rx="4"/><rect class="chip-inner" x="68" y="34" width="28" height="25" rx="2"/>
-   <g class="board-pins"><path d="M68 23v-6 M78 23v-6 M88 23v-6 M98 23v-6 M68 70v6 M78 70v6 M88 70v6 M98 70v6 M55 34h-6 M55 44h-6 M55 54h-6 M109 34h6 M109 44h6 M109 54h6"/></g>
-   <rect class="board-port" x="7" y="35" width="17" height="24" rx="2"/><circle class="board-led" cx="124" cy="68" r="3"/>
-  </g>
-  <g class="pcb-board pcb-board-tiny" transform="translate(1370 670) rotate(-9 70 40)">
-   <rect class="board-base" width="142" height="84" rx="8"/><rect class="board-edge" x="5" y="5" width="132" height="74" rx="5"/>
-   <path class="board-trace" d="M10 20 H36 V32 H54 M10 64 H40 V52 H54 M88 10 V24 H117 V39 H132"/>
-   <rect class="board-chip" x="53" y="25" width="34" height="31" rx="3"/><rect class="chip-inner" x="59" y="31" width="22" height="19" rx="2"/>
-   <g class="board-pins"><path d="M58 20v-5 M68 20v-5 M78 20v-5 M58 61v5 M68 61v5 M78 61v5 M48 31h-5 M48 41h-5 M48 51h-5 M92 31h5 M92 41h5 M92 51h5"/></g>
-  </g>
+ <g class="pcb-chip-small" transform="translate(80 690)">
+  <rect class="chip-body" width="82" height="82" rx="4"/><rect class="chip-core" x="9" y="9" width="64" height="64" rx="2"/>
+  <path class="chip-pins" d="M10 -18v18 M27 -18v18 M44 -18v18 M61 -18v18 M10 82v18 M27 82v18 M44 82v18 M61 82v18 M-18 12h18 M-18 30h18 M-18 48h18 M-18 66h18 M82 12h18 M82 30h18 M82 48h18 M82 66h18"/>
  </g>
-
+ <g class="pcb-chip-small" transform="translate(1165 650) scale(.72)">
+  <rect class="chip-body" width="82" height="82" rx="4"/><rect class="chip-core" x="9" y="9" width="64" height="64" rx="2"/>
+  <path class="chip-pins" d="M10 -18v18 M27 -18v18 M44 -18v18 M61 -18v18 M10 82v18 M27 82v18 M44 82v18 M61 82v18 M-18 12h18 M-18 30h18 M-18 48h18 M-18 66h18 M82 12h18 M82 30h18 M82 48h18 M82 66h18"/>
+ </g>
+ <g class="pcb-passives">
+  <rect x="565" y="130" width="26" height="11" rx="2"/><rect x="600" y="130" width="26" height="11" rx="2"/><rect x="630" y="130" width="26" height="11" rx="2"/>
+  <rect x="1020" y="255" width="28" height="11" rx="2"/><rect x="1055" y="255" width="28" height="11" rx="2"/><circle cx="850" cy="245" r="12"/><circle cx="850" cy="245" r="5"/>
+ </g>
+ <g class="pcb-pulses" fill="none" stroke-linecap="round">
+  <path d="M-20 90 H130 Q165 90 165 125 V185 H250 L290 225 H365 V270 H425"/>
+  <path d="M-20 330 H85 V290 Q85 260 115 260 H185 V220 H240 V180 H300"/>
+  <path d="M45 920 V815 H125 V770 H205 V720 H280 V665 H345"/>
+  <path d="M260 -25 V65 H340 L380 105 V155 H445 V215 H505"/>
+  <path d="M850 -25 V55 H925 V95 H985 L1025 135 V190 H1080"/>
+  <path d="M1620 85 H1495 V130 H1430 L1390 170 V230 H1320 V275 H1255"/>
+  <path d="M1620 590 H1515 V635 H1445 V680 H1370 L1330 720 H1250"/>
+  <path d="M1530 920 V855 H1455 V810 H1380 V765 H1310 L1270 725"/>
+  <path d="M900 480 H970 V440 H1030 L1070 400 H1140 V355 H1195"/>
+ </g>
+ <g class="pcb-leds" filter="url(#tinyGlow)">
+  <circle cx="165" cy="125" r="3"/><circle cx="290" cy="225" r="3"/><circle cx="445" cy="215" r="3"/><circle cx="600" cy="100" r="3"/><circle cx="985" cy="135" r="3"/><circle cx="1275" cy="95" r="3"/><circle cx="1390" cy="170" r="3"/><circle cx="1350" cy="475" r="3"/><circle cx="1445" cy="680" r="3"/><circle cx="1180" cy="745" r="3"/><circle cx="825" cy="750" r="3"/><circle cx="610" cy="555" r="3"/>
+ </g>
 </svg><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
 
 <header class="nav">
