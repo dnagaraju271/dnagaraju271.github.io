@@ -420,3 +420,27 @@ body{background:#0B132B!important}
 #space .pcb-pulses path:nth-child(2n){animation-duration:4.1s!important}
 #space .pcb-pulses path:nth-child(3n){animation-duration:5s!important}
 #space .pcb-pulses path:nth-child(4n){animation-duration:3.7s!important}
+
+
+/* Detailed electronics-board scene: chips, pins, traces and visible traveling signals */
+#space .grid,#space .particles,#space .wave,#space .orb{display:none!important}
+#space .pcb-circuit{opacity:1!important;overflow:visible}
+#space .pcb-traces path,#space .pcb-detail-traces path{fill:none!important;stroke:#087acb!important;stroke-width:1.45!important;stroke-linecap:round!important;stroke-linejoin:round!important;filter:drop-shadow(0 0 2px rgba(0,132,255,.32))!important;vector-effect:non-scaling-stroke}
+#space .pcb-detail-traces path{stroke:rgba(0,183,255,.62)!important;stroke-width:1.25!important}
+#space .pcb-pads circle{fill:#061329!important;stroke:#008ee8!important;stroke-width:2!important}
+#space .pcb-components rect{fill:#07152b!important;stroke:#087acb!important;stroke-width:1.7!important;vector-effect:non-scaling-stroke}
+#space .pcb-components .pcb-chip>rect:first-child{fill:#071020!important;stroke:#00b9ff!important;stroke-width:2.2!important;filter:drop-shadow(0 0 8px rgba(0,174,255,.25))}
+#space .pcb-components .pcb-chip>rect:nth-child(2){fill:#0a1d35!important;stroke:rgba(0,174,255,.7)!important}
+#space .pcb-components .pins path{fill:none!important;stroke:#1595e8!important;stroke-width:2!important;stroke-linecap:round!important}
+#space .pcb-components .pcb-passives rect{fill:#10233d!important;stroke:#168bd5!important}
+#space .pcb-components .pcb-passives circle{fill:#061329!important;stroke:#00d9ff!important;stroke-width:2.2!important}
+#space .pcb-pulse-points circle{fill:#aafffb!important;stroke:#00f6ff!important;stroke-width:2.5!important;filter:drop-shadow(0 0 4px #00f6ff) drop-shadow(0 0 10px #00c8ff);animation:pcbNodeGlow 2.8s ease-in-out infinite alternate}
+#space .pcb-pulse-points circle:nth-child(3n){animation-delay:-1.1s}
+#space .pcb-pulse-points circle:nth-child(2n){animation-delay:-1.9s}
+#space .pcb-pulses path{stroke:#39ff88!important;stroke-width:3.4!important;stroke-dasharray:2 42!important;stroke-linecap:round!important;filter:drop-shadow(0 0 4px #39ff88) drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 18px rgba(0,255,210,.8))!important;animation:pcbTracePulse 3.6s linear infinite!important}
+#space .pcb-pulses path:nth-child(2n){animation-duration:4.5s!important;animation-delay:-1.7s!important}
+#space .pcb-pulses path:nth-child(3n){animation-duration:5.4s!important;animation-delay:-2.6s!important}
+#space .pcb-pulses path:nth-child(4n){animation-duration:4.1s!important;animation-delay:-.8s!important}
+@keyframes pcbNodeGlow{from{opacity:.45;filter:drop-shadow(0 0 2px #00f6ff)}to{opacity:1;filter:drop-shadow(0 0 7px #00f6ff) drop-shadow(0 0 16px #00c8ff)}}
+@media(max-width:850px){#space .pcb-circuit{opacity:.82!important}#space .pcb-detail-traces path{stroke-width:1.1!important}#space .pcb-components{opacity:.75}}
+@media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-pulse-points circle{animation:none!important}}
