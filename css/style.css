@@ -266,3 +266,36 @@ box-shadow:0 0 0 1px rgba(70,220,255,.08),0 0 75px rgba(38,190,255,.18),inset 0 
 .language-select,.language-select select{border-color:rgba(105,165,255,.25);background-color:#0B132B}
 .language-select select:focus{border-color:#39FF88;box-shadow:0 0 0 2px rgba(57,255,136,.12)}
 @media(prefers-reduced-motion:reduce){#space:after{animation:none!important}}
+
+
+/* v20261022: force the selected Prompt Blue + AI Green theme above older overrides */
+:root{--bg:#0B132B!important;--panel:rgba(11,19,43,.84)!important;--line:rgba(57,255,136,.24)!important;--text:#F3F7FF!important;--muted:#B5C2D8!important;--cyan:#39FF88!important;--blue:#014BAA!important;--purple:#6A00F4!important;--glow:rgba(57,255,136,.24)!important;--glass:rgba(11,19,43,.84)!important}
+body{background:#0B132B!important}
+#space{background:radial-gradient(ellipse at 18% 15%,rgba(1,75,170,.30),transparent 34%),radial-gradient(ellipse at 82% 72%,rgba(57,255,136,.13),transparent 31%),radial-gradient(ellipse at 52% 45%,rgba(106,0,244,.10),transparent 38%),#0B132B!important}
+.nav{background:rgba(11,19,43,.94)!important}
+.hero h1 span{background:linear-gradient(90deg,#39FF88,#B7FF72,#8BEAFF)!important;-webkit-background-clip:text!important;color:transparent!important}
+.btn.primary{background:linear-gradient(120deg,#39FF88,#B7FF72)!important;color:#0B132B!important}
+.eyebrow,.brand span,.arrow,.miniLabel{color:#39FF88!important}
+.tag{color:#8BEAFF!important;border-color:rgba(57,255,136,.28)!important;background:rgba(57,255,136,.075)!important}
+#space:before{
+  content:"";position:absolute;inset:-5%;pointer-events:none;opacity:.65;
+  background:
+    linear-gradient(90deg,transparent 0 12%,rgba(57,255,136,.34) 12.1% 12.25%,transparent 12.35% 100%),
+    linear-gradient(0deg,transparent 0 26%,rgba(91,140,255,.32) 26.1% 26.25%,transparent 26.35% 100%),
+    linear-gradient(90deg,transparent 0 42%,rgba(57,255,136,.28) 42.1% 42.25%,transparent 42.35% 100%),
+    linear-gradient(0deg,transparent 0 62%,rgba(91,140,255,.30) 62.1% 62.25%,transparent 62.35% 100%),
+    linear-gradient(90deg,transparent 0 78%,rgba(57,255,136,.28) 78.1% 78.25%,transparent 78.35% 100%);
+  background-size:300px 220px,300px 220px,420px 280px,420px 280px,500px 360px;
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 12%,rgba(0,0,0,.8) 60%,transparent 90%);
+  mask-image:radial-gradient(ellipse at center,#000 12%,rgba(0,0,0,.8) 60%,transparent 90%);
+}
+#space:after{
+  content:"";position:absolute;inset:-20%;pointer-events:none;opacity:.92;
+  background:linear-gradient(112deg,transparent 0 43%,rgba(57,255,136,0) 46%,rgba(57,255,136,.16) 48%,#39FF88 49.6%,#D9FFE9 50%,rgba(57,255,136,.45) 50.5%,transparent 54% 100%);
+  background-size:260% 260%;mix-blend-mode:screen;
+  -webkit-mask-image:repeating-linear-gradient(0deg,#000 0 1px,transparent 1px 64px),repeating-linear-gradient(90deg,#000 0 1px,transparent 1px 64px);
+  mask-image:repeating-linear-gradient(0deg,#000 0 1px,transparent 1px 64px),repeating-linear-gradient(90deg,#000 0 1px,transparent 1px 64px);
+  animation:circuitImpulse 7s linear infinite!important;
+}
+@keyframes circuitImpulse{0%{background-position:140% 0}100%{background-position:-140% 100%}}
+@media(prefers-reduced-motion:reduce){#space:after{animation:none!important}}
