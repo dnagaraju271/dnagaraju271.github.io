@@ -489,3 +489,27 @@ body{background:#0B132B!important}
 @keyframes pcbTravelSubtle{from{stroke-dashoffset:0}to{stroke-dashoffset:-720}}
 @keyframes pcbLedSoft{from{opacity:.55}to{opacity:.95}}
 @media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-pulse-points circle,#space .pcb-leds circle{animation:none!important}}
+
+
+/* Custom vector development boards: Raspberry Pi-inspired shapes built in SVG, not a flat background image */
+#space{background:radial-gradient(ellipse at 18% 22%,rgba(9,54,106,.22),transparent 43%),radial-gradient(ellipse at 82% 68%,rgba(0,95,111,.13),transparent 42%),#030914!important}
+#space .pcb-circuit{opacity:.88!important}
+#space .pcb-boards{opacity:.76;pointer-events:none}
+#space .pcb-board .board-base{fill:#09251f;fill-opacity:.96;stroke:#168c76;stroke-width:1.8;vector-effect:non-scaling-stroke;filter:drop-shadow(0 8px 18px rgba(0,0,0,.38))}
+#space .pcb-board .board-edge{fill:#061b22;stroke:#087fa0;stroke-width:1;stroke-opacity:.9;vector-effect:non-scaling-stroke}
+#space .pcb-board .board-chip{fill:#07101d;stroke:#168cc6;stroke-width:1.5;vector-effect:non-scaling-stroke}
+#space .pcb-board .chip-inner{fill:#0a2030;stroke:#176a91;stroke-width:1;vector-effect:non-scaling-stroke}
+#space .pcb-board .board-pins{fill:none;stroke:#1685b9;stroke-width:2;stroke-linecap:round;vector-effect:non-scaling-stroke}
+#space .pcb-board .board-traces,#space .pcb-board .board-trace{fill:none;stroke:#0e9ca8;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;opacity:.9;vector-effect:non-scaling-stroke}
+#space .pcb-board .board-pads circle{fill:#03111d;stroke:#12a4cf;stroke-width:1.5}
+#space .pcb-board .board-port{fill:#06111d;stroke:#2088b5;stroke-width:1.5;vector-effect:non-scaling-stroke}
+#space .pcb-board .board-led{fill:#69ffc0;filter:drop-shadow(0 0 3px rgba(54,255,180,.55))}
+#space .pcb-board-large{opacity:.65}
+#space .pcb-board-small{opacity:.82}
+#space .pcb-board-mini{opacity:.75}
+#space .pcb-board-tiny{opacity:.66}
+#space .pcb-pulses path{stroke-width:1.8!important;stroke-dasharray:16 300!important;filter:drop-shadow(0 0 2px rgba(30,214,255,.38))!important;animation:pcbTravelSubtle 8.8s linear infinite!important}
+#space .pcb-pulses path:nth-child(2n){filter:drop-shadow(0 0 2px rgba(56,255,192,.34))!important;animation-duration:10.2s!important}
+#space .pcb-pulses path:nth-child(3n){filter:drop-shadow(0 0 2px rgba(154,104,255,.3))!important;animation-duration:11.5s!important}
+@media(max-width:850px){#space .pcb-boards{opacity:.36}#space .pcb-board-large{opacity:.38}#space .pcb-board-small{opacity:.48}#space .pcb-board-mini,#space .pcb-board-tiny{opacity:.34}}
+@media(prefers-reduced-motion:reduce){#space .pcb-pulses path{animation:none!important}}
