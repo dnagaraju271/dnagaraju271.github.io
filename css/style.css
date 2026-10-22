@@ -617,3 +617,13 @@ body{background:#0B132B!important}
 .nav{position:sticky;z-index:20}
 main.wrap,footer.footer{position:relative;z-index:1}
 #scrollProgress{position:fixed;z-index:30}
+
+/* FINAL FIX: render the live SVG PCB behind all portfolio content. */
+html,body{background:#030914!important}
+body{position:relative;isolation:isolate;background:transparent!important}
+#space{position:fixed!important;inset:0!important;z-index:0!important;display:block!important;overflow:hidden!important;background:#030914!important;background-image:none!important;opacity:1!important;pointer-events:none!important}
+#space .pcb-scene{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;opacity:1!important}
+#space .pcb-vignette{position:absolute!important;inset:0!important;z-index:2!important;pointer-events:none!important;background:linear-gradient(90deg,rgba(2,8,17,.24),rgba(2,8,17,.08) 50%,rgba(2,8,17,.24)),linear-gradient(180deg,rgba(2,8,17,.14),rgba(2,8,17,.12) 55%,rgba(2,8,17,.32))!important}
+body>.nav,body>main,body>.footer,body>header,body>section{position:relative!important;z-index:1!important}
+#scrollProgress{z-index:50!important}
+@media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-leds circle{animation:none!important}}
