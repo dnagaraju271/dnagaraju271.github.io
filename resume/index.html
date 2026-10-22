@@ -96,8 +96,9 @@ function setResumeDownload(lang){
   if(!select||!link)return;
   const chosen=(lang==="fr"?"fr":"en");
   select.value=chosen;
-  link.href=RESUME_FILES[chosen];
-  link.download=chosen==="fr"?"Dharavath_Nagaraju_Resume_FR.pdf":"Dharavath_Nagaraju_Resume_EN.pdf";
+  link.href="./"+RESUME_FILES[chosen];
+  link.setAttribute("download",chosen==="fr"?"Dharavath_Nagaraju_Resume_FR.pdf":"Dharavath_Nagaraju_Resume_EN.pdf");
+  link.setAttribute("type","application/pdf");
 }
 
 function applyLanguage(lang){
