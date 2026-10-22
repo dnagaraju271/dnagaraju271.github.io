@@ -574,3 +574,16 @@ body{background:#0B132B!important}
 #space .pcb-leds circle{animation:pcbLedSoft 6s ease-in-out infinite alternate}
 @media(max-width:850px){#space .pcb-devboard{opacity:.22!important}#space .pcb-floating-chip{opacity:.28!important}#space .pcb-board-left,#space .pcb-board-right{opacity:.24!important}}
 @media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-leds circle{animation:none!important}}
+
+
+/* Real motherboard photo background — image asset must exist at assets/motherboard-background.webp */
+#space{
+ position:fixed;inset:0;z-index:-3;overflow:hidden;
+ background-color:#030914;
+ background-image:linear-gradient(rgba(3,9,20,.34),rgba(3,9,20,.48)),url("../assets/motherboard-background.webp");
+ background-position:center center;background-repeat:no-repeat;background-size:cover;
+}
+#space::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,9,20,.04) 0%,rgba(3,9,20,.22) 100%);pointer-events:none}
+#space::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,9,20,.16),transparent 48%,rgba(3,9,20,.08));pointer-events:none}
+#space>*{display:none!important}
+@media(max-width:700px){#space{background-position:center;background-image:linear-gradient(rgba(3,9,20,.48),rgba(3,9,20,.56)),url("../assets/motherboard-background.webp")}}
