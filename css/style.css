@@ -349,3 +349,34 @@ body{background:#0B132B!important}
 #space .grid{opacity:.12!important}
 #space .wave,#space .wave.w2,#space .wave.w3{opacity:.14!important}
 @media(prefers-reduced-motion:reduce){#space .pcb-pulses path{animation:none!important;stroke-dasharray:none;opacity:.35}}
+
+
+/* Visual refinement: keep the PCB motif subtle and preserve readable content */
+#space .grid{display:none!important}
+#space .particles{opacity:.055!important}
+#space .wave,#space .wave.w2,#space .wave.w3{opacity:.06!important}
+#space:before,#space:after{display:none!important;content:none!important}
+#space .pcb-circuit{
+  opacity:.34!important;
+  -webkit-mask-image:radial-gradient(ellipse at center,transparent 0%,rgba(0,0,0,.22) 30%,#000 78%)!important;
+  mask-image:radial-gradient(ellipse at center,transparent 0%,rgba(0,0,0,.22) 30%,#000 78%)!important;
+}
+#space .pcb-traces path{stroke:rgba(48,142,204,.3)!important;stroke-width:1.25!important}
+#space .pcb-pads circle{fill:#08101e!important;stroke:rgba(57,255,136,.44)!important;stroke-width:1.2!important}
+#space .pcb-pulses path{
+  stroke:#39ff88!important;stroke-width:2!important;
+  stroke-dasharray:2 245!important;
+  filter:drop-shadow(0 0 2px rgba(57,255,136,.85)) drop-shadow(0 0 5px rgba(57,255,136,.55))!important;
+  animation-duration:8s!important;
+}
+#space .pcb-pulses path:nth-child(2n){animation-duration:10s!important}
+#space .pcb-pulses path:nth-child(3n){animation-duration:12s!important}
+#space .pcb-pulses path:nth-child(4n){animation-duration:9s!important}
+.card,.stat,.visual,.detailHero,.box,.connectionBar{background-color:rgba(7,14,27,.88)!important}
+@media(max-width:850px){
+ #space .pcb-circuit{opacity:.23!important}
+ #space .pcb-pulses path{stroke-width:1.7!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #space .pcb-pulses path{animation:none!important;stroke-dasharray:none!important;opacity:.28!important}
+}
