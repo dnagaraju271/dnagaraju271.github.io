@@ -545,7 +545,7 @@ body{background:#0B132B!important}
 
 
 /* PCB scene refinement: richer board detail, readable contrast, restrained travelling signals. */
-#space{z-index:-1!important;background:#030914!important}
+#space{z-index:-3!important;background:#030914!important}
 #space>.pcb-circuit{opacity:.94!important}
 #space .pcb-base-traces{opacity:.72!important}
 #space .pcb-fine-traces{opacity:.52!important}
