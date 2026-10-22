@@ -611,3 +611,9 @@ body{background:#0B132B!important}
 @keyframes ledPulse{0%,100%{opacity:.32}50%{opacity:1}}
 @media(max-width:850px){#space .pcb-components{opacity:.38}#space .board{opacity:.55}#space .floating-mcu{opacity:.42}}
 @media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-led,#space .pcb-leds circle{animation:none!important}}
+
+/* Ensure the live PCB sits behind content, not behind the document canvas. */
+#space{z-index:0!important}
+.nav{position:sticky;z-index:20}
+main.wrap,footer.footer{position:relative;z-index:1}
+#scrollProgress{position:fixed;z-index:30}
