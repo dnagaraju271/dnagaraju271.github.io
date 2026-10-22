@@ -587,3 +587,27 @@ body{background:#0B132B!important}
 #space::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,9,20,.16),transparent 48%,rgba(3,9,20,.08));pointer-events:none}
 #space>*{display:none!important}
 @media(max-width:700px){#space{background-position:center;background-image:linear-gradient(rgba(3,9,20,.48),rgba(3,9,20,.56)),url("../assets/motherboard-background.webp")}}
+
+/* Live vector motherboard background: SVG PCB, CSS lighting and JavaScript LED motion */
+#space{position:fixed!important;inset:0!important;z-index:-3!important;overflow:hidden!important;background:#030914!important;background-image:none!important;isolation:isolate}
+#space::before,#space::after{display:none!important}
+#space>*{display:block!important}
+#space>.grid,#space>.particles,#space>.orb,#space>.wave{display:none!important}
+#space .pcb-scene{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.92;pointer-events:none}
+#space .pcb-traces path{stroke:#07547f;stroke-width:1.35;opacity:.7}
+#space .pcb-traces path:nth-child(3n){stroke:#0b7da6;opacity:.52}
+#space .pcb-pulses path{stroke:#36dfff;stroke-width:2.2;stroke-dasharray:2 210;stroke-dashoffset:0;opacity:.92;filter:url(#ledGlow);animation:liveSignal 8s linear infinite}
+#space .pcb-pulses path:nth-child(2n){stroke:#35ffc1;animation-duration:10s;animation-delay:-3s}
+#space .pcb-pulses path:nth-child(3n){stroke:#438cff;animation-duration:12s;animation-delay:-6s}
+#space .pcb-components{opacity:.8}
+#space .board{filter:drop-shadow(0 10px 25px rgba(0,0,0,.34))}
+#space .pcb-led{fill:#42ffc3;filter:url(#ledGlow);animation:ledPulse 3.7s ease-in-out infinite}
+#space .pcb-led:nth-of-type(2n){animation-delay:-1.8s}
+#space .pcb-leds circle{fill:#43ffd0;opacity:.8;filter:url(#ledGlow);animation:ledPulse 4.3s ease-in-out infinite alternate}
+#space .floating-mcu{opacity:.88;filter:drop-shadow(0 0 18px rgba(0,137,255,.13))}
+#space .small-chip{opacity:.5}
+#space .pcb-vignette{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(2,8,17,.22),rgba(2,8,17,.05) 48%,rgba(2,8,17,.18)),linear-gradient(180deg,rgba(2,8,17,.14),rgba(2,8,17,.10) 50%,rgba(2,8,17,.35))}
+@keyframes liveSignal{to{stroke-dashoffset:-424}}
+@keyframes ledPulse{0%,100%{opacity:.32}50%{opacity:1}}
+@media(max-width:850px){#space .pcb-components{opacity:.38}#space .board{opacity:.55}#space .floating-mcu{opacity:.42}}
+@media(prefers-reduced-motion:reduce){#space .pcb-pulses path,#space .pcb-led,#space .pcb-leds circle{animation:none!important}}
