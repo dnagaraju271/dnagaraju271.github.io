@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multimodal Classification • Live Dashboard | Nagaraju Dharavath</title>
+<link rel="stylesheet" href="../../../css/style.css?v=20261007-7">
+<style>
+.dashboardPage{max-width:1180px;margin:0 auto;padding:38px 24px 80px}
+.dashTop{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.dashTitle{font-size:clamp(32px,4.3vw,52px);line-height:1.04;letter-spacing:-.035em;margin:8px 0}
+.dashSub{color:var(--muted);max-width:760px;line-height:1.7}
+.dashStatus{display:flex;align-items:center;gap:9px;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,93,108,.28);background:rgba(255,93,108,.07);color:#ff8790;white-space:nowrap;font:11px ui-monospace,monospace}
+.dashStatus.online{border-color:rgba(105,255,189,.28);background:rgba(105,255,189,.07);color:#69ffbd}
+.dashDot{width:8px;height:8px;border-radius:50%;background:#ff5d6c;box-shadow:0 0 12px rgba(255,93,108,.6)}
+.dashStatus.online .dashDot{background:#69ffbd}
+.dashControls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin:20px 0 10px}
+.dashInput{min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#050b14;color:var(--text);outline:none}
+.dashInput:focus,.captionInput:focus{border-color:rgba(57,216,255,.55)}
+.dashNote{color:var(--muted);font-size:12px;line-height:1.65;margin:0 0 18px}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.metric{border:1px solid var(--line);border-radius:16px;padding:17px;background:linear-gradient(145deg,rgba(10,20,35,.78),rgba(7,14,26,.62))}
+.metric span{display:block;color:var(--muted);font:10px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}
+.metric strong{display:block;color:var(--cyan);font-size:20px;margin-top:6px}
+.workspace{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card2{min-width:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(10,20,35,.78),rgba(7,14,26,.64));box-shadow:inset 0 1px 0 rgba(255,255,255,.02),0 16px 50px rgba(0,0,0,.16)}
+.title2{padding:14px 17px;border-bottom:1px solid var(--line);font:11px ui-monospace,monospace;letter-spacing:.1em;color:#bfd0da}
+.panel{padding:18px}
+.label{display:block;color:var(--cyan);font:10px ui-monospace,monospace;letter-spacing:.12em;margin-bottom:8px}
+.uploadBox{display:flex;align-items:center;justify-content:center;min-height:190px;border:1px dashed rgba(120,190,255,.35);border-radius:14px;background:radial-gradient(circle,rgba(30,170,255,.09),transparent 60%),#03070e;text-align:center;padding:18px;cursor:pointer;overflow:hidden}
+.uploadBox input{position:absolute;width:1px;height:1px;opacity:0}
+.uploadBox strong{color:#eaf5ff}
+.uploadBox small{display:block;color:var(--muted);margin-top:7px}
+.uploadBox img{display:block;max-width:100%;max-height:310px;object-fit:contain;border-radius:10px}
+.captionInput{display:block;width:100%;min-height:118px;resize:vertical;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#050b14;color:var(--text);font:14px/1.6 inherit;outline:none}
+.primaryBtn{border:0;border-radius:12px;background:linear-gradient(90deg,#26c6d9,#7ce0c3);color:#06140f;font:700 13px inherit;padding:13px 18px;cursor:pointer}
+.primaryBtn:disabled{opacity:.5;cursor:not-allowed}
+.message{min-height:22px;color:var(--muted);font-size:12px;line-height:1.6;margin:11px 0 0}
+.preview{min-height:365px;display:grid;place-items:center;text-align:center;padding:20px;background:radial-gradient(circle,rgba(57,216,255,.08),transparent 38%),#03070e}
+.preview img{max-width:100%;max-height:480px;object-fit:contain;border-radius:12px}
+.previewEmpty{max-width:330px;color:var(--muted);font-size:13px;line-height:1.7}
+.previewEmpty .cameraIcon{font-size:56px;color:var(--cyan);opacity:.75}
+.resultsSection{margin-top:18px}
+.resultsHead{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin:26px 0 13px}
+.resultsHead h2{font-size:22px;margin:0}
+.resultsHead p{color:var(--muted);font-size:12px;margin:5px 0 0}
+.resultsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.resultCard{min-width:0;border:1px solid var(--line);border-radius:16px;padding:16px;background:linear-gradient(145deg,rgba(10,20,35,.78),rgba(7,14,26,.64))}
+.resultCard h3{font-size:16px;margin:0 0 9px;color:#eaf5ff}
+.predicted{min-height:35px;color:#7ce0c3;font-size:12px;line-height:1.5;margin:0 0 12px}
+.scoreRow{display:grid;grid-template-columns:58px minmax(24px,1fr) 45px;align-items:center;gap:8px;margin:10px 0;font-size:11px}
+.scoreTrack{height:8px;background:#26384a;border-radius:99px;overflow:hidden}
+.scoreFill{height:100%;background:linear-gradient(90deg,#7ce0c3,#9bbcff);border-radius:99px}
+.scoreValue{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.notePanel{margin-top:18px;padding:15px 17px;border:1px solid rgba(57,216,255,.16);border-radius:14px;background:rgba(14,44,62,.18);color:var(--muted);font-size:12px;line-height:1.7}
+.foot{text-align:center;color:var(--muted);font-size:11px;padding:22px 0}
+@media(max-width:900px){.workspace{grid-template-columns:1fr}.resultsGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.dashboardPage{padding:30px 17px 60px}.dashTop{flex-direction:column}.dashStatus{align-self:flex-start}.dashControls{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.resultsGrid{grid-template-columns:1fr}.resultsHead{align-items:flex-start;flex-direction:column}.preview{min-height:260px}}
+</style>
+</head>
+<body>
+<div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+<header class="nav"><div class="wrap navin"><a class="brand" href="../../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../../index.html#home" data-i18n="home">Home</a><a href="../../../index.html#about" data-i18n="about">About</a><a href="../../../index.html#skills" data-i18n="skills">Skills</a><a href="../../../index.html#projects" data-i18n="projects">Projects</a><a href="../../../index.html#experience" data-i18n="experience">Experience</a><a href="../../../index.html#education" data-i18n="education">Education</a><a href="../../../index.html#contact" data-i18n="contact">Contact</a></nav><label class="language-select">🌐 <select id="languageSelect"><option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="ja">日本語</option><option value="zh">中文</option></select></label></div></header>
+
+<main class="dashboardPage">
+<a class="back" href="../">← Back to Multimodal Classification Project</a>
+<div class="dashTop">
+  <div><div class="eyebrow">LIVE MULTIMODAL DASHBOARD</div><h1 class="dashTitle">Image + Text Classification</h1><p class="dashSub">Upload one image, provide its associated caption, and compare predictions from the image-only CNN, text-only BiLSTM and multimodal fusion model.</p></div>
+  <div class="dashStatus" id="api-status" role="status"><span class="dashDot"></span><span id="api-status-text">API NOT CONNECTED</span></div>
+</div>
+
+<div class="dashControls">
+  <input id="api-url" class="dashInput" type="url" inputmode="url" aria-label="Inference API URL" placeholder="http://127.0.0.1:8000">
+  <button id="connect" class="btn primary" type="button">Connect / Check API</button>
+</div>
+<p class="dashNote">For your local college demonstration, run the FastAPI service on your Mac and use <strong>http://127.0.0.1:8000</strong>. Your browser sends the selected image and caption to that service. No simulated predictions are displayed.</p>
+
+<section class="metrics" aria-label="Model setup">
+  <div class="metric"><span>MODEL BRANCHES</span><strong>3 trained models</strong></div>
+  <div class="metric"><span>TARGET CLASSES</span><strong>6 labels</strong></div>
+  <div class="metric"><span>IMAGE INPUT</span><strong>224 × 224 RGB</strong></div>
+</section>
+
+<section class="workspace">
+  <div class="card2">
+    <div class="title2">INPUT • IMAGE + ASSOCIATED TEXT</div>
+    <form class="panel" id="predict-form">
+      <label class="label" for="image-file">1. SELECT AN IMAGE</label>
+      <label class="uploadBox" for="image-file">
+        <span id="upload-label"><strong>＋ Choose an image</strong><small>JPEG, PNG or WebP · maximum 12 MB</small></span>
+        <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp" required>
+      </label>
+      <label class="label" for="caption" style="margin-top:18px">2. ENTER THE ASSOCIATED CAPTION</label>
+      <textarea id="caption" class="captionInput" placeholder="Example: A dog is resting on the pavement beside a bicycle." required></textarea>
+      <button class="primaryBtn" id="run-prediction" type="submit" disabled style="width:100%;margin-top:14px">Compare all three models →</button>
+      <p class="message" id="message" aria-live="polite">Connect to the local API to enable predictions.</p>
+    </form>
+  </div>
+
+  <div class="card2">
+    <div class="title2">IMAGE PREVIEW</div>
+    <div class="preview" id="preview">
+      <div class="previewEmpty" id="preview-empty"><div class="cameraIcon">▧</div><strong>Your selected image will appear here</strong><p>Choose an image from your device to preview it before running inference.</p></div>
+      <img id="preview-image" alt="Selected input preview" hidden>
+    </div>
+  </div>
+</section>
+
+<section class="resultsSection" aria-labelledby="results-title">
+  <div class="resultsHead"><div><h2 id="results-title">Model Predictions</h2><p>Independent sigmoid probabilities for the six target classes.</p></div></div>
+  <div class="resultsGrid" id="results-grid" aria-live="polite">
+    <article class="resultCard"><h3>Image-only CNN</h3><p class="predicted">Waiting for a real prediction.</p></article>
+    <article class="resultCard"><h3>Text-only BiLSTM</h3><p class="predicted">Waiting for a real prediction.</p></article>
+    <article class="resultCard"><h3>Multimodal fusion</h3><p class="predicted">Waiting for a real prediction.</p></article>
+  </div>
+</section>
+
+<div class="notePanel"><strong>How to run the local demo:</strong> activate the project's virtual environment, start the FastAPI server with <code>uvicorn src.api.main:app --reload</code>, then connect to <code>http://127.0.0.1:8000</code> above. The API must report all three trained models and the text vocabulary as ready before predictions can run.</div>
+</main>
+<footer class="foot">Multimodal Image + Text Classification • EfficientNetB0 • BiLSTM • FastAPI</footer>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const apiInput=$("api-url"),status=$("api-status"),statusText=$("api-status-text"),connectButton=$("connect"),runButton=$("run-prediction"),message=$("message"),form=$("predict-form"),fileInput=$("image-file");
+const apiDefault=window.MM_API_BASE||localStorage.getItem("multimodalInferenceApi")||"http://127.0.0.1:8000";
+const modelTitles={image_only:"Image-only CNN",text_only:"Text-only BiLSTM",multimodal:"Multimodal fusion"};
+let apiBase="",previewUrl="";
+apiInput.value=apiDefault;
+function setStatus(label,kind){
+ statusText.textContent=label;
+ status.className="dashStatus"+(kind?" "+kind:"");
+}
+function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
+async function connect(){
+ const base=baseUrl();
+ apiBase="";runButton.disabled=true;
+ if(!base){setStatus("API URL REQUIRED","error");message.textContent="Enter the API address first.";return false}
+ setStatus("CHECKING API","");
+ connectButton.disabled=true;connectButton.textContent="Checking…";
+ message.textContent="Checking API health and model readiness…";
+ try{
+  const health=await fetch(base+"/api/health",{cache:"no-store"});
+  if(!health.ok)throw new Error("Health check failed (HTTP "+health.status+").");
+  const response=await fetch(base+"/api/models/status",{cache:"no-store"});
+  if(!response.ok)throw new Error("Model status check failed (HTTP "+response.status+").");
+  const data=await response.json();
+  const loaded=Object.values(data.models||{}).filter(Boolean).length;
+  if(!data.ready||loaded!==3||!data.vocabulary){
+   setStatus("MODELS NOT READY","error");
+   message.textContent=data.message||"The three models and text vocabulary are not all available.";
+   return false;
+  }
+  apiBase=base;
+  localStorage.setItem("multimodalInferenceApi",base);
+  setStatus("API ONLINE · 3/3 MODELS READY","online");
+  message.textContent="Connected successfully. Select an image and enter its associated caption.";
+  runButton.disabled=false;
+  return true;
+ }catch(error){
+  setStatus("API CONNECTION FAILED","error");
+  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the API. Check that it is running, the URL is correct, and CORS allows this portfolio origin.":error.message;
+  return false;
+ }finally{
+  connectButton.disabled=false;connectButton.textContent="Connect / Check API";
+ }
+}
+connectButton.addEventListener("click",connect);
+apiInput.addEventListener("change",()=>{
+ apiBase="";runButton.disabled=true;setStatus("CHECK CONNECTION","");
+ message.textContent="API address changed. Connect again before running predictions.";
+});
+fileInput.addEventListener("change",()=>{
+ const file=fileInput.files[0];if(!file)return;
+ if(!["image/jpeg","image/png","image/webp"].includes(file.type)){
+  fileInput.value="";message.textContent="Choose a JPEG, PNG or WebP image.";return;
+ }
+ if(file.size>12*1024*1024){fileInput.value="";message.textContent="The image exceeds the 12 MB upload limit.";return}
+ if(previewUrl)URL.revokeObjectURL(previewUrl);
+ previewUrl=URL.createObjectURL(file);
+ $("preview-image").src=previewUrl;$("preview-image").hidden=false;$("preview-empty").hidden=true;
+ $("upload-label").innerHTML="<strong>"+file.name.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))+"</strong><small>"+(file.size/1024/1024).toFixed(2)+" MB · selected</small>";
+});
+function renderResultCard(key,data){
+ const card=document.createElement("article");card.className="resultCard";
+ const title=document.createElement("h3");title.textContent=modelTitles[key]||key;card.append(title);
+ const predicted=document.createElement("p");predicted.className="predicted";
+ predicted.textContent="Predicted: "+(data.predicted_labels?.length?data.predicted_labels.join(", "):"no class above 0.50");
+ card.append(predicted);
+ for(const item of data.ranked_classes||[]){
+  const row=document.createElement("div");row.className="scoreRow";
+  const label=document.createElement("span");label.textContent=item.class;
+  const track=document.createElement("div");track.className="scoreTrack";
+  const fill=document.createElement("div");fill.className="scoreFill";
+  const value=Math.max(0,Math.min(1,Number(item.probability)||0));
+  fill.style.width=(value*100)+"%";track.append(fill);
+  const percent=document.createElement("span");percent.className="scoreValue";percent.textContent=(value*100).toFixed(1)+"%";
+  row.append(label,track,percent);card.append(row);
+ }
+ return card;
+}
+form.addEventListener("submit",async event=>{
+ event.preventDefault();
+ const file=fileInput.files[0],caption=$("caption").value.trim();
+ if(!file){message.textContent="Choose an image first.";return}
+ if(!caption){message.textContent="Enter the associated caption.";return}
+ if(!apiBase&&!await connect())return;
+ const body=new FormData();body.append("file",file);body.append("caption",caption);
+ runButton.disabled=true;runButton.textContent="Running three models…";
+ message.textContent="Sending the image-caption pair to the API…";
+ try{
+  const response=await fetch(apiBase+"/api/predict",{method:"POST",body});
+  const payload=await response.json();
+  if(!response.ok)throw new Error(payload.detail||"Prediction failed (HTTP "+response.status+").");
+  const results=payload.results||{},required=["image_only","text_only","multimodal"];
+  const missing=required.filter(key=>!results[key]);
+  if(missing.length)throw new Error("API response is missing: "+missing.join(", "));
+  $("results-grid").replaceChildren(...required.map(key=>renderResultCard(key,results[key])));
+  message.textContent="Prediction completed. Scores are independent sigmoid probabilities; labels use a 0.50 threshold.";
+ }catch(error){
+  message.textContent=error.message;
+ }finally{
+  runButton.disabled=!apiBase;runButton.textContent="Compare all three models →";
+ }
+});
+connect();
+})();
+</script>
+<script src="../../../js/app.js?v=20261119-1"></script>
+</body>
+</html>
