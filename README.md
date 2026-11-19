@@ -34,3 +34,9 @@ Built and maintained by **Nagaraju Dharavath**.
 - GitHub: https://github.com/dnagaraju271
 - LinkedIn: https://www.linkedin.com/in/dnagaraju/
 - Email: nagaraju072001@gmail.com
+
+
+## New project page
+
+- **Multi-Modal Image & Text Classification:** `projects/multimodal-classification/`
+- Source repository: https://github.com/dnagaraju271/multimodal-image-text-classification

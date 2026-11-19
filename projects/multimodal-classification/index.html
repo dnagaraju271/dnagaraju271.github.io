@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi-Modal Image &amp; Text Classification | Nagaraju Dharavath</title>
+<link rel="stylesheet" href="../../css/style.css?v=20261007-7">
+<style>
+.mm-results{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}.mm-results th,.mm-results td{padding:12px 10px;border-bottom:1px solid rgba(120,190,255,.13);text-align:left}.mm-results th{color:#9edff4;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.mm-results td:not(:first-child){font-variant-numeric:tabular-nums}.mm-results tr:last-child td{border-bottom:0}.mm-results tr.best td{color:#8bf0ce}.mm-bars{display:grid;gap:13px;margin-top:17px}.mm-bar-row{display:grid;grid-template-columns:125px 1fr 55px;gap:10px;align-items:center;font-size:12px}.mm-track{height:9px;border-radius:20px;background:#1c2d40;overflow:hidden}.mm-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#25d6ed,#80e5bd)}.mm-bar-row strong{text-align:right;font-variant-numeric:tabular-nums}.mm-note{font-size:12px;color:#91a7b2;line-height:1.7;margin-top:14px}.mm-callout{border:1px solid rgba(57,216,255,.18);background:rgba(14,44,62,.22);border-radius:13px;padding:15px 17px;margin-top:15px}.mm-code{white-space:pre;overflow:auto;background:#040b14;border:1px solid rgba(120,190,255,.13);border-radius:12px;padding:17px;color:#b6d5e6;font:12px/1.8 ui-monospace,SFMono-Regular,monospace}.mm-code .hl{color:#7ce0c3}.mm-stage{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-top:15px}.mm-stage div{padding:14px 10px;border:1px solid rgba(120,190,255,.15);border-radius:12px;background:rgba(255,255,255,.025);text-align:center}.mm-stage strong{display:block;color:#d9f7ff;font-size:13px}.mm-stage small{display:block;color:#91a7b2;font-size:11px;margin-top:4px}.mm-arrow{color:#7ce0c3;font-size:20px}.mm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}.mm-stat{padding:15px;border:1px solid rgba(120,190,255,.13);border-radius:12px;background:rgba(255,255,255,.025)}.mm-stat b{display:block;color:#7ce0c3;font-size:25px}.mm-stat span{font-size:11px;color:#91a7b2}.mm-demo{display:flex;flex-wrap:wrap;gap:10px}.mm-demo a{color:#9edff4}.mm-live-status{display:inline-flex;padding:6px 10px;border-radius:99px;border:1px solid rgba(124,224,195,.25);color:#7ce0c3;font-size:11px;letter-spacing:.05em}@media(max-width:700px){.mm-stage{grid-template-columns:1fr}.mm-arrow{transform:rotate(90deg);text-align:center}.mm-stats{grid-template-columns:1fr}.mm-bar-row{grid-template-columns:92px 1fr 48px}.mm-results{font-size:11px}.mm-results th,.mm-results td{padding:9px 5px}}
+</style>
+</head>
+<body>
+<div id="space"><div class="grid"></div><div class="particles"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="wave"></div><div class="wave w2"></div><div class="wave w3"></div></div>
+<header class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">NAGA<span>RAJU</span></a><nav><a href="../../index.html#home" data-i18n="home">Home</a><a href="../../index.html#about" data-i18n="about">About</a><a href="../../index.html#skills" data-i18n="skills">Skills</a><a href="../../index.html#projects" data-i18n="projects">Projects</a><a href="../../index.html#contact" data-i18n="contact">Contact</a></nav><label class="language-select"><span>🌐</span><select id="languageSelect"><option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="hi">हिन्दी</option><option value="te">తెలుగు</option><option value="ta">தமிழ்</option><option value="ja">日本語</option><option value="zh">中文</option></select></label></div></header>
+<main class="wrap detailPage">
+<a href="../../index.html#projects" class="back">← Back to Projects</a>
+<section class="detailHero">
+<div class="eyebrow">Deep Learning • Computer Vision • NLP • Multimodal AI</div>
+<h1>Multi-Modal Image &amp; Text Classification</h1>
+<p class="sub">A comparative deep-learning project that studies how visual features and associated captions can work together for multi-label image classification.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/dnagaraju271/multimodal-image-text-classification" target="_blank" rel="noopener">Source Code on GitHub</a>
+<a class="btn" href="#results">View Experimental Results</a>
+<a class="btn" href="#local-demo">Run the Local Demo</a>
+</div>
+</section>
+<div class="detailGrid">
+<div class="box">
+<h3>Project Snapshot</h3>
+<div class="snapshot">
+<div><span class="miniLabel">STATUS</span><strong>Trained research prototype</strong></div>
+<div><span class="miniLabel">TASK</span><strong>Six-class multi-label classification</strong></div>
+<div><span class="miniLabel">DATASET</span><strong>MS COCO 2017 paired images + captions</strong></div>
+</div>
+<div class="mm-callout"><span class="mm-live-status">LOCAL INFERENCE VERIFIED</span><p style="margin-bottom:0">The FastAPI backend and browser interface have been run locally with all three trained model artifacts. A public hosted inference endpoint has not been deployed.</p></div>
+</div>
+
+<div class="box">
+<h3>Research Objective</h3>
+<p>Compare three model branches on the same paired image-caption examples and investigate whether feature-level fusion improves classification performance:</p>
+<div class="cards" style="margin-top:12px">
+<div class="card"><h3>Image-only CNN</h3><p>Learn visual representations from the image with an ImageNet-pretrained EfficientNetB0 backbone.</p></div>
+<div class="card"><h3>Text-only BiLSTM</h3><p>Encode the associated caption with trainable word embeddings and a Bidirectional LSTM.</p></div>
+<div class="card"><h3>Multimodal Fusion</h3><p>Concatenate image and caption feature vectors, then classify with dense layers and dropout.</p></div>
+</div>
+</div>
+
+<div class="box">
+<h3>Model Architecture</h3>
+<p>Both modalities are trained against the same annotation-derived target vector. The image-only and text-only branches are baselines; the fusion branch combines both feature representations.</p>
+<div class="mm-stage">
+<div><strong>Image input</strong><small>RGB · 224 × 224</small><strong>EfficientNetB0</strong><small>Image features</small></div>
+<span class="mm-arrow">→</span>
+<div><strong>Feature fusion</strong><small>Concatenation</small><strong>Dense + Dropout</strong><small>Classification head</small></div>
+<span class="mm-arrow">←</span>
+<div><strong>Caption input</strong><small>TextVectorization</small><strong>Embedding + BiLSTM</strong><small>Caption features</small></div>
+</div>
+<div class="mm-code" style="margin-top:16px">IMAGE BRANCH                         TEXT BRANCH
+RGB image (224 × 224)                Associated COCO captions
+       ↓                                      ↓
+EfficientNetB0                       TextVectorization
+(pretrained, frozen → fine-tune)             ↓
+       ↓                               Word Embedding
+Image feature vector                         ↓
+       └──────────────┐                Bidirectional LSTM
+                      ↓                       ↓
+                 Concatenate  ←──────── Text feature vector
+                      ↓
+              Dense + BatchNorm
+                      ↓
+                  Dropout
+                      ↓
+              Six sigmoid outputs
+                      ↓
+      bicycle · bird · bus · cat · dog · horse</div>
+</div>
+
+<div class="box">
+<h3>Dataset &amp; Preparation</h3>
+<div class="snapshot">
+<div><span class="miniLabel">TRAINING</span><strong>3,000 images</strong></div>
+<div><span class="miniLabel">HELD-OUT VALIDATION</span><strong>750 images</strong></div>
+<div><span class="miniLabel">TOTAL</span><strong>3,750 paired images</strong></div>
+</div>
+<p>The subset was prepared from MS COCO 2017 instance annotations and captions. Ground-truth labels are derived from object categories in the annotations; captions are model inputs, not the source of the labels. All captions for an image are joined into one text input and each image appears once in the manifest.</p>
+<p>The task is multi-label: an image can contain more than one target category. The six configured categories are bicycle, bird, bus, cat, dog and horse. The subset selection process favours under-represented target classes, so this is a selected, approximately class-balanced subset rather than a random sample of the full COCO distribution.</p>
+<div class="mm-note">Split safeguard: official COCO train2017 and val2017 image IDs are kept separate. Text vocabulary is fitted on training captions only. Cross-validation and hyperparameter search are planned on train2017 only; the official validation partition is reserved for final reporting.</div>
+</div>
+
+<div class="box" id="results">
+<h3>Initial Held-Out Validation Results</h3>
+<p>All three models were evaluated on the same 750-image official validation subset at an independent sigmoid threshold of 0.50.</p>
+<div class="mm-stats">
+<div class="mm-stat"><span>BEST MACRO F1 · FUSION</span><b>0.7593</b><span>Multimodal model</span></div>
+<div class="mm-stat"><span>BEST mAP · FUSION</span><b>0.9036</b><span>Mean average precision</span></div>
+<div class="mm-stat"><span>EXACT MATCH · TEXT / FUSION</span><b>0.5067</b><span>Same exact-match accuracy</span></div>
+</div>
+<table class="mm-results">
+<thead><tr><th>Model</th><th>Macro F1</th><th>Micro F1</th><th>mAP</th><th>Exact match</th></tr></thead>
+<tbody>
+<tr><td>Image-only CNN</td><td>0.7043</td><td>0.6972</td><td>0.8536</td><td>0.4000</td></tr>
+<tr><td>Text-only BiLSTM</td><td>0.7551</td><td>0.7471</td><td>0.8402</td><td>0.5067</td></tr>
+<tr class="best"><td>Multimodal fusion</td><td><strong>0.7593</strong></td><td><strong>0.7498</strong></td><td><strong>0.9036</strong></td><td>0.5067</td></tr>
+</tbody>
+</table>
+<div class="mm-bars">
+<div class="mm-bar-row"><span>Image CNN</span><div class="mm-track"><div class="mm-fill" style="width:70.43%"></div></div><strong>0.704</strong></div>
+<div class="mm-bar-row"><span>Text BiLSTM</span><div class="mm-track"><div class="mm-fill" style="width:75.51%"></div></div><strong>0.755</strong></div>
+<div class="mm-bar-row"><span>Fusion</span><div class="mm-track"><div class="mm-fill" style="width:75.93%"></div></div><strong>0.759</strong></div>
+</div>
+<div class="mm-callout"><strong>Interpretation</strong><p style="margin-bottom:0">Fusion produced the highest macro F1 and mAP in this run. Its macro-F1 gain over the text-only model is small (+0.0042), and exact-match accuracy is unchanged. The clearest improvement is mAP (+0.0634 over text-only), suggesting better ranking of relevant labels. Cross-validation and repeated runs are still needed before claiming a robust general improvement.</p></div>
+<p class="mm-note">These are actual initial-run results from the selected 3,750-image subset, not cross-validation averages. The class-balanced selection process and caption content may influence performance.</p>
+</div>
+
+<div class="box">
+<h3>Technologies</h3>
+<span class="tag">Python 3.12</span><span class="tag">TensorFlow 2.21</span><span class="tag">Keras</span><span class="tag">EfficientNetB0</span><span class="tag">BiLSTM</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">MS COCO 2017</span><span class="tag">FastAPI</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub</span>
+</div>
+
+<div class="box">
+<h3>Engineering Pipeline</h3>
+<div class="code">COCO 2017 annotations + captions
+          ↓
+Select six target classes and paired images
+          ↓
+Image-level train / held-out validation split
+          ↓
+ ┌────────────────┬────────────────┐
+ │                │                │
+Image-only CNN  Text-only BiLSTM  Image + Text Fusion
+ │                │                │
+ └────────────────┴────────────────┘
+          ↓
+Weighted binary cross-entropy + Adam
+          ↓
+Validation metrics and per-class analysis
+          ↓
+FastAPI inference backend
+          ↓
+Browser-based comparison interface</div>
+</div>
+
+<div class="box" id="local-demo">
+<h3>Interactive Website — Local Research Demo</h3>
+<p>The browser interface accepts an image and its associated caption, then displays independent predictions from the image-only CNN, text-only BiLSTM and multimodal fusion model. It also reads the saved validation comparison report.</p>
+<div class="mm-demo">
+<a href="https://github.com/dnagaraju271/multimodal-image-text-classification/tree/main/frontend" target="_blank" rel="noopener">Frontend source</a>
+<a href="https://github.com/dnagaraju271/multimodal-image-text-classification/tree/main/src/api" target="_blank" rel="noopener">FastAPI backend</a>
+<a href="https://github.com/dnagaraju271/multimodal-image-text-classification#local-research-demo-website" target="_blank" rel="noopener">Run instructions in README</a>
+</div>
+<div class="mm-code" style="margin-top:14px"># From the project repository, with the environment activated
+uvicorn src.api.main:app --reload
+
+# Open in your browser
+http://127.0.0.1:8000</div>
+<p class="mm-note">The web application is currently a local prototype and requires the trained model files on the machine running FastAPI. This portfolio page is public; the inference service itself is not yet hosted for public visitors.</p>
+</div>
+
+<div class="box">
+<h3>Current Implementation &amp; Next Work</h3>
+<p>Implemented: paired dataset preparation, three model branches, weighted multi-label training, held-out evaluation, prediction API and browser interface.</p>
+<p>Next: complete image-ID-level K-fold cross-validation, run the bounded hyperparameter search, inspect per-class errors and caption dependence, document repeatability, then update this page with the final experiment results.</p>
+</div>
+</div>
+</main>
+<footer class="footer">Nagaraju Dharavath • Embedded Software &amp; AI Engineering</footer>
+<script src="../../js/app.js?v=20261119-1"></script>
+</body>
+</html>
