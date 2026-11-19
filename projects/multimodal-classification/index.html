@@ -38,6 +38,23 @@
 .mm-live-track{height:7px;background:#26384a;border-radius:99px;overflow:hidden}
 .mm-live-fill{height:100%;background:linear-gradient(90deg,#7ce0c3,#9bbcff)}
 .mm-live-percent{text-align:right;color:#91a7b2;font-variant-numeric:tabular-nums}
+.mm-overview-live{min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 18px;border:1px solid rgba(50,210,255,.2);border-radius:16px;background:radial-gradient(circle at 50% 15%,rgba(32,170,255,.13),transparent 58%),#050a13}
+.mm-overview-icon{width:58px;height:58px;display:grid;place-items:center;border:2px solid #d9f3ff;border-radius:50%;font-size:44px;line-height:1;color:#d9f3ff;margin-bottom:13px}
+.mm-overview-live>strong{font-size:16px;color:#eaf5ff}
+.mm-overview-ready{display:inline-flex;align-items:center;gap:7px;margin-top:9px;color:#69ffbd;font-size:12px}
+.mm-overview-ready:before{content:"";width:8px;height:8px;border-radius:50%;background:#69ffbd;box-shadow:0 0 10px rgba(105,255,189,.55)}
+.mm-overview-live>p{max-width:470px;margin:15px auto 10px;color:#a9bfd0;font-size:13px;line-height:1.7}
+.mm-overview-api{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid rgba(255,190,90,.28);border-radius:99px;color:#ffd18a;font:10px ui-monospace,monospace;letter-spacing:.04em}
+.mm-overview-api.online{border-color:rgba(105,255,189,.3);color:#69ffbd}
+.mm-overview-api.error{border-color:rgba(255,93,108,.35);color:#ff8790}
+.mm-overview-dot{width:7px;height:7px;border-radius:50%;background:#e9ae5b}
+.mm-overview-api.online .mm-overview-dot{background:#69ffbd}
+.mm-overview-api.error .mm-overview-dot{background:#ff8790}
+.mm-overview-models{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:13px}
+.mm-overview-models span{padding:6px 9px;border:1px solid rgba(120,190,255,.14);border-radius:99px;background:rgba(255,255,255,.025);color:#b9d1df;font-size:10px}
+.mm-overview-link{display:inline-block;margin-top:15px;text-decoration:none}
+.mm-overview-help{font-size:11px!important;color:#8297a6!important;margin:13px auto 0!important}
+@media(max-width:700px){.mm-overview-live{min-height:230px;padding:20px 13px}}
 @media(max-width:700px){.mm-gallery,.mm-live-results{grid-template-columns:1fr}.mm-api-connect{grid-template-columns:1fr}.mm-live-shell{padding:13px}}
 
 </style>
@@ -66,6 +83,20 @@
 <div><span class="miniLabel">DATASET</span><strong>MS COCO 2017 paired images + captions</strong></div>
 </div>
 <div class="mm-callout"><span class="mm-live-status">LOCAL INFERENCE VERIFIED</span><p style="margin-bottom:0">The FastAPI backend and browser interface have been run locally with all three trained model artifacts. A public hosted inference endpoint has not been deployed.</p></div>
+</div>
+
+<div class="box mm-overview-box">
+<h3>Live Project</h3>
+<div class="mm-overview-live">
+<div class="mm-overview-icon" aria-hidden="true">◎</div>
+<strong>Multimodal inference dashboard</strong>
+<span class="mm-overview-ready">DEMO INTERFACE READY</span>
+<p>Test one image-caption pair and compare predictions from the image-only CNN, text-only BiLSTM and multimodal fusion model.</p>
+<div class="mm-overview-api" role="status"><span class="mm-overview-dot"></span><span id="mm-overview-api-state">API NOT CONNECTED</span></div>
+<div class="mm-overview-models"><span>Image CNN</span><span>Text BiLSTM</span><span>Fusion model</span></div>
+<a class="btn primary mm-overview-link" href="#local-demo">Open Live Dashboard ↓</a>
+<p class="mm-overview-help">For this student demo, start the FastAPI service on your Mac. Your Mac's localhost is accessible only from your own device, not from other portfolio visitors.</p>
+</div>
 </div>
 
 <div class="box">
@@ -175,7 +206,7 @@ Browser-based comparison interface</div>
 
 <div class="box" id="local-demo">
 <h3>Live Multimodal Demo</h3>
-<p>Upload an image and enter its caption directly on this portfolio page. The hosted inference API evaluates the same pair with all three trained models and returns their class probabilities here, without opening a separate application.</p>
+<p>Upload an image and enter its caption directly on this portfolio page. The local FastAPI inference service evaluates the same pair with all three trained models and returns their class probabilities here, without opening a separate application.</p>
 <div class="mm-gallery">
 <figure><img src="images/demo-input.png" alt="Multimodal demo image upload and caption input" loading="lazy"><figcaption>Image upload and associated caption</figcaption></figure>
 <figure><img src="images/demo-predictions.png" alt="Image CNN, text BiLSTM and multimodal fusion predictions" loading="lazy"><figcaption>Three-model predictions and held-out validation metrics</figcaption></figure>
@@ -183,10 +214,10 @@ Browser-based comparison interface</div>
 <div class="mm-live-shell" id="mm-live">
 <div class="mm-live-top"><div><div class="eyebrow">INTERACTIVE INFERENCE</div><h3 style="margin:5px 0 0">Test an image-caption pair</h3></div><span class="mm-live-state" id="mm-api-state" role="status">API NOT CONNECTED</span></div>
 <div class="mm-api-connect">
-<input id="mm-api-url" type="url" inputmode="url" placeholder="https://your-inference-service.hf.space" aria-label="Inference API URL">
+<input id="mm-api-url" type="url" inputmode="url" placeholder="http://127.0.0.1:8000" aria-label="Inference API URL">
 <button type="button" id="mm-connect">Connect / Check</button>
 </div>
-<p class="mm-live-help">The portfolio is hosted as a static site. Predictions require the separate FastAPI inference service to be running and all three trained model files plus the text vocabulary to be available. The API address will be preconfigured here after deployment.</p>
+<p class="mm-live-help">This page is static, so predictions require the FastAPI service to be running on your Mac with all three trained models and the text vocabulary available. For your local demonstration, enter http://127.0.0.1:8000. Other portfolio visitors cannot access the localhost service running on your Mac.</p>
 <form class="mm-live-form" id="mm-live-form">
 <label class="mm-live-upload" for="mm-file"><span id="mm-upload-label"><strong>＋ Choose an image</strong><br><small>JPEG, PNG or WebP · maximum 12 MB</small></span><input id="mm-file" type="file" accept="image/jpeg,image/png,image/webp" required><img id="mm-preview" alt="Selected image preview" hidden></label>
 <label for="mm-caption">Associated caption<textarea id="mm-caption" rows="3" placeholder="Describe the image..." required></textarea></label>
@@ -199,7 +230,7 @@ Browser-based comparison interface</div>
 <article class="mm-live-card"><h4>Multimodal fusion</h4><p class="mm-predicted">Combined image and caption features</p></article>
 </div>
 </div>
-<p class="mm-note">The live interface is embedded in this portfolio page. Its inference API is a separate backend service; the page will only show predictions after that service reports all three trained models as ready. No simulated predictions are displayed.</p>
+<p class="mm-note">The live interface is embedded in this portfolio page. It shows real predictions only after your local FastAPI service reports that all three trained models and the vocabulary are ready. No simulated predictions are displayed.</p>
 </div>
 
 <div class="box">
@@ -219,7 +250,14 @@ const modelTitles={image_only:"Image-only CNN",text_only:"Text-only BiLSTM",mult
 let connectedBase="",previewUrl="";
 const configured=window.MM_API_BASE||localStorage.getItem("multimodalInferenceApi")||"";
 apiInput.value=configured;
-function setState(label,kind){state.textContent=label;state.className="mm-live-state"+(kind?" "+kind:"")}
+function setState(label,kind){
+ state.textContent=label;state.className="mm-live-state"+(kind?" "+kind:"");
+ const overview=$("mm-overview-api-state");
+ if(overview){
+  overview.textContent=kind==="online"?"API ONLINE · 3/3 MODELS READY":label;
+  overview.className="mm-overview-api"+(kind?" "+kind:"");
+ }
+}
 function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
 async function connect(){
  const base=baseUrl();
