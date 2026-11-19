@@ -208,7 +208,6 @@ function setStatus(label,kind){
 function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
 async function loadValidationMetrics(){
  const target=$("validation-metrics");
- target.replaceChildren();
  try{
   const response=await fetch(apiBase+"/api/metrics",{cache:"no-store",mode:"cors",targetAddressSpace:"loopback"});
   if(!response.ok)throw new Error("Metrics request failed (HTTP "+response.status+").");
@@ -219,6 +218,7 @@ async function loadValidationMetrics(){
    ["text_only","Text-only BiLSTM"],
    ["multimodal","Multimodal fusion"]
   ];
+  const cards=[];
   const metricValue=(model,keys)=>{
    for(const key of keys){
     const value=Number(model[key]);
@@ -243,9 +243,10 @@ async function loadValidationMetrics(){
     const result=document.createElement("strong");result.textContent=value;
     row.append(label,result);card.append(row);
    }
-   target.append(card);
+   cards.push(card);
   }
-  if(!target.children.length)throw new Error("No model metrics were found in the saved report.");
+  if(!cards.length)throw new Error("No model metrics were found in the saved report.");
+  target.replaceChildren(...cards);
   const sourceNote=$("validation-source-note");
   if(sourceNote)sourceNote.textContent="Loaded the saved evaluation report from your running local FastAPI service.";
  }catch(error){
