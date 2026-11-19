@@ -135,11 +135,12 @@
     </div>
     <p class="dashNote" style="margin:13px 0 0">Selected MS COCO 2017 subset. Ground-truth labels come from instance annotations; captions are the text-model input. The split uses separate official train2017 and val2017 images.</p>
     <div class="classPills" aria-label="Six target classes"><span>Bicycle</span><span>Bird</span><span>Bus</span><span>Cat</span><span>Dog</span><span>Horse</span></div>
-    <h3 class="validationTitle">Held-out validation label support</h3>
-    <div class="classPills" id="class-support"><span>Load validation report to see actual positive-label counts</span></div>
-    <h3 class="validationTitle">Saved held-out validation results</h3>
+    <h3 class="validationTitle">Saved held-out validation results · 750 images</h3>
+    <p class="metricsMessage" id="validation-source-note">Recorded evaluation from your saved model comparison. These figures remain visible when the local API is offline.</p>
     <div class="validationGrid" id="validation-metrics" aria-live="polite">
-      <p class="metricsMessage">Connect to your local API to load the saved evaluation report.</p>
+      <article class="validationCard"><h4>Image-only CNN</h4><div class="validationMetric"><span>Macro F1</span><strong>0.7043</strong></div><div class="validationMetric"><span>Micro F1</span><strong>0.6972</strong></div><div class="validationMetric"><span>mAP</span><strong>0.8536</strong></div><div class="validationMetric"><span>Exact match</span><strong>0.4000</strong></div></article>
+      <article class="validationCard"><h4>Text-only BiLSTM</h4><div class="validationMetric"><span>Macro F1</span><strong>0.7551</strong></div><div class="validationMetric"><span>Micro F1</span><strong>0.7471</strong></div><div class="validationMetric"><span>mAP</span><strong>0.8402</strong></div><div class="validationMetric"><span>Exact match</span><strong>0.5067</strong></div></article>
+      <article class="validationCard"><h4>Multimodal fusion</h4><div class="validationMetric"><span>Macro F1</span><strong>0.7593</strong></div><div class="validationMetric"><span>Micro F1</span><strong>0.7498</strong></div><div class="validationMetric"><span>mAP</span><strong>0.9036</strong></div><div class="validationMetric"><span>Exact match</span><strong>0.5067</strong></div></article>
     </div>
   </div>
 </section>
@@ -147,9 +148,44 @@
 <section class="resultsSection" aria-labelledby="results-title">
   <div class="resultsHead"><div><h2 id="results-title">Model Predictions</h2><p>Independent sigmoid probabilities for the six target classes.</p></div></div>
   <div class="resultsGrid" id="results-grid" aria-live="polite">
-    <article class="resultCard"><h3>Image-only CNN</h3><p class="predicted">Waiting for a real prediction.</p></article>
-    <article class="resultCard"><h3>Text-only BiLSTM</h3><p class="predicted">Waiting for a real prediction.</p></article>
-    <article class="resultCard"><h3>Multimodal fusion</h3><p class="predicted">Waiting for a real prediction.</p></article>
+    <article class="resultCard"><h3>Image-only CNN</h3><p class="predicted">Waiting for a new live prediction.</p></article>
+    <article class="resultCard"><h3>Text-only BiLSTM</h3><p class="predicted">Waiting for a new live prediction.</p></article>
+    <article class="resultCard"><h3>Multimodal fusion</h3><p class="predicted">Waiting for a new live prediction.</p></article>
+  </div>
+  <p class="dashNote" style="margin-top:10px">This section updates only when you submit a new image and caption to the connected API.</p>
+</section>
+
+<section class="card2 datasetPanel" aria-labelledby="example-title" style="margin-top:18px">
+  <div class="title2">RECORDED LOCAL INFERENCE EXAMPLE</div>
+  <div class="panel">
+    <h2 id="example-title" style="font-size:19px;margin:0 0 7px">Example: dog resting beside a bicycle</h2>
+    <p class="dashNote">A recorded prediction from the successful local demo shown in your uploaded screenshot. It is an example run, not the output for a new upload.</p>
+    <div class="resultsGrid">
+      <article class="resultCard"><h3>Image-only CNN</h3><p class="predicted">Predicted: bicycle, dog</p>
+        <div class="scoreRow"><span>bicycle</span><div class="scoreTrack"><div class="scoreFill" style="width:99.9%"></div></div><span class="scoreValue">99.9%</span></div>
+        <div class="scoreRow"><span>dog</span><div class="scoreTrack"><div class="scoreFill" style="width:95.6%"></div></div><span class="scoreValue">95.6%</span></div>
+        <div class="scoreRow"><span>cat</span><div class="scoreTrack"><div class="scoreFill" style="width:19%"></div></div><span class="scoreValue">19.0%</span></div>
+        <div class="scoreRow"><span>bus</span><div class="scoreTrack"><div class="scoreFill" style="width:12.1%"></div></div><span class="scoreValue">12.1%</span></div>
+        <div class="scoreRow"><span>horse</span><div class="scoreTrack"><div class="scoreFill" style="width:4.7%"></div></div><span class="scoreValue">4.7%</span></div>
+        <div class="scoreRow"><span>bird</span><div class="scoreTrack"><div class="scoreFill" style="width:1.6%"></div></div><span class="scoreValue">1.6%</span></div>
+      </article>
+      <article class="resultCard"><h3>Text-only BiLSTM</h3><p class="predicted">Predicted: dog, cat</p>
+        <div class="scoreRow"><span>dog</span><div class="scoreTrack"><div class="scoreFill" style="width:59%"></div></div><span class="scoreValue">59.0%</span></div>
+        <div class="scoreRow"><span>cat</span><div class="scoreTrack"><div class="scoreFill" style="width:50.5%"></div></div><span class="scoreValue">50.5%</span></div>
+        <div class="scoreRow"><span>bicycle</span><div class="scoreTrack"><div class="scoreFill" style="width:47.6%"></div></div><span class="scoreValue">47.6%</span></div>
+        <div class="scoreRow"><span>bird</span><div class="scoreTrack"><div class="scoreFill" style="width:47%"></div></div><span class="scoreValue">47.0%</span></div>
+        <div class="scoreRow"><span>bus</span><div class="scoreTrack"><div class="scoreFill" style="width:40.6%"></div></div><span class="scoreValue">40.6%</span></div>
+        <div class="scoreRow"><span>horse</span><div class="scoreTrack"><div class="scoreFill" style="width:39.6%"></div></div><span class="scoreValue">39.6%</span></div>
+      </article>
+      <article class="resultCard"><h3>Multimodal fusion</h3><p class="predicted">Predicted: bicycle</p>
+        <div class="scoreRow"><span>bicycle</span><div class="scoreTrack"><div class="scoreFill" style="width:100%"></div></div><span class="scoreValue">100.0%</span></div>
+        <div class="scoreRow"><span>bus</span><div class="scoreTrack"><div class="scoreFill" style="width:38.9%"></div></div><span class="scoreValue">38.9%</span></div>
+        <div class="scoreRow"><span>dog</span><div class="scoreTrack"><div class="scoreFill" style="width:23.8%"></div></div><span class="scoreValue">23.8%</span></div>
+        <div class="scoreRow"><span>bird</span><div class="scoreTrack"><div class="scoreFill" style="width:10.2%"></div></div><span class="scoreValue">10.2%</span></div>
+        <div class="scoreRow"><span>cat</span><div class="scoreTrack"><div class="scoreFill" style="width:7.8%"></div></div><span class="scoreValue">7.8%</span></div>
+        <div class="scoreRow"><span>horse</span><div class="scoreTrack"><div class="scoreFill" style="width:3.4%"></div></div><span class="scoreValue">3.4%</span></div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -210,21 +246,11 @@ async function loadValidationMetrics(){
    target.append(card);
   }
   if(!target.children.length)throw new Error("No model metrics were found in the saved report.");
-  const supportTarget=$("class-support");
-  const supportSource=payload.report.models.image_only||payload.report.models.text_only||payload.report.models.multimodal;
-  const supportData=supportSource?.per_class||{};
-  const classNames=["bicycle","bird","bus","cat","dog","horse"];
-  supportTarget.replaceChildren();
-  for(const className of classNames){
-   const positiveCount=Number(supportData[className]?.support);
-   const pill=document.createElement("span");
-   pill.textContent=className[0].toUpperCase()+className.slice(1)+" · "+(Number.isFinite(positiveCount)?positiveCount:"—")+" positives";
-   supportTarget.append(pill);
-  }
+  const sourceNote=$("validation-source-note");
+  if(sourceNote)sourceNote.textContent="Loaded the saved evaluation report from your running local FastAPI service.";
  }catch(error){
-  const p=document.createElement("p");p.className="metricsMessage";
-  p.textContent="Could not load the saved evaluation metrics: "+error.message;
-  target.replaceChildren(p);
+  const sourceNote=$("validation-source-note");
+  if(sourceNote)sourceNote.textContent="Showing the saved validation results recorded for this project. Start and connect the local API to refresh them from the evaluation JSON file.";
  }
 }
 async function connect(){
