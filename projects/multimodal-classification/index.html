@@ -7,6 +7,39 @@
 <link rel="stylesheet" href="../../css/style.css?v=20261007-7">
 <style>
 .mm-results{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}.mm-results th,.mm-results td{padding:12px 10px;border-bottom:1px solid rgba(120,190,255,.13);text-align:left}.mm-results th{color:#9edff4;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.mm-results td:not(:first-child){font-variant-numeric:tabular-nums}.mm-results tr:last-child td{border-bottom:0}.mm-results tr.best td{color:#8bf0ce}.mm-bars{display:grid;gap:13px;margin-top:17px}.mm-bar-row{display:grid;grid-template-columns:125px 1fr 55px;gap:10px;align-items:center;font-size:12px}.mm-track{height:9px;border-radius:20px;background:#1c2d40;overflow:hidden}.mm-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#25d6ed,#80e5bd)}.mm-bar-row strong{text-align:right;font-variant-numeric:tabular-nums}.mm-note{font-size:12px;color:#91a7b2;line-height:1.7;margin-top:14px}.mm-callout{border:1px solid rgba(57,216,255,.18);background:rgba(14,44,62,.22);border-radius:13px;padding:15px 17px;margin-top:15px}.mm-code{white-space:pre;overflow:auto;background:#040b14;border:1px solid rgba(120,190,255,.13);border-radius:12px;padding:17px;color:#b6d5e6;font:12px/1.8 ui-monospace,SFMono-Regular,monospace}.mm-code .hl{color:#7ce0c3}.mm-stage{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-top:15px}.mm-stage div{padding:14px 10px;border:1px solid rgba(120,190,255,.15);border-radius:12px;background:rgba(255,255,255,.025);text-align:center}.mm-stage strong{display:block;color:#d9f7ff;font-size:13px}.mm-stage small{display:block;color:#91a7b2;font-size:11px;margin-top:4px}.mm-arrow{color:#7ce0c3;font-size:20px}.mm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}.mm-stat{padding:15px;border:1px solid rgba(120,190,255,.13);border-radius:12px;background:rgba(255,255,255,.025)}.mm-stat b{display:block;color:#7ce0c3;font-size:25px}.mm-stat span{font-size:11px;color:#91a7b2}.mm-demo{display:flex;flex-wrap:wrap;gap:10px}.mm-demo a{color:#9edff4}.mm-live-status{display:inline-flex;padding:6px 10px;border-radius:99px;border:1px solid rgba(124,224,195,.25);color:#7ce0c3;font-size:11px;letter-spacing:.05em}@media(max-width:700px){.mm-stage{grid-template-columns:1fr}.mm-arrow{transform:rotate(90deg);text-align:center}.mm-stats{grid-template-columns:1fr}.mm-bar-row{grid-template-columns:92px 1fr 48px}.mm-results{font-size:11px}.mm-results th,.mm-results td{padding:9px 5px}}
+
+.mm-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.mm-gallery figure{margin:0;border:1px solid rgba(120,190,255,.15);border-radius:13px;overflow:hidden;background:rgba(5,12,22,.7)}
+.mm-gallery img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#07111b}
+.mm-gallery figcaption{padding:10px 12px;color:#91a7b2;font-size:12px}
+.mm-live-shell{border:1px solid rgba(124,224,195,.22);border-radius:16px;padding:17px;background:linear-gradient(145deg,rgba(9,23,32,.88),rgba(7,14,25,.82));margin-top:14px}
+.mm-live-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mm-live-state{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,190,90,.3);border-radius:99px;padding:7px 11px;color:#ffd18a;font:11px ui-monospace,monospace}
+.mm-live-state:before{content:"";width:7px;height:7px;background:#e9ae5b;border-radius:50%}
+.mm-live-state.online{border-color:rgba(105,255,189,.3);color:#69ffbd}
+.mm-live-state.online:before{background:#69ffbd}
+.mm-live-state.error{border-color:rgba(255,93,108,.35);color:#ff8790}
+.mm-api-connect{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;margin-top:14px}
+.mm-api-connect input,.mm-live-shell input[type=file],.mm-live-shell textarea{width:100%;min-width:0;border:1px solid rgba(120,190,255,.2);border-radius:10px;background:#07111b;color:#eef4fa;padding:12px;font:inherit}
+.mm-api-connect button,.mm-live-btn{border:0;border-radius:10px;background:linear-gradient(90deg,#26c6d9,#7ce0c3);color:#06140f;font:700 13px inherit;padding:12px 17px;cursor:pointer}
+.mm-live-shell button:disabled{opacity:.55;cursor:wait}
+.mm-live-help{color:#91a7b2;font-size:11px;line-height:1.65;margin:9px 0 0}
+.mm-live-form{display:grid;grid-template-columns:minmax(0,1fr);gap:11px;margin-top:17px}
+.mm-live-upload{display:flex;align-items:center;justify-content:center;min-height:190px;border:1px dashed #526b7b;border-radius:12px;background:#111f2e;text-align:center;padding:16px;cursor:pointer;overflow:hidden}
+.mm-live-upload input{position:absolute;width:1px;height:1px;opacity:0}
+.mm-live-upload img{max-width:100%;max-height:260px;object-fit:contain;border-radius:8px}
+.mm-live-shell textarea{resize:vertical;min-height:92px;margin-top:6px}
+.mm-live-message{min-height:22px;color:#91a7b2;font-size:12px;margin:7px 0 0}
+.mm-live-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-top:16px}
+.mm-live-card{min-width:0;border:1px solid rgba(120,190,255,.15);border-radius:12px;padding:13px;background:rgba(5,12,22,.78)}
+.mm-live-card h4{font-size:13px;margin:0 0 8px;color:#eef4fa}
+.mm-live-card .mm-predicted{font-size:11px;line-height:1.5;color:#7ce0c3;min-height:32px;margin:0 0 10px}
+.mm-live-score{display:grid;grid-template-columns:54px minmax(20px,1fr) 43px;align-items:center;gap:7px;margin:8px 0;font-size:10px}
+.mm-live-track{height:7px;background:#26384a;border-radius:99px;overflow:hidden}
+.mm-live-fill{height:100%;background:linear-gradient(90deg,#7ce0c3,#9bbcff)}
+.mm-live-percent{text-align:right;color:#91a7b2;font-variant-numeric:tabular-nums}
+@media(max-width:700px){.mm-gallery,.mm-live-results{grid-template-columns:1fr}.mm-api-connect{grid-template-columns:1fr}.mm-live-shell{padding:13px}}
+
 </style>
 </head>
 <body>
@@ -21,7 +54,7 @@
 <div class="actions">
 <a class="btn primary" href="https://github.com/dnagaraju271/multimodal-image-text-classification" target="_blank" rel="noopener">Source Code on GitHub</a>
 <a class="btn" href="#results">View Experimental Results</a>
-<a class="btn" href="#local-demo">Run the Local Demo</a>
+<a class="btn" href="#local-demo">Try Live Demo</a>
 </div>
 </section>
 <div class="detailGrid">
@@ -141,19 +174,32 @@ Browser-based comparison interface</div>
 </div>
 
 <div class="box" id="local-demo">
-<h3>Interactive Website — Local Research Demo</h3>
-<p>The browser interface accepts an image and its associated caption, then displays independent predictions from the image-only CNN, text-only BiLSTM and multimodal fusion model. It also reads the saved validation comparison report.</p>
-<div class="mm-demo">
-<a href="https://github.com/dnagaraju271/multimodal-image-text-classification/tree/main/frontend" target="_blank" rel="noopener">Frontend source</a>
-<a href="https://github.com/dnagaraju271/multimodal-image-text-classification/tree/main/src/api" target="_blank" rel="noopener">FastAPI backend</a>
-<a href="https://github.com/dnagaraju271/multimodal-image-text-classification#local-research-demo-website" target="_blank" rel="noopener">Run instructions in README</a>
+<h3>Live Multimodal Demo</h3>
+<p>Upload an image and enter its caption directly on this portfolio page. The hosted inference API evaluates the same pair with all three trained models and returns their class probabilities here, without opening a separate application.</p>
+<div class="mm-gallery">
+<figure><img src="images/demo-input.png" alt="Multimodal demo image upload and caption input" loading="lazy"><figcaption>Image upload and associated caption</figcaption></figure>
+<figure><img src="images/demo-predictions.png" alt="Image CNN, text BiLSTM and multimodal fusion predictions" loading="lazy"><figcaption>Three-model predictions and held-out validation metrics</figcaption></figure>
 </div>
-<div class="mm-code" style="margin-top:14px"># From the project repository, with the environment activated
-uvicorn src.api.main:app --reload
-
-# Open in your browser
-http://127.0.0.1:8000</div>
-<p class="mm-note">The web application is currently a local prototype and requires the trained model files on the machine running FastAPI. This portfolio page is public; the inference service itself is not yet hosted for public visitors.</p>
+<div class="mm-live-shell" id="mm-live">
+<div class="mm-live-top"><div><div class="eyebrow">INTERACTIVE INFERENCE</div><h3 style="margin:5px 0 0">Test an image-caption pair</h3></div><span class="mm-live-state" id="mm-api-state" role="status">API NOT CONNECTED</span></div>
+<div class="mm-api-connect">
+<input id="mm-api-url" type="url" inputmode="url" placeholder="https://your-inference-service.hf.space" aria-label="Inference API URL">
+<button type="button" id="mm-connect">Connect / Check</button>
+</div>
+<p class="mm-live-help">The portfolio is hosted as a static site. Predictions require the separate FastAPI inference service to be running and all three trained model files plus the text vocabulary to be available. The API address will be preconfigured here after deployment.</p>
+<form class="mm-live-form" id="mm-live-form">
+<label class="mm-live-upload" for="mm-file"><span id="mm-upload-label"><strong>＋ Choose an image</strong><br><small>JPEG, PNG or WebP · maximum 12 MB</small></span><input id="mm-file" type="file" accept="image/jpeg,image/png,image/webp" required><img id="mm-preview" alt="Selected image preview" hidden></label>
+<label for="mm-caption">Associated caption<textarea id="mm-caption" rows="3" placeholder="Describe the image..." required></textarea></label>
+<button class="mm-live-btn" id="mm-run" type="submit" disabled>Compare all three models →</button>
+<p class="mm-live-message" id="mm-message" aria-live="polite">Connect to the inference API to enable live predictions.</p>
+</form>
+<div class="mm-live-results" id="mm-live-results" aria-live="polite">
+<article class="mm-live-card"><h4>Image-only CNN</h4><p class="mm-predicted">EfficientNetB0 visual features</p></article>
+<article class="mm-live-card"><h4>Text-only BiLSTM</h4><p class="mm-predicted">Caption embeddings and recurrent features</p></article>
+<article class="mm-live-card"><h4>Multimodal fusion</h4><p class="mm-predicted">Combined image and caption features</p></article>
+</div>
+</div>
+<p class="mm-note">The live interface is embedded in this portfolio page. Its inference API is a separate backend service; the page will only show predictions after that service reports all three trained models as ready. No simulated predictions are displayed.</p>
 </div>
 
 <div class="box">
@@ -164,6 +210,98 @@ http://127.0.0.1:8000</div>
 </div>
 </main>
 <footer class="footer">Nagaraju Dharavath • Embedded Software &amp; AI Engineering</footer>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const state=$("mm-api-state"),apiInput=$("mm-api-url"),run=$("mm-run"),message=$("mm-message"),form=$("mm-live-form");
+const modelTitles={image_only:"Image-only CNN",text_only:"Text-only BiLSTM",multimodal:"Multimodal fusion"};
+let connectedBase="",previewUrl="";
+const configured=window.MM_API_BASE||localStorage.getItem("multimodalInferenceApi")||"";
+apiInput.value=configured;
+function setState(label,kind){state.textContent=label;state.className="mm-live-state"+(kind?" "+kind:"")}
+function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
+async function connect(){
+ const base=baseUrl();
+ connectedBase="";run.disabled=true;
+ if(!base){setState("API URL REQUIRED","error");message.textContent="The inference service has not been configured yet.";return false}
+ setState("CHECKING API","");
+ message.textContent="Checking service health and trained model files…";
+ try{
+  const health=await fetch(base+"/api/health",{cache:"no-store"});
+  if(!health.ok)throw new Error("Health check failed (HTTP "+health.status+").");
+  const statusResponse=await fetch(base+"/api/models/status",{cache:"no-store"});
+  if(!statusResponse.ok)throw new Error("Model status check failed (HTTP "+statusResponse.status+").");
+  const status=await statusResponse.json();
+  const count=Object.values(status.models||{}).filter(Boolean).length;
+  if(!status.ready||count!==3||!status.vocabulary){
+   setState("API ONLINE · MODELS NOT READY","error");
+   message.textContent=status.message||"All three models and the text vocabulary must be available.";
+   return false;
+  }
+  connectedBase=base;
+  localStorage.setItem("multimodalInferenceApi",base);
+  setState("API ONLINE · 3/3 MODELS READY","online");
+  message.textContent="Connected. Upload an image and enter its associated caption.";
+  run.disabled=false;
+  return true;
+ }catch(error){
+  setState("API CONNECTION FAILED","error");
+  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the API. Check the URL, service status and allowed CORS origin.":error.message;
+  return false;
+ }
+}
+$("mm-connect").addEventListener("click",connect);
+apiInput.addEventListener("change",()=>{connectedBase="";run.disabled=true;setState("CHECK CONNECTION","");message.textContent="The API address changed. Connect again before running predictions."});
+$("mm-file").addEventListener("change",()=>{
+ const file=$("mm-file").files[0];if(!file)return;
+ if(previewUrl)URL.revokeObjectURL(previewUrl);
+ previewUrl=URL.createObjectURL(file);
+ $("mm-preview").src=previewUrl;$("mm-preview").hidden=false;
+ $("mm-upload-label").innerHTML="<strong>"+file.name.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))+"</strong><br><small>"+(file.size/1024/1024).toFixed(2)+" MB · selected</small>";
+});
+function renderCard(name,data){
+ const card=document.createElement("article");card.className="mm-live-card";
+ const heading=document.createElement("h4");heading.textContent=modelTitles[name]||name;card.append(heading);
+ const predicted=document.createElement("p");predicted.className="mm-predicted";
+ predicted.textContent="Predicted: "+(data.predicted_labels?.length?data.predicted_labels.join(", "):"no class above 0.50");card.append(predicted);
+ for(const item of data.ranked_classes||[]){
+  const row=document.createElement("div");row.className="mm-live-score";
+  const label=document.createElement("span");label.textContent=item.class;
+  const track=document.createElement("div");track.className="mm-live-track";
+  const fill=document.createElement("div");fill.className="mm-live-fill";
+  const probability=Math.max(0,Math.min(1,Number(item.probability)||0));fill.style.width=(probability*100)+"%";track.append(fill);
+  const percent=document.createElement("span");percent.className="mm-live-percent";percent.textContent=(probability*100).toFixed(1)+"%";
+  row.append(label,track,percent);card.append(row);
+ }
+ return card;
+}
+form.addEventListener("submit",async event=>{
+ event.preventDefault();
+ const file=$("mm-file").files[0],caption=$("mm-caption").value.trim();
+ if(!file){message.textContent="Choose an image first.";return}
+ if(file.size>12*1024*1024){message.textContent="The image exceeds the 12 MB upload limit.";return}
+ if(!caption){message.textContent="Enter the associated caption.";return}
+ if(!connectedBase&&!await connect())return;
+ const body=new FormData();body.append("file",file);body.append("caption",caption);
+ run.disabled=true;run.textContent="Running three models…";message.textContent="Uploading the image-caption pair and running inference…";
+ try{
+  const response=await fetch(connectedBase+"/api/predict",{method:"POST",body});
+  const payload=await response.json();
+  if(!response.ok)throw new Error(payload.detail||"Prediction failed (HTTP "+response.status+").");
+  const results=payload.results||{};
+  const required=["image_only","text_only","multimodal"];
+  const missing=required.filter(key=>!results[key]);
+  if(missing.length)throw new Error("The API did not return all three model outputs: "+missing.join(", "));
+  $("mm-live-results").replaceChildren(...required.map(key=>renderCard(key,results[key])));
+  message.textContent="Predictions completed. Probabilities are independent sigmoid scores with a 0.50 decision threshold.";
+ }catch(error){message.textContent=error.message}
+ finally{run.disabled=!connectedBase;run.textContent="Compare all three models →"}
+});
+if(configured){connect()}else{setState("API NOT CONNECTED","");}
+})();
+</script>
+
 <script src="../../js/app.js?v=20261119-1"></script>
 </body>
 </html>
