@@ -53,6 +53,24 @@
 .scoreFill{height:100%;background:linear-gradient(90deg,#7ce0c3,#9bbcff);border-radius:99px}
 .scoreValue{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
 .notePanel{margin-top:18px;padding:15px 17px;border:1px solid rgba(57,216,255,.16);border-radius:14px;background:rgba(14,44,62,.18);color:var(--muted);font-size:12px;line-height:1.7}
+.datasetPanel{margin-top:18px}
+.datasetGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.datasetMetric{padding:15px;background:#0d151f;border:1px solid var(--line);border-radius:12px}
+.datasetMetric span{display:block;color:var(--muted);font:10px ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase}
+.datasetMetric strong{display:block;color:var(--mint);font-size:24px;margin-top:6px}
+.classPills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.classPills span{padding:6px 10px;border:1px solid rgba(120,190,255,.17);border-radius:99px;background:rgba(255,255,255,.025);color:#b9d1df;font-size:11px}
+.validationTitle{margin:22px 0 10px;font-size:16px;color:#eaf5ff}
+.validationGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.validationCard{min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0d151f}
+.validationCard h4{font-size:13px;margin:0 0 11px;color:#eaf5ff}
+.validationMetric{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid rgba(120,190,255,.1);font-size:11px}
+.validationMetric:last-child{border-bottom:0}
+.validationMetric span{color:var(--muted)}
+.validationMetric strong{color:var(--mint);font-variant-numeric:tabular-nums}
+.metricsMessage{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+@media(max-width:900px){.datasetGrid{grid-template-columns:repeat(2,1fr)}.validationGrid{grid-template-columns:1fr}}
+@media(max-width:600px){.datasetGrid{grid-template-columns:1fr 1fr}}
 .foot{text-align:center;color:var(--muted);font-size:11px;padding:22px 0}
 @media(max-width:900px){.workspace{grid-template-columns:1fr}.resultsGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.dashboardPage{padding:30px 17px 60px}.dashTop{flex-direction:column}.dashStatus{align-self:flex-start}.dashControls{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.resultsGrid{grid-template-columns:1fr}.resultsHead{align-items:flex-start;flex-direction:column}.preview{min-height:260px}}
@@ -73,7 +91,7 @@
   <input id="api-url" class="dashInput" type="url" inputmode="url" aria-label="Inference API URL" placeholder="http://127.0.0.1:8000">
   <button id="connect" class="btn primary" type="button">Connect / Check API</button>
 </div>
-<p class="dashNote">For your local college demonstration, run the FastAPI service on your Mac and use <strong>http://127.0.0.1:8000</strong>. Your browser sends the selected image and caption to that service. No simulated predictions are displayed.</p>
+<p class="dashNote">For your local college demonstration, run the FastAPI service on your Mac and use <strong>http://127.0.0.1:8000</strong>. Click <strong>Connect / Check API</strong> and allow Chrome's Loopback network permission when prompted. No simulated predictions are displayed.</p>
 
 <section class="metrics" aria-label="Model setup">
   <div class="metric"><span>MODEL BRANCHES</span><strong>3 trained models</strong></div>
@@ -106,6 +124,24 @@
   </div>
 </section>
 
+<section class="card2 datasetPanel" aria-labelledby="dataset-title">
+  <div class="title2">DATASET • COCO 2017</div>
+  <div class="panel">
+    <div class="datasetGrid">
+      <div class="datasetMetric"><span>Training images</span><strong>3,000</strong></div>
+      <div class="datasetMetric"><span>Validation images</span><strong>750</strong></div>
+      <div class="datasetMetric"><span>Total paired images</span><strong>3,750</strong></div>
+      <div class="datasetMetric"><span>Target classes</span><strong>6</strong></div>
+    </div>
+    <p class="dashNote" style="margin:13px 0 0">Selected MS COCO 2017 subset. Ground-truth labels come from instance annotations; captions are the text-model input. The split uses separate official train2017 and val2017 images.</p>
+    <div class="classPills" aria-label="Six target classes"><span>Bicycle</span><span>Bird</span><span>Bus</span><span>Cat</span><span>Dog</span><span>Horse</span></div>
+    <h3 class="validationTitle">Saved held-out validation results</h3>
+    <div class="validationGrid" id="validation-metrics" aria-live="polite">
+      <p class="metricsMessage">Connect to your local API to load the saved evaluation report.</p>
+    </div>
+  </div>
+</section>
+
 <section class="resultsSection" aria-labelledby="results-title">
   <div class="resultsHead"><div><h2 id="results-title">Model Predictions</h2><p>Independent sigmoid probabilities for the six target classes.</p></div></div>
   <div class="resultsGrid" id="results-grid" aria-live="polite">
@@ -132,6 +168,52 @@ function setStatus(label,kind){
  status.className="dashStatus"+(kind?" "+kind:"");
 }
 function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
+async function loadValidationMetrics(){
+ const target=$("validation-metrics");
+ target.replaceChildren();
+ try{
+  const response=await fetch(apiBase+"/api/metrics",{cache:"no-store"});
+  if(!response.ok)throw new Error("Metrics request failed (HTTP "+response.status+").");
+  const payload=await response.json();
+  if(!payload.available||!payload.report||!payload.report.models)throw new Error(payload.message||"Saved evaluation report is not available.");
+  const names=[
+   ["image_only","Image-only CNN"],
+   ["text_only","Text-only BiLSTM"],
+   ["multimodal","Multimodal fusion"]
+  ];
+  const metricValue=(model,keys)=>{
+   for(const key of keys){
+    const value=Number(model[key]);
+    if(Number.isFinite(value))return value.toFixed(4);
+   }
+   return "—";
+  };
+  for(const [key,title] of names){
+   const model=payload.report.models[key];
+   if(!model)continue;
+   const card=document.createElement("article");card.className="validationCard";
+   const heading=document.createElement("h4");heading.textContent=title;card.append(heading);
+   const rows=[
+    ["Macro F1",metricValue(model,["macro_f1"])],
+    ["Micro F1",metricValue(model,["micro_f1"])],
+    ["mAP",metricValue(model,["mean_average_precision","map","mAP"])],
+    ["Exact match",metricValue(model,["exact_match_accuracy","exact_match","subset_accuracy"])]
+   ];
+   for(const [labelText,value] of rows){
+    const row=document.createElement("div");row.className="validationMetric";
+    const label=document.createElement("span");label.textContent=labelText;
+    const result=document.createElement("strong");result.textContent=value;
+    row.append(label,result);card.append(row);
+   }
+   target.append(card);
+  }
+  if(!target.children.length)throw new Error("No model metrics were found in the saved report.");
+ }catch(error){
+  const p=document.createElement("p");p.className="metricsMessage";
+  p.textContent="Could not load the saved evaluation metrics: "+error.message;
+  target.replaceChildren(p);
+ }
+}
 async function connect(){
  const base=baseUrl();
  apiBase="";runButton.disabled=true;
@@ -156,6 +238,7 @@ async function connect(){
   setStatus("API ONLINE · 3/3 MODELS READY","online");
   message.textContent="Connected successfully. Select an image and enter its associated caption.";
   runButton.disabled=false;
+  await loadValidationMetrics();
   return true;
  }catch(error){
   setStatus("API CONNECTION FAILED","error");
@@ -223,7 +306,8 @@ form.addEventListener("submit",async event=>{
   runButton.disabled=!apiBase;runButton.textContent="Compare all three models →";
  }
 });
-connect();
+setStatus("API NOT CONNECTED","");
+message.textContent="Start FastAPI, then click Connect / Check API. Chrome may ask permission to access localhost.";
 })();
 </script>
 <script src="../../../js/app.js?v=20261119-1"></script>
