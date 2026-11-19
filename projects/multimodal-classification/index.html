@@ -71,7 +71,7 @@
 <div class="actions">
 <a class="btn primary" href="https://github.com/dnagaraju271/multimodal-image-text-classification" target="_blank" rel="noopener">Source Code on GitHub</a>
 <a class="btn" href="#results">View Experimental Results</a>
-<a class="btn" href="#local-demo">Try Live Demo</a>
+<a class="btn" href="live/">Try Live Demo</a>
 </div>
 </section>
 <div class="detailGrid">
@@ -94,7 +94,7 @@
 <p>Test one image-caption pair and compare predictions from the image-only CNN, text-only BiLSTM and multimodal fusion model.</p>
 <div class="mm-overview-api" role="status"><span class="mm-overview-dot"></span><span id="mm-overview-api-state">API NOT CONNECTED</span></div>
 <div class="mm-overview-models"><span>Image CNN</span><span>Text BiLSTM</span><span>Fusion model</span></div>
-<a class="btn primary mm-overview-link" href="#local-demo">Open Live Dashboard ↓</a>
+<a class="btn primary mm-overview-link" href="live/">Open Live Dashboard ↓</a>
 <p class="mm-overview-help">For this student demo, start the FastAPI service on your Mac. Your Mac's localhost is accessible only from your own device, not from other portfolio visitors.</p>
 </div>
 </div>
@@ -205,32 +205,17 @@ Browser-based comparison interface</div>
 </div>
 
 <div class="box" id="local-demo">
-<h3>Live Multimodal Demo</h3>
-<p>Upload an image and enter its caption directly on this portfolio page. The local FastAPI inference service evaluates the same pair with all three trained models and returns their class probabilities here, without opening a separate application.</p>
+<h3>Live Multimodal Dashboard</h3>
+<p>The interactive inference interface opens on its own dashboard page. Upload an image, enter its associated caption, and compare the three trained models without crowding this project overview.</p>
 <div class="mm-gallery">
-<figure><img src="images/demo-input.png" alt="Multimodal demo image upload and caption input" loading="lazy"><figcaption>Image upload and associated caption</figcaption></figure>
-<figure><img src="images/demo-predictions.png" alt="Image CNN, text BiLSTM and multimodal fusion predictions" loading="lazy"><figcaption>Three-model predictions and held-out validation metrics</figcaption></figure>
+<figure><img src="images/demo-input.png" alt="Multimodal dashboard image upload and caption input" loading="lazy"><figcaption>Image upload and associated caption</figcaption></figure>
+<figure><img src="images/demo-predictions.png" alt="Image CNN, text BiLSTM and multimodal fusion predictions" loading="lazy"><figcaption>Three-model prediction comparison</figcaption></figure>
 </div>
-<div class="mm-live-shell" id="mm-live">
-<div class="mm-live-top"><div><div class="eyebrow">INTERACTIVE INFERENCE</div><h3 style="margin:5px 0 0">Test an image-caption pair</h3></div><span class="mm-live-state" id="mm-api-state" role="status">API NOT CONNECTED</span></div>
-<div class="mm-api-connect">
-<input id="mm-api-url" type="url" inputmode="url" placeholder="http://127.0.0.1:8000" aria-label="Inference API URL">
-<button type="button" id="mm-connect">Connect / Check</button>
+<div class="mm-callout">
+<span class="mm-live-status">SEPARATE INTERACTIVE DASHBOARD</span>
+<p style="margin-bottom:12px">For the local college demonstration, start the FastAPI service on your Mac. The dashboard connects to <code>http://127.0.0.1:8000</code> and displays real model outputs when all artifacts are ready.</p>
+<a class="btn primary" href="live/">Open Live Dashboard →</a>
 </div>
-<p class="mm-live-help">This page is static, so predictions require the FastAPI service to be running on your Mac with all three trained models and the text vocabulary available. For your local demonstration, enter http://127.0.0.1:8000. Other portfolio visitors cannot access the localhost service running on your Mac.</p>
-<form class="mm-live-form" id="mm-live-form">
-<label class="mm-live-upload" for="mm-file"><span id="mm-upload-label"><strong>＋ Choose an image</strong><br><small>JPEG, PNG or WebP · maximum 12 MB</small></span><input id="mm-file" type="file" accept="image/jpeg,image/png,image/webp" required><img id="mm-preview" alt="Selected image preview" hidden></label>
-<label for="mm-caption">Associated caption<textarea id="mm-caption" rows="3" placeholder="Describe the image..." required></textarea></label>
-<button class="mm-live-btn" id="mm-run" type="submit" disabled>Compare all three models →</button>
-<p class="mm-live-message" id="mm-message" aria-live="polite">Connect to the inference API to enable live predictions.</p>
-</form>
-<div class="mm-live-results" id="mm-live-results" aria-live="polite">
-<article class="mm-live-card"><h4>Image-only CNN</h4><p class="mm-predicted">EfficientNetB0 visual features</p></article>
-<article class="mm-live-card"><h4>Text-only BiLSTM</h4><p class="mm-predicted">Caption embeddings and recurrent features</p></article>
-<article class="mm-live-card"><h4>Multimodal fusion</h4><p class="mm-predicted">Combined image and caption features</p></article>
-</div>
-</div>
-<p class="mm-note">The live interface is embedded in this portfolio page. It shows real predictions only after your local FastAPI service reports that all three trained models and the vocabulary are ready. No simulated predictions are displayed.</p>
 </div>
 
 <div class="box">
@@ -242,103 +227,7 @@ Browser-based comparison interface</div>
 </main>
 <footer class="footer">Nagaraju Dharavath • Embedded Software &amp; AI Engineering</footer>
 
-<script>
-(()=>{
-const $=id=>document.getElementById(id);
-const state=$("mm-api-state"),apiInput=$("mm-api-url"),run=$("mm-run"),message=$("mm-message"),form=$("mm-live-form");
-const modelTitles={image_only:"Image-only CNN",text_only:"Text-only BiLSTM",multimodal:"Multimodal fusion"};
-let connectedBase="",previewUrl="";
-const configured=window.MM_API_BASE||localStorage.getItem("multimodalInferenceApi")||"";
-apiInput.value=configured;
-function setState(label,kind){
- state.textContent=label;state.className="mm-live-state"+(kind?" "+kind:"");
- const overview=$("mm-overview-api-state");
- if(overview){
-  overview.textContent=kind==="online"?"API ONLINE · 3/3 MODELS READY":label;
-  overview.className="mm-overview-api"+(kind?" "+kind:"");
- }
-}
-function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
-async function connect(){
- const base=baseUrl();
- connectedBase="";run.disabled=true;
- if(!base){setState("API URL REQUIRED","error");message.textContent="The inference service has not been configured yet.";return false}
- setState("CHECKING API","");
- message.textContent="Checking service health and trained model files…";
- try{
-  const health=await fetch(base+"/api/health",{cache:"no-store"});
-  if(!health.ok)throw new Error("Health check failed (HTTP "+health.status+").");
-  const statusResponse=await fetch(base+"/api/models/status",{cache:"no-store"});
-  if(!statusResponse.ok)throw new Error("Model status check failed (HTTP "+statusResponse.status+").");
-  const status=await statusResponse.json();
-  const count=Object.values(status.models||{}).filter(Boolean).length;
-  if(!status.ready||count!==3||!status.vocabulary){
-   setState("API ONLINE · MODELS NOT READY","error");
-   message.textContent=status.message||"All three models and the text vocabulary must be available.";
-   return false;
-  }
-  connectedBase=base;
-  localStorage.setItem("multimodalInferenceApi",base);
-  setState("API ONLINE · 3/3 MODELS READY","online");
-  message.textContent="Connected. Upload an image and enter its associated caption.";
-  run.disabled=false;
-  return true;
- }catch(error){
-  setState("API CONNECTION FAILED","error");
-  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the API. Check the URL, service status and allowed CORS origin.":error.message;
-  return false;
- }
-}
-$("mm-connect").addEventListener("click",connect);
-apiInput.addEventListener("change",()=>{connectedBase="";run.disabled=true;setState("CHECK CONNECTION","");message.textContent="The API address changed. Connect again before running predictions."});
-$("mm-file").addEventListener("change",()=>{
- const file=$("mm-file").files[0];if(!file)return;
- if(previewUrl)URL.revokeObjectURL(previewUrl);
- previewUrl=URL.createObjectURL(file);
- $("mm-preview").src=previewUrl;$("mm-preview").hidden=false;
- $("mm-upload-label").innerHTML="<strong>"+file.name.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))+"</strong><br><small>"+(file.size/1024/1024).toFixed(2)+" MB · selected</small>";
-});
-function renderCard(name,data){
- const card=document.createElement("article");card.className="mm-live-card";
- const heading=document.createElement("h4");heading.textContent=modelTitles[name]||name;card.append(heading);
- const predicted=document.createElement("p");predicted.className="mm-predicted";
- predicted.textContent="Predicted: "+(data.predicted_labels?.length?data.predicted_labels.join(", "):"no class above 0.50");card.append(predicted);
- for(const item of data.ranked_classes||[]){
-  const row=document.createElement("div");row.className="mm-live-score";
-  const label=document.createElement("span");label.textContent=item.class;
-  const track=document.createElement("div");track.className="mm-live-track";
-  const fill=document.createElement("div");fill.className="mm-live-fill";
-  const probability=Math.max(0,Math.min(1,Number(item.probability)||0));fill.style.width=(probability*100)+"%";track.append(fill);
-  const percent=document.createElement("span");percent.className="mm-live-percent";percent.textContent=(probability*100).toFixed(1)+"%";
-  row.append(label,track,percent);card.append(row);
- }
- return card;
-}
-form.addEventListener("submit",async event=>{
- event.preventDefault();
- const file=$("mm-file").files[0],caption=$("mm-caption").value.trim();
- if(!file){message.textContent="Choose an image first.";return}
- if(file.size>12*1024*1024){message.textContent="The image exceeds the 12 MB upload limit.";return}
- if(!caption){message.textContent="Enter the associated caption.";return}
- if(!connectedBase&&!await connect())return;
- const body=new FormData();body.append("file",file);body.append("caption",caption);
- run.disabled=true;run.textContent="Running three models…";message.textContent="Uploading the image-caption pair and running inference…";
- try{
-  const response=await fetch(connectedBase+"/api/predict",{method:"POST",body});
-  const payload=await response.json();
-  if(!response.ok)throw new Error(payload.detail||"Prediction failed (HTTP "+response.status+").");
-  const results=payload.results||{};
-  const required=["image_only","text_only","multimodal"];
-  const missing=required.filter(key=>!results[key]);
-  if(missing.length)throw new Error("The API did not return all three model outputs: "+missing.join(", "));
-  $("mm-live-results").replaceChildren(...required.map(key=>renderCard(key,results[key])));
-  message.textContent="Predictions completed. Probabilities are independent sigmoid scores with a 0.50 decision threshold.";
- }catch(error){message.textContent=error.message}
- finally{run.disabled=!connectedBase;run.textContent="Compare all three models →"}
-});
-if(configured){connect()}else{setState("API NOT CONNECTED","");}
-})();
-</script>
+
 
 <script src="../../js/app.js?v=20261119-1"></script>
 </body>
