@@ -135,6 +135,8 @@
     </div>
     <p class="dashNote" style="margin:13px 0 0">Selected MS COCO 2017 subset. Ground-truth labels come from instance annotations; captions are the text-model input. The split uses separate official train2017 and val2017 images.</p>
     <div class="classPills" aria-label="Six target classes"><span>Bicycle</span><span>Bird</span><span>Bus</span><span>Cat</span><span>Dog</span><span>Horse</span></div>
+    <h3 class="validationTitle">Held-out validation label support</h3>
+    <div class="classPills" id="class-support"><span>Load validation report to see actual positive-label counts</span></div>
     <h3 class="validationTitle">Saved held-out validation results</h3>
     <div class="validationGrid" id="validation-metrics" aria-live="polite">
       <p class="metricsMessage">Connect to your local API to load the saved evaluation report.</p>
@@ -208,6 +210,17 @@ async function loadValidationMetrics(){
    target.append(card);
   }
   if(!target.children.length)throw new Error("No model metrics were found in the saved report.");
+  const supportTarget=$("class-support");
+  const supportSource=payload.report.models.image_only||payload.report.models.text_only||payload.report.models.multimodal;
+  const supportData=supportSource?.per_class||{};
+  const classNames=["bicycle","bird","bus","cat","dog","horse"];
+  supportTarget.replaceChildren();
+  for(const className of classNames){
+   const positiveCount=Number(supportData[className]?.support);
+   const pill=document.createElement("span");
+   pill.textContent=className[0].toUpperCase()+className.slice(1)+" · "+(Number.isFinite(positiveCount)?positiveCount:"—")+" positives";
+   supportTarget.append(pill);
+  }
  }catch(error){
   const p=document.createElement("p");p.className="metricsMessage";
   p.textContent="Could not load the saved evaluation metrics: "+error.message;
@@ -242,7 +255,7 @@ async function connect(){
   return true;
  }catch(error){
   setStatus("API CONNECTION FAILED","error");
-  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the API. Check that it is running, the URL is correct, and CORS allows this portfolio origin.":error.message;
+  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the local API. In Chrome, allow Loopback network access for this portfolio site, then click Connect / Check API again.":error.message;
   return false;
  }finally{
   connectButton.disabled=false;connectButton.textContent="Connect / Check API";
