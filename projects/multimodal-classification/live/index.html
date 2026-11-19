@@ -206,10 +206,21 @@ function setStatus(label,kind){
  status.className="dashStatus"+(kind?" "+kind:"");
 }
 function baseUrl(){return apiInput.value.trim().replace(/\/+$/,"")}
+function apiRequestOptions(base,options={}){
+ const host=new URL(base).hostname.toLowerCase();
+ const isLoopback=host==="127.0.0.1"||host==="localhost"||host==="::1";
+ return {...options,mode:"cors",...(isLoopback?{targetAddressSpace:"loopback"}:{})};
+}
+function isLoopbackUrl(base){
+ try{
+  const host=new URL(base).hostname.toLowerCase();
+  return host==="127.0.0.1"||host==="localhost"||host==="::1";
+ }catch(error){return false}
+}
 async function loadValidationMetrics(){
  const target=$("validation-metrics");
  try{
-  const response=await fetch(apiBase+"/api/metrics",{cache:"no-store",mode:"cors",targetAddressSpace:"loopback"});
+  const response=await fetch(apiBase+"/api/metrics",apiRequestOptions(apiBase,{cache:"no-store"}));
   if(!response.ok)throw new Error("Metrics request failed (HTTP "+response.status+").");
   const payload=await response.json();
   if(!payload.available||!payload.report||!payload.report.models)throw new Error(payload.message||"Saved evaluation report is not available.");
@@ -262,7 +273,7 @@ async function connect(){
  connectButton.disabled=true;connectButton.textContent="Checking…";
  message.textContent="Checking Chrome permission, API health and model readiness…";
  try{
-  if(navigator.permissions?.query){
+  if(isLoopbackUrl(base)&&navigator.permissions?.query){
    try{
     const loopbackPermission=await navigator.permissions.query({name:"loopback-network"});
     if(loopbackPermission.state==="denied"){
@@ -273,9 +284,9 @@ async function connect(){
     // Older browsers may not expose the granular Loopback permission query.
    }
   }
-  const health=await fetch(base+"/api/health",{cache:"no-store",mode:"cors",targetAddressSpace:"loopback"});
+  const health=await fetch(base+"/api/health",apiRequestOptions(base,{cache:"no-store"}));
   if(!health.ok)throw new Error("Health check failed (HTTP "+health.status+").");
-  const response=await fetch(base+"/api/models/status",{cache:"no-store",mode:"cors",targetAddressSpace:"loopback"});
+  const response=await fetch(base+"/api/models/status",apiRequestOptions(base,{cache:"no-store"}));
   if(!response.ok)throw new Error("Model status check failed (HTTP "+response.status+").");
   const data=await response.json();
   const loaded=Object.values(data.models||{}).filter(Boolean).length;
@@ -356,7 +367,7 @@ form.addEventListener("submit",async event=>{
  runButton.disabled=true;runButton.textContent="Running three models…";
  message.textContent="Sending the image-caption pair to the API…";
  try{
-  const response=await fetch(apiBase+"/api/predict",{method:"POST",body,mode:"cors",targetAddressSpace:"loopback"});
+  const response=await fetch(apiBase+"/api/predict",apiRequestOptions(apiBase,{method:"POST",body}));
   const payload=await response.json();
   if(!response.ok)throw new Error(payload.detail||"Prediction failed (HTTP "+response.status+").");
   const results=payload.results||{},required=["image_only","text_only","multimodal"];
