@@ -233,8 +233,19 @@ async function connect(){
  if(!base){setStatus("API URL REQUIRED","error");message.textContent="Enter the API address first.";return false}
  setStatus("CHECKING API","");
  connectButton.disabled=true;connectButton.textContent="Checking…";
- message.textContent="Checking API health and model readiness…";
+ message.textContent="Checking Chrome permission, API health and model readiness…";
  try{
+  if(navigator.permissions?.query){
+   try{
+    const loopbackPermission=await navigator.permissions.query({name:"loopback-network"});
+    if(loopbackPermission.state==="denied"){
+     throw new Error("LOOPBACK_PERMISSION_DENIED");
+    }
+   }catch(permissionError){
+    if(permissionError.message==="LOOPBACK_PERMISSION_DENIED")throw permissionError;
+    // Older browsers may not expose the granular Loopback permission query.
+   }
+  }
   const health=await fetch(base+"/api/health",{cache:"no-store"});
   if(!health.ok)throw new Error("Health check failed (HTTP "+health.status+").");
   const response=await fetch(base+"/api/models/status",{cache:"no-store"});
@@ -255,7 +266,20 @@ async function connect(){
   return true;
  }catch(error){
   setStatus("API CONNECTION FAILED","error");
-  message.textContent=error.message.includes("Failed to fetch")?"Could not reach the local API. In Chrome, allow Loopback network access for this portfolio site, then click Connect / Check API again.":error.message;
+  if(error.message==="LOOPBACK_PERMISSION_DENIED"){
+   message.textContent="Chrome is blocking localhost access. Open the site controls beside the address bar → Site settings → Loopback network → Allow, then reload this page.";
+  }else if(error.message.includes("Failed to fetch")){
+   let permissionState="unknown";
+   try{
+    const permission=await navigator.permissions.query({name:"loopback-network"});
+    permissionState=permission.state;
+   }catch(ignore){}
+   message.textContent=permissionState==="denied"
+    ?"Chrome has denied Loopback network access. Open Site settings for this GitHub Pages site and set Loopback network to Allow."
+    :"Chrome could not reach localhost. Check Site settings → Loopback network, then test http://127.0.0.1:8000/api/health directly in another tab.";
+  }else{
+   message.textContent=error.message;
+  }
   return false;
  }finally{
   connectButton.disabled=false;connectButton.textContent="Connect / Check API";
